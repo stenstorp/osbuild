@@ -1,0 +1,17 @@
+_configure() {
+	./configure				\
+		--prefix=/usr			\
+		--build=$(support/config.guess)	\
+		--host=${TARGET}		\
+		--without-bash-malloc
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make DESTDIR=${OS} install
+	mv ${OS}/usr/bin/bash ${OS}/bin/bash
+	ln -sv bash ${OS}/bin/sh
+}

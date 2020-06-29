@@ -1,0 +1,4 @@
+name=patch
+version=2.7.6
+source=https://ftp.gnu.org/gnu/patch/patch-$version.tar.xz
+sha1sum=6f64fa75993bdb285ac4ed6eca6c9212725bff91

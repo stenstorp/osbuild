@@ -1,0 +1,62 @@
+_configure() {
+	source ${COMPDIR}/mpfr/info
+	mpfr_version=${version}
+	source ${COMPDIR}/gmp/info
+	gmp_version=${version}
+	source ${COMPDIR}/mpc/info
+	mpc_version=${version}
+
+	source ${COMPDIR}/gcc/info
+
+	tar -xf ${SOURCEDIR}/mpfr-${mpfr_version}.tar.xz
+	mv -v mpfr-${mpfr_version} mpfr
+	tar -xf ${SOURCEDIR}/gmp-${gmp_version}.tar.xz
+	mv -v gmp-${gmp_version} gmp
+	tar -xf ${SOURCEDIR}/mpc-${mpc_version}.tar.gz
+	mv -v mpc-${mpc_version} mpc
+
+	# FIXME - add more
+	case ${ARCH} in
+		x86_64)
+			sed -e '/m64=/s/lib64/lib/' -i.orig gcc/config/i386/t-linux64 ;;
+		powerpc64) ;;
+		aarch64) ;;
+	esac
+
+	mkdir -v build
+	cd build
+
+	../configure				\
+		--target=${TARGET}		\
+		--prefix=${OS}/tools		\
+		--with-glibc-version=2.11	\
+		--with-sysroot=${OS}		\
+		--with-newlib			\
+		--without-headers		\
+		--enable-initfini-array		\
+		--disable-nls			\
+		--disable-shared		\
+		--disable-multilib		\
+		--disable-decimal-float		\
+		--disable-threads		\
+		--disable-libatomic		\
+		--disable-libgomp		\
+		--disable-libquadmath		\
+		--disable-libssp		\
+		--disable-libvtv		\
+		--disable-libstdcxx		\
+		--with-long-double-128		\
+		--enable-languages=c,c++
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+
+	cd ..
+	cat gcc/limitx.h gcc/glimits.h gcc/limity.h > \
+		`dirname $(${TARGET}-gcc -print-libgcc-file-name)`/install-tools/include/limits.h
+}

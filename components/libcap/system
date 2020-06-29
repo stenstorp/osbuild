@@ -1,0 +1,15 @@
+_configure() {
+	sed -i '/install.*STACAPLIBNAME/d' libcap/Makefile
+}
+
+_build() {
+	make -j${THREADS} lib=lib
+}
+
+_install() {
+	make lib=lib PKGCONFIGDIR=/usr/lib/pkgconfig install
+	chmod -v 755 /lib/libcap.so.$version
+	mv -v /lib/libpsx.a /usr/lib
+	rm -v /lib/libcap.so
+	ln -sfv ../../lib/libcap.so.2 /usr/lib/libcap.so
+}

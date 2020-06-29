@@ -1,0 +1,14 @@
+_configure() {
+	./configure --prefix=/usr
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+
+	mv -v /usr/bin/fuser   /bin
+	mv -v /usr/bin/killall /bin
+}

@@ -1,0 +1,4 @@
+name=binutils
+version=2.34
+source=https://ftp.gnu.org/gnu/binutils/binutils-$version.tar.xz
+sha1sum=78f7ba4c0775ae75f5b906dc9af03d70b39b0785

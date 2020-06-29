@@ -1,0 +1,21 @@
+_configure() {
+	mkdir -v build
+	cd build
+
+	../libstdc++-v3/configure		\
+		--host=${TARGET}		\
+		--build=$(../config.guess)	\
+		--prefix=/usr			\
+		--disable-multilib		\
+		--disable-nls			\
+		--disable-libstdcxx-pch		\
+		--with-gxx-include-dir=/tools/${TARGET}/include/c++/${version}
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make DESTDIR=${OS} install
+}

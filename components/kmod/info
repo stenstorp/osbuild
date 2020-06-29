@@ -1,0 +1,4 @@
+name=kmod
+version=27
+source=https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-$version.tar.xz
+sha1sum=2c5d55ffe3a83e9de70bb3419fb1a2887489a65f

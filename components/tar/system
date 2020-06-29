@@ -1,0 +1,15 @@
+_configure() {
+	FORCE_UNSAFE_CONFIGURE=1	\
+	./configure			\
+		--prefix=/usr		\
+		--bindir=/bin
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+	make -C doc install-html docdir=/usr/share/doc/tar-$version
+}

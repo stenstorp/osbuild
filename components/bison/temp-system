@@ -1,0 +1,13 @@
+_configure() {
+	./configure		\
+		--prefix=/usr	\
+		--docdir=/usr/share/doc/bison-$version
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+}

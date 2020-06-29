@@ -1,0 +1,21 @@
+_configure() {
+	./configure			\
+		--prefix=/usr		\
+		--enable-shared		\
+		--with-system-expat	\
+		--with-system-ffi	\
+		--with-ensurepip=yes
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+
+	# FIXME - hard-coded version
+	chmod -v 755 /usr/lib/libpython3.8.so
+	chmod -v 755 /usr/lib/libpython3.so
+	ln -sfv pip3.8 /usr/bin/pip3
+}

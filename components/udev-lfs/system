@@ -1,0 +1,4 @@
+_install() {
+	cd ..
+	make -f udev-lfs-$version/Makefile.lfs install
+}

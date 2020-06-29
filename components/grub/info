@@ -1,0 +1,4 @@
+name=grub
+version=2.04
+source=https://ftp.gnu.org/gnu/grub/grub-$version.tar.xz
+sha1sum=3ed21de7be5970d7638b9f526bca3292af78e0fc

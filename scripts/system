@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+source config
+
+COMPONENTS="man-pages tcl expect dejagnu iana-etc glibc tzdata zlib bzip2 xz zstd file readline m4 bc flex binutils gmp mpfr mpc attr acl libcap shadow gcc pkg-config ncurses sed psmisc gettext bison grep bash libtool gdbm gperf expat inetutils perl xml-parser intltool autoconf automake kmod elfutils libffi openssl python ninja meson coreutils check diffutils gawk findutils groff grub less gzip iproute2 kbd libpipeline make patch man-db tar texinfo vim eudev procps-ng util-linux e2fsprogs sysklogd sysvinit libtasn1 p11-kit make-ca wget lfs-bootscripts linux"
+
+for f in ${COMPONENTS}; do
+	scripts/build system $f
+done

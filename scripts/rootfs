@@ -1,0 +1,59 @@
+#!/bin/bash
+set -e
+
+source config
+
+if [ -z $1 ]; then
+	echo "Usage: rootfs [STAGE]"
+	exit 1
+fi
+
+STAGE=$1
+
+# FIXME - add more
+case ${ARCH} in
+	x86_64 | aarch64 | powerpc64)
+		BITS=64 ;;
+	*)
+		BITS=32 ;;
+esac
+
+case ${STAGE} in
+	cross-compiler)
+		echo "[rootfs] Creating cross-compiler root filesystem"
+		mkdir -p ${OS}/{usr,lib,var,etc,bin,sbin}
+		if [ "${BITS}" == "64" ]; then
+			mkdir -p ${OS}/lib64
+		fi
+		mkdir -p ${OS}/tools ;;
+	system)
+		mkdir -pv /{bin,boot,etc/{opt,sysconfig},home,lib/firmware,mnt,opt}
+		mkdir -pv /{media/{floppy,cdrom},srv,var}
+		mkdir -pv /usr/{,local/}{bin,include,lib,sbin,src}
+		mkdir -pv /usr/{,local/}share/{color,dict,doc,info,locale,man}
+		mkdir -pv /usr/{,local/}share/{misc,terminfo,zoneinfo}
+		mkdir -pv /usr/{,local/}share/man/man{1..8}
+		install -dv -m 1777 /tmp /var/tmp
+		install -dv -m 0750 /root
+
+		mkdir -v /var/{log,mail,spool}
+		ln -sv /run /var/run
+		ln -sv /run/lock /var/lock
+		mkdir -pv /var/{opt,cache,lib/{color,misc,locate},local}
+
+		ln -sv /proc/self/mounts /etc/mtab
+
+		echo "127.0.0.1 localhost $(hostname)" > /etc/hosts
+
+		cp -r files/* ${OS}/
+
+		touch /var/log/{btmp,lastlog,faillog,wtmp}
+		chgrp -v utmp /var/log/lastlog
+		chmod -v 664  /var/log/lastlog
+		chmod -v 600  /var/log/btmp
+
+	;;
+	*)
+		echo "[rootfs] no such stage \"${STAGE}\""
+		exit 1 ;;
+esac

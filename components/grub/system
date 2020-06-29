@@ -1,0 +1,17 @@
+_configure() {
+	./configure			\
+		--prefix=/usr		\
+		--sbindir=/sbin		\
+		--sysconfdir=/etc	\
+		--disable-efiemu	\
+		--disable-werror
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+	mv -v /etc/bash_completion.d/grub /usr/share/bash-completion/completions
+}

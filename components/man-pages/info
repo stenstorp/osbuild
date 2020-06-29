@@ -1,0 +1,4 @@
+name=man-pages
+version=5.07
+source=https://www.kernel.org/pub/linux/docs/man-pages/man-pages-$version.tar.xz
+sha1sum=3c04016dcd0444318580c7868b2da0b3fbddfa18

@@ -1,0 +1,17 @@
+_configure() {
+	./configure			\
+		--prefix=/usr		\
+		--with-tcl=/usr/lib	\
+		--enable-shared		\
+		--mandir=/usr/share/man	\
+		--with-tclinclude=/usr/include
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+	ln -svf expect$version/libexpect$version.so /usr/lib
+}

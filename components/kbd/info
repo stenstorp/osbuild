@@ -1,0 +1,4 @@
+name=kbd
+version=2.2.0
+source=https://www.kernel.org/pub/linux/utils/kbd/kbd-$version.tar.xz
+sha1sum=0180f70c7d34452a04d106e0b8cfadebe0e1b2a8

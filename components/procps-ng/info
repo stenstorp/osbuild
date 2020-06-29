@@ -1,0 +1,4 @@
+name=procps-ng
+version=3.3.16
+source=https://sourceforge.net/projects/procps-ng/files/Production/procps-ng-$version.tar.xz
+sha1sum=1645168d28b70837d787f4337fd85f6f82f0a251

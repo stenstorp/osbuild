@@ -1,0 +1,14 @@
+_configure() {
+	sed -i '/Error loading kernel symbols/{n;n;d}' ksym_mod.c
+	sed -i 's/union wait/int/' syslogd.c
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make BINDIR=/sbin install
+
+	cp ${COMPDIR}/sysklogd/syslog.conf /etc/syslog.conf
+}

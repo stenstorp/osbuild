@@ -1,0 +1,11 @@
+_configure() {
+	PREFIX=/usr CC=gcc CFLAGS="-std=c99" ./configure.sh -G -O3
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+}

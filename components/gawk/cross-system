@@ -1,0 +1,16 @@
+_configure() {
+	sed -i 's/extras//' Makefile.in
+
+	./configure				\
+		--prefix=/usr			\
+		--host=${TARGET}		\
+		--build=$(./config.guess)
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make DESTDIR=${OS} install
+}

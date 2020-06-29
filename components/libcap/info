@@ -1,0 +1,4 @@
+name=libcap
+version=2.36
+source=https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-$version.tar.xz
+sha1sum=82902baa1efc7e51ea3fd0bddc188b1753c9a68e

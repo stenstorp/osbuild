@@ -1,0 +1,24 @@
+_configure() {
+	sed '20,$ d' -i trust/trust-extract-compat.in
+
+	echo "/usr/libexec/make-ca/copy-trust-modifications" >> trust/trust-extract-compat.in
+	echo "/usr/sbin/make-ca -f -g" >> trust/trust-extract-compat.in
+
+	./configure			\
+		--prefix=/usr		\
+		--sysconfdir=/etc	\
+		--with-trust-paths=/etc/pki/anchors
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+
+	ln -sfv /usr/libexec/p11-kit/trust-extract-compat \
+		/usr/bin/update-ca-certificates
+
+	ln -sfv ./pkcs11/p11-kit-trust.so /usr/lib/libnssckbi.so
+}

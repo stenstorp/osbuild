@@ -1,0 +1,11 @@
+_configure() {
+	perl Makefile.PL
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+}

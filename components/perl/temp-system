@@ -1,0 +1,13 @@
+_configure() {
+	patch -Np1 -i ${COMPDIR}/perl/perl-gcc10.patch
+
+	sh Configure -des -Dprefix=/usr
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+}

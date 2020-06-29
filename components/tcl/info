@@ -1,0 +1,5 @@
+name=tcl
+version=8.6.10
+source=https://downloads.sourceforge.net/tcl/tcl$version-src.tar.gz
+sha1sum=0ba1dcc40db79749c322258781879a3c17093295
+folder=tcl$version

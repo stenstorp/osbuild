@@ -1,0 +1,4 @@
+name=readline
+version=8.0
+source=http://ftp.gnu.org/gnu/readline/readline-$version.tar.gz
+sha1sum=d58041c2143595dc001d2777ae9a200be30198b0

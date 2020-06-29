@@ -1,0 +1,17 @@
+_configure() {
+	sed -i '/RESIZECONS_PROGS=/s/yes/no/' configure
+	sed -i 's/resizecons.8 //' docs/man/man8/Makefile.in
+
+	./configure --prefix=/usr --disable-vlock
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+
+	mkdir -v            /usr/share/doc/kbd-$version
+	cp -R -v docs/doc/* /usr/share/doc/kbd-$version
+}

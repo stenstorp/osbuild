@@ -1,0 +1,16 @@
+_configure() {
+	./configure --prefix=/usr --bindir=/bin
+}
+
+_build() {
+	make -j${THREADS}
+	make -j${THREADS} html
+}
+
+_install() {
+	make install
+
+	install -d -m755           /usr/share/doc/sed-$version
+	install -m644 doc/sed.html /usr/share/doc/sed-$version
+}
+	

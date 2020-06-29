@@ -1,0 +1,19 @@
+_configure() {
+	mkdir -v build
+	cd build
+
+	../configure \
+		--prefix=${OS}/tools	\
+		--with-sysroot=${OS}	\
+		--target=${TARGET}	\
+		--disable-nls		\
+		--disable-werror
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+}

@@ -1,0 +1,4 @@
+name=perl
+version=5.30.0
+source=https://www.cpan.org/src/5.0/perl-$version.tar.xz
+sha1sum=cc8d1e08ffe4624c197a44d02855632725d39f8e

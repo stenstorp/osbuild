@@ -1,0 +1,25 @@
+_configure() {
+	./configure					\
+		--prefix=/usr				\
+		--host=${TARGET}			\
+		--build=$(build-aux/config.guess)	\
+		--enable-install-program=hostname	\
+		--enable-no-install-program=kill,uptime
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make DESTDIR=${OS} install
+
+	mv -v ${OS}/usr/bin/{cat,chgrp,chmod,chown,cp,date,dd,df,echo}	${OS}/bin
+	mv -v ${OS}/usr/bin/{false,ln,ls,mkdir,mknod,mv,pwd,rm}		${OS}/bin
+	mv -v ${OS}/usr/bin/{rmdir,stty,sync,true,uname}		${OS}/bin
+	mv -v ${OS}/usr/bin/{head,nice,sleep,touch}			${OS}/bin
+	mv -v ${OS}/usr/bin/chroot ${OS}/usr/sbin
+	mkdir -pv ${OS}/usr/share/man/man8
+	mv -v ${OS}/usr/share/man/man1/chroot.1				${OS}/usr/share/man/man8/chroot.8
+	sed -i 's/"1"/"8"/'						${OS}/usr/share/man/man8/chroot.8
+}

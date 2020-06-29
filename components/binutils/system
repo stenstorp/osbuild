@@ -1,0 +1,25 @@
+_configure() {
+	sed -i '/@\tincremental_copy/d' gold/testsuite/Makefile.in
+	patch -Np1 -i ${COMPDIR}/binutils/binutils-2.34-gcc10_gold_test_fix-1.patch
+
+	mkdir -v build
+	cd build
+
+	../configure			\
+		--prefix=/usr		\
+		--enable-gold		\
+		--enable-ld=default	\
+		--enable-plugins	\
+		--enable-shared		\
+		--disable-werror	\
+		--enable-64-bit-bfd	\
+		--with-system-zlib
+}
+
+_build() {
+	make -j${THREADS} tooldir=/usr
+}
+
+_install() {
+	make tooldir=/usr install
+}

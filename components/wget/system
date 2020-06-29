@@ -1,0 +1,14 @@
+_configure() {
+	./configure			\
+		--prefix=/usr		\
+		--sysconfdir=/etc	\
+		--with-ssl=openssl
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+}

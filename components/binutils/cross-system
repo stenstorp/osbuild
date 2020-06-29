@@ -1,0 +1,22 @@
+_configure() {
+	mkdir -v build
+	cd build
+
+	../configure				\
+		--prefix=/usr			\
+		--build=$(../config.guess)	\
+		--host=${TARGET}		\
+		--disable-nls			\
+		--enable-shared			\
+		--disable-werror		\
+		--enable-64-bit-bfd
+		
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make DESTDIR=${OS} install
+}

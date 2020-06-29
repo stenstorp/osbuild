@@ -1,0 +1,16 @@
+_configure() {
+	./configure			\
+		--prefix=/usr		\
+		--disable-static	\
+		--docdir=/usr/share/doc/mpc-$version
+}
+
+_build() {
+	make -j${THREADS}
+	make -j${THREADS} html
+}
+
+_install() {
+	make install
+	make install-html
+}

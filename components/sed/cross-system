@@ -1,0 +1,14 @@
+_configure() {
+	./configure			\
+		--prefix=/usr		\
+		--host=${TARGET}	\
+		--bindir=/bin
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make DESTDIR=${OS} install
+}

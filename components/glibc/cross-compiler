@@ -1,0 +1,29 @@
+_configure() {
+	case ${ARCH} in
+		i?86) ln -sfv ld-linux.so.2 ${OS}/lib/ld-lsb.so.3
+		;;
+		x86_64) ln -sfv /lib/ld-linux-x86-64.so.2 ${OS}/lib64/ld-linux-x86-64.so.2
+			ln -sfv /lib/ld-linux-x86-64.so.2 ${OS}/lib64/ld-lsb-x86-64.so.3
+		;;
+	esac
+
+	mkdir -v build
+	cd build
+
+	../configure					\
+		--prefix=/usr				\
+		--host=${TARGET}			\
+		--build=$(../scripts/config.guess)	\
+		--enable-kernel=3.2			\
+		--with-headers=${OS}/usr/include	\
+		libc_cv_slibdir=/lib
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make DESTDIR=${OS} install
+	${OS}/tools/libexec/gcc/${TARGET}/*/install-tools/mkheaders
+}

@@ -1,0 +1,70 @@
+#!/bin/bash
+set -e
+
+source config
+
+if [ -z $1 ]; then
+	echo "Usage: extract [TARGET]"
+	exit 1
+fi
+
+COMP=$1
+
+mkdir -p ${WORKDIR}
+
+unset name version source sha1sum folder
+source ${COMPDIR}/${COMP}/info
+filename=${source##*/}
+
+if [ ! -e ${SOURCEDIR}/${filename} ]; then
+	echo "[${name}] source doesn't exist, exiting"
+	exit 1
+fi
+
+fext=${filename#*.}
+ext=${filename##*.}
+
+if [ $(echo ${fext} | grep tar) ] && [ "${ext}" != "tar" ]; then
+	extension="tar.${ext}"
+else
+	extension="${ext}"
+fi
+
+if [ -e ${WORKDIR}/${name}-${version} ]; then
+	rm -rf ${WORKDIR}/${name}-${version}
+fi
+
+mkdir -p ${WORKDIR}/${name}-${version}
+
+echo "[${name}] extracting source"
+case ${extension} in
+	tar.xz)
+		tar -C ${WORKDIR}/${name}-${version} -xJf ${SOURCEDIR}/${filename} ;;
+	tar.gz)
+		tar -C ${WORKDIR}/${name}-${version} -xzf ${SOURCEDIR}/${filename} ;;
+	tar.bz2)
+		tar -C ${WORKDIR}/${name}-${version} -xjf ${SOURCEDIR}/${filename} ;;
+	tar)
+		tar -C ${WORKDIR}/${name}-${version} -xf ${SOURCEDIR}/${filename} ;;
+	xz)
+		cd ${WORKDIR}/${name}-${version}
+		unxz ${SOURCEDIR}/${filename}
+		cd ${CDIR} ;;
+	gz)
+		cd ${WORKDIR}/${name}-${version}
+		gunzip ${SOURCEDIR}/${filename}
+		cd ${CDIR} ;;
+	bz2)
+		cd ${WORKDIR}/${name}-${version}
+		bunzip ${SOURCEDIR}/${filename}
+		cd ${CDIR} ;;
+	zip)
+		cd ${WORKDIR}/${name}-${version}
+		unzip ${SOURCEDIR}/${filename}
+		cd ${CDIR} ;;
+	#7z) ;;
+	#rar) ;;
+	*)
+		echo "[${name}] file type \"${extension}\" not supported"
+		exit 1 ;;
+esac

@@ -1,0 +1,17 @@
+_build() {
+	make mrproper
+
+	case ${ARCH} in
+		x86_64,i?86) KARCH=x86 ;;
+		powerpc64) KARCH=powerpc ;;
+		*) KARCH=${ARCH} ;;
+	esac
+
+	make ARCH=${KARCH} headers
+}
+
+_install() {
+	find usr/include -name '.*' -delete
+	rm usr/include/Makefile
+	cp -rv usr/include ${OS}/usr
+}

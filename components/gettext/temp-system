@@ -1,0 +1,11 @@
+_configure() {
+	./configure --disable-shared
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	cp -v gettext-tools/src/{msgfmt,msgmerge,xgettext} /usr/bin
+}

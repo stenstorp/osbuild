@@ -1,0 +1,12 @@
+_configure() {
+	./configure --prefix=/usr --docdir=/usr/share/doc/flex-$version
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+	ln -sv flex /usr/bin/lex
+}

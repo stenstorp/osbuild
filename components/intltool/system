@@ -1,0 +1,15 @@
+_configure() {
+	sed -i 's:\\\${:\\\$\\{:' intltool-update.in
+
+	./configure --prefix=/usr
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+
+	install -v -Dm644 doc/I18N-HOWTO /usr/share/doc/intltool-$version/I18N-HOWTO
+}

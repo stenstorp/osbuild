@@ -1,0 +1,4 @@
+name=texinfo
+version=6.7
+source=http://ftp.gnu.org/gnu/texinfo/texinfo-$version.tar.xz
+sha1sum=d84d46368e2694919c05a539cb8c616ac89bf4df

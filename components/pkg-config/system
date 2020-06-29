@@ -1,0 +1,15 @@
+_configure() {
+	./configure			\
+		--prefix=/usr		\
+		--with-internal-glib	\
+		--disable-host-tool	\
+		--docdir=/usr/share/doc/pkg-config-$version
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+}

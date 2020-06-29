@@ -1,0 +1,20 @@
+_configure() {
+	./configure						\
+		--prefix=/usr					\
+		--exec-prefix=					\
+		--libdir=/usr/lib				\
+		--docdir=/usr/share/doc/procps-ng-$version	\
+		--disable-static				\
+		--disable-kill
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+
+	mv -v /usr/lib/libprocps.so.* /lib
+	ln -sfv ../../lib/$(readlink /usr/lib/libprocps.so) /usr/lib/libprocps.so
+}

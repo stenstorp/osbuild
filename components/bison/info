@@ -1,0 +1,4 @@
+name=bison
+version=3.6.4
+source=http://ftp.gnu.org/gnu/bison/bison-$version.tar.xz
+sha1sum=f31fb34f1f04327004ae259137ce509dacb8b063

@@ -1,0 +1,11 @@
+_configure() {
+	PAGE=A4 ./configure --prefix=/usr
+}
+
+_build() {
+	make -j1
+}
+
+_install() {
+	make install
+}

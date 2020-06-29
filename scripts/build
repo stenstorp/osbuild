@@ -1,0 +1,60 @@
+#!/bin/bash
+set -e
+
+source config
+
+if [ -z $2 ]; then
+	echo "Usage: build [STAGE] [TARGET]"
+	exit 1
+fi
+
+STAGE=$1
+COMP=$2
+
+if [ ! -e ${COMPDIR}/${COMP} ]; then
+	echo "component \"${COMP}\" not found"
+	exit 1
+fi
+
+scripts/download ${COMP}
+scripts/extract ${COMP}
+
+unset name version source sha1sum folder
+source ${COMPDIR}/${COMP}/info
+
+if [ -z ${folder} ]; then
+	folder=${name}-${version}
+fi
+
+cd ${WORKDIR}/${name}-${version}/${folder}
+unset _configure _build _install
+source ${COMPDIR}/${COMP}/${STAGE}
+
+if [ -e ${LOGDIR}/${STAGE}/${COMP} ]; then
+	rm -rf ${LOGDIR}/${STAGE}/${COMP}
+fi
+mkdir -p ${LOGDIR}/${STAGE}/${COMP}
+
+if [ ! -z $(type -t _configure) ]; then
+	echo "[${name}] configuring"
+	_configure &> ${LOGDIR}/${STAGE}/${COMP}/${name}-configure.log || exit 1
+fi
+
+if [ ! -z $(type -t _build) ]; then
+	echo "[${name}] building"
+	_build &> ${LOGDIR}/${STAGE}/${COMP}/${name}-build.log || exit 1
+fi
+
+if [ ! -z $(type -t _install) ]; then
+	echo "[${name}] installing"
+	_install &> ${LOGDIR}/${STAGE}/${COMP}/${name}-install.log || exit 1
+fi
+
+cd ${CDIR}
+
+if [ -z ${noclean} ]; then
+	echo "[${name}] cleaning"
+	rm -rf ${WORKDIR}/${name}-${version}
+fi
+
+echo "[${name}] complete"

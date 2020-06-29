@@ -1,0 +1,23 @@
+_configure() {
+	sed -i 's@\(ln -s -f \)$(PREFIX)/bin/@\1@' Makefile
+	sed -i "s@(PREFIX)/man@(PREFIX)/share/man@g" Makefile
+}
+
+_build() {
+	make -j${THREADS} -f Makefile-libbz2_so
+	make clean
+
+	make -j${THREADS}
+}
+
+_install() {
+	make PREFIX=/usr install
+
+	cp -v bzip2-shared /bin/bzip2
+	cp -av libbz2.so* /lib
+	# FIXME - hard-coded version
+	ln -sv ../../lib/libbz2.so.1.0 /usr/lib/libbz2.so
+	rm -v /usr/bin/{bunzip2,bzcat,bzip2}
+	ln -sv bzip2 /bin/bunzip2
+	ln -sv bzip2 /bin/bzcat
+}

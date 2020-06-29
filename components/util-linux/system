@@ -1,0 +1,26 @@
+_configure() {
+mkdir -pv /var/lib/hwclock
+
+./configure						\
+	ADJTIME_PATH=/var/lib/hwclock/adjtime		\
+	--docdir=/usr/share/doc/util-linux-$version	\
+	--disable-chfn-chsh				\
+	--disable-login					\
+	--disable-nologin				\
+	--disable-su					\
+	--disable-setpriv				\
+	--disable-runuser				\
+	--disable-pylibmount				\
+	--disable-static				\
+	--without-python				\
+	--without-systemd				\
+	--without-systemdsystemunitdir
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+}

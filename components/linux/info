@@ -1,0 +1,4 @@
+name=linux
+version=5.4.49
+source=https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz
+sha1sum=e000080db981fdf05aedc6b2438091835f53b832

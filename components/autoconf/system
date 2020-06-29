@@ -1,0 +1,12 @@
+_configure() {
+	sed -i '361 s/{/\\{/' bin/autoscan.in
+	./configure --prefix=/usr
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+}

@@ -1,0 +1,31 @@
+_configure() {
+	mkdir -v build
+	cd build
+
+	../configure				\
+		--prefix=/usr			\
+		--disable-werror		\
+		--enable-kernel=3.2		\
+		--enable-stack-protector=strong	\
+		--with-headers=/usr/include	\
+		libc_cv_slibdir=/lib
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	sed '/test-installation/s@$(PERL)@echo not running@' -i ../Makefile
+	make install
+
+	cp -v ../nscd/nscd.conf /etc/nscd.conf
+	mkdir -pv /var/cache/nscd
+
+	make -j${THREADS} localedata/install-locales
+
+	cp ${COMPDIR}/glibc/files/nsswitch.conf /etc/nsswitch.conf
+	cp ${COMPDIR}/glibc/files/ld.so.conf /etc/ld.so.conf
+
+	mkdir -pv /etc/ld.so.conf.d
+}

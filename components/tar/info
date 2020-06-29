@@ -1,0 +1,4 @@
+name=tar
+version=1.32
+source=https://ftp.gnu.org/gnu/tar/tar-$version.tar.xz
+sha1sum=162e00af4702565119c05465e8b6f21c75092794

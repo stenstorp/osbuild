@@ -1,0 +1,12 @@
+_configure() {
+	# FIXME - native arch?
+	./configure --prefix=/usr --disable-static --with-gcc-arch=native
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+}

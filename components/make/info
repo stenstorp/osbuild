@@ -1,0 +1,4 @@
+name=make
+version=4.3
+source=https://ftp.gnu.org/gnu/make/make-$version.tar.gz
+sha1sum=3c40e5b49b893dbb14f1e2e1f8fe89b7298cc51d

@@ -1,0 +1,4 @@
+name=psmisc
+version=23.3
+source=https://sourceforge.net/projects/psmisc/files/psmisc/psmisc-$version.tar.xz
+sha1sum=417f24fb15d7dd8967f2dd646b52b8685239a68d

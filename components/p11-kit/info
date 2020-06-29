@@ -1,0 +1,4 @@
+name=p11-kit
+version=0.23.20
+source=https://github.com/p11-glue/p11-kit/releases/download/$version/p11-kit-$version.tar.xz
+sha1sum=35b8b044c5ce4f45aebc5391f24d94ecbba7a1f4

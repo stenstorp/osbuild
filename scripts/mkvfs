@@ -1,0 +1,36 @@
+#!/bin/bash
+set -e
+
+source config
+
+chown -R root:root ${OS}/{usr,lib,var,etc,bin,sbin,tools}
+
+# FIXME - add more
+case ${ARCH} in
+  x86_64 | aarch64 | powerpc64) chown -R root:root ${OS}/lib64 ;;
+esac
+
+mkdir -pv ${OS}/{dev,proc,sys,run}
+
+mknod -m 600 ${OS}/dev/console c 5 1
+mknod -m 666 ${OS}/dev/null c 1 3
+
+mount -v --bind /dev ${OS}/dev
+
+mount -v --bind /dev/pts ${OS}/dev/pts
+mount -vt proc proc ${OS}/proc
+mount -vt sysfs sysfs ${OS}/sys
+mount -vt tmpfs tmpfs ${OS}/run
+
+if [ -h ${OS}/dev/shm ]; then
+  mkdir -pv ${OS}/$(readlink ${OS}/dev/shm)
+fi
+
+mkdir -p ${OS}/usr/src/system
+
+cp -r config ${OS}/usr/src/system/
+cp -r components ${OS}/usr/src/system/
+cp -r source ${OS}/usr/src/system/
+cp -r scripts ${OS}/usr/src/system/
+cp -r files ${OS}/usr/src/system/
+cp -r Makefile ${OS}/usr/src/system/

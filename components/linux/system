@@ -1,0 +1,30 @@
+_configure() {
+	make mrproper
+
+	case ${ARCH} in
+		x86_64 | i?86 ) KARCH=x86 ;;
+		powerpc64 ) KARCH=powerpc ;;
+		*) KARCH=${ARCH} ;;
+	esac
+
+	# FIXME - use a proper config!
+	make ARCH=${KARCH} defconfig
+}
+
+_build() {
+	make -j${THREADS} ARCH=${KARCH}
+}
+
+_install() {
+	make modules_install
+
+	cp -iv arch/x86/boot/bzImage /boot/vmlinuz-$version
+	cp -iv System.map /boot/System.map-$version
+	cp -iv .config /boot/config-$version
+
+	install -d /usr/share/doc/linux-$version
+	cp -r Documentation/* /usr/share/doc/linux-$version
+
+	install -v -m755 -d /etc/modprobe.d
+	cp -v ${COMPDIR}/linux/files/usb.conf /etc/modprobe.d/usb.conf
+}

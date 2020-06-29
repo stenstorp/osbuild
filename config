@@ -1,0 +1,17 @@
+#!/bin/sh
+
+CDIR=$(pwd)
+SOURCEDIR=${CDIR}/source
+COMPDIR=${CDIR}/components
+LOGDIR=${CDIR}/log
+WORKDIR=${CDIR}/work
+OS=${CDIR}/OS
+
+ARCH=$(uname -m)
+THREADS=$(nproc)
+
+TARGET=${ARCH}-unknown-linux-gnu
+#OS_TGT=${ARCH}-unknown-linux-gnueabi
+#OS_TGT=${ARCH}-unknown-linux-gnueabihf
+
+PATH=${OS}/tools/bin:/bin:/usr/bin:/sbin:/usr/sbin

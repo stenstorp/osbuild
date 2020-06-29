@@ -1,0 +1,17 @@
+_configure() {
+	./configure					\
+		--prefix=/usr				\
+		--docdir=/usr/share/doc/bash-$version	\
+		--without-bash-malloc			\
+		--with-installed-readline
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+
+	mv -vf /usr/bin/bash /bin
+}

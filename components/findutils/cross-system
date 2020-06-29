@@ -1,0 +1,17 @@
+_configure() {
+	./configure					\
+		--prefix=/usr				\
+		--host=${TARGET}			\
+		--build=$(build-aux/config.guess)
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make DESTDIR=${OS} install
+
+	mv -v ${OS}/usr/bin/find ${OS}/bin
+	sed -i 's|find:=${BINDIR}|find:=/bin|' ${OS}/usr/bin/updatedb
+}

@@ -1,0 +1,15 @@
+_configure() {
+	./configure			\
+		--prefix=/usr		\
+		--disable-static	\
+		--docdir=/usr/share/doc/expat-$version
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+	install -v -m644 doc/*.{html,png,css} /usr/share/doc/expat-$version
+}

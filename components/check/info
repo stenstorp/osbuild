@@ -1,0 +1,4 @@
+name=check
+version=0.14.0
+source=https://github.com/libcheck/check/releases/download/$version/check-$version.tar.gz
+sha1sum=f88dec20faa3ffb81b539242687f2504032fdea4

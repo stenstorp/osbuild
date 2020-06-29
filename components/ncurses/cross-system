@@ -1,0 +1,36 @@
+_configure() {
+	sed -i s/mawk// configure
+
+	mkdir build
+	pushd build
+		../configure
+		make -C include
+		make -C progs tic
+	popd
+
+	./configure				\
+		--prefix=/usr			\
+		--host=${TARGET}		\
+		--build=$(./config.guess)	\
+		--mandir=/usr/share/man		\
+		--with-manpage-format=normal	\
+		--with-shared			\
+		--without-debug			\
+		--without-ada			\
+		--without-normal		\
+		--enable-widec			\
+		--disable-stripping
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make DESTDIR=${OS} TIC_PATH=$(pwd)/build/progs/tic install
+	ln -s libncursesw.so ${OS}/usr/lib/libncurses.so
+
+	mv -v ${OS}/usr/lib/libncursesw.so.6* ${OS}/lib
+
+	ln -sfv ../../lib/$(readlink ${OS}/usr/lib/libncursesw.so) ${OS}/usr/lib/libncursesw.so
+}
