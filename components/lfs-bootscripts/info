@@ -1,4 +1,4 @@
 name=lfs-bootscripts
 version=20191031
 source=http://www.linuxfromscratch.org/lfs/downloads/development/lfs-bootscripts-$version.tar.xz
-sha1sum=ce9a5b92dedd88f243482e618b49823e0d8b96da
+sha1sum=bab48845310911c6b5f27372834a3b306ef5728e
