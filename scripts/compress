@@ -1,0 +1,18 @@
+#!/bin/bash
+set -e
+
+source config
+
+for f in usr/src/system/log dev/pts dev proc sys run; do
+	if mountpoint -q ${OS}/$f; then
+		sudo umount -l ${OS}/$f
+	fi
+done
+
+sudo cp -r ${OS} ${OS}-copy
+
+cd ${OS}-copy
+sudo XZ_OPT="--threads=${THREADS}" tar cfJ ../os-$(date +%Y%m%d).tar.xz *
+cd ${CDIR}
+
+sudo rm -rf ${OS}-copy

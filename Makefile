@@ -33,3 +33,6 @@ chroot-system:
 
 chroot-clean:
 	@sudo scripts/chrrun scripts/system-cleanup
+
+compress:
+	@sudo scripts/compress
