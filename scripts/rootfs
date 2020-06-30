@@ -27,6 +27,12 @@ case ${STAGE} in
 		fi
 		mkdir -p ${OS}/tools ;;
 	system)
+
+		if [ "$(stat -c %d:%i /)" == "$(stat -c %d:%i /proc/1/root/.)" ]; then
+			echo "[rootfs] MUST BE RUN IN CHROOT!, exiting"
+			exit 1
+		fi
+
 		mkdir -pv /{bin,boot,etc/{opt,sysconfig},home,lib/firmware,mnt,opt}
 		mkdir -pv /{media/{floppy,cdrom},srv,var}
 		mkdir -pv /usr/{,local/}{bin,include,lib,sbin,src}
@@ -43,9 +49,7 @@ case ${STAGE} in
 
 		ln -sv /proc/self/mounts /etc/mtab
 
-		echo "127.0.0.1 localhost $(hostname)" > /etc/hosts
-
-		cp -r files/* ${OS}/
+		cp -rv files/* /
 
 		touch /var/log/{btmp,lastlog,faillog,wtmp}
 		chgrp -v utmp /var/log/lastlog
