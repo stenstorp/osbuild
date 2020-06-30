@@ -2,13 +2,38 @@ _configure() {
 	make mrproper
 
 	case ${ARCH} in
-		x86_64 | i?86 ) KARCH=x86 ;;
-		powerpc64 ) KARCH=powerpc ;;
-		*) KARCH=${ARCH} ;;
+		x86_64)
+			KARCH=x86
+			DEFCONFIG=x86_64_defconfig
+		;;
+		i?86)
+			KARCH=x86
+			DEFCONFIG=i386_defconfig
+		;;
+		powerpc)
+			KARCH=powerpc
+			DEFCONFIG=pmac32_defconfig
+		;;
+		powerpc64)
+			KARCH=powerpc
+			DEFCONFIG=ppc64_defconfig
+		;;
+		aarch64)
+			KARCH=arm64
+			DEFCONFIG=defconfig
+		;;
+		arm)
+			KARCH=arm
+			DEFCONFIG=bcm2835_defconfig
+		;;
+		*)
+			KARCH=${ARCH}
+			DEFCONFIG=defconfig
+		;;
 	esac
 
 	# FIXME - use a proper config!
-	make ARCH=${KARCH} defconfig
+	make ARCH=${KARCH} ${DEFCONFIG}
 }
 
 _build() {

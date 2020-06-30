@@ -1,9 +1,19 @@
 _configure() {
 	case ${ARCH} in
-		i?86) ln -sfv ld-linux.so.2 ${OS}/lib/ld-lsb.so.3
+		i?86)
+			ln -sfv ld-linux.so.2 ${OS}/lib/ld-lsb.so.3
 		;;
-		x86_64) ln -sfv /lib/ld-linux-x86-64.so.2 ${OS}/lib64/ld-linux-x86-64.so.2
+		x86_64)
+			ln -sfv /lib/ld-linux-x86-64.so.2 ${OS}/lib64/ld-linux-x86-64.so.2
 			ln -sfv /lib/ld-linux-x86-64.so.2 ${OS}/lib64/ld-lsb-x86-64.so.3
+		;;
+		aarch64)
+			ln -sfv /lib/ld-linux-aarch64.so.1 ${OS}/lib64/ld-linux-aarch64.so.1
+			ln -sfv /lib/ld-linux-aarch64.so.1 ${OS}/lib64/ld-lsb-aarch64.so.3
+		;;
+		powerpc64)
+			ln -sfv /lib/ld64.so.1 ${OS}/lib64/ld64.so.1
+			ln -sfv /lib/ld64.so.1 ${OS}/lib64/ld-lsb-ppc64.so.3
 		;;
 	esac
 
