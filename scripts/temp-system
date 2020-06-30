@@ -6,5 +6,5 @@ source config
 COMPONENTS="libstdc++ bison gettext perl python texinfo util-linux"
 
 for f in ${COMPONENTS}; do
-	scripts/build temp-system $f
+	scripts/build temp-system $f || exit 1
 done
