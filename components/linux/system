@@ -60,4 +60,6 @@ _install() {
 
 	install -v -m755 -d /etc/modprobe.d
 	cp -v ${COMPDIR}/linux/files/usb.conf /etc/modprobe.d/usb.conf
+
+	dracut --force --kver $version
 }
