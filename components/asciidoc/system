@@ -1,0 +1,18 @@
+_configure() {
+	./configure			\
+		--prefix=/usr		\
+		--sysconfdir=/etc	\
+		--docdir=/usr/share/doc/asciidoc-$version
+}
+
+_build() {
+	sed -i -e 's/--nonet//g' a2x.py
+	sed -i -e 's/--nonet//g' build_website.sh
+
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+	make docs
+}

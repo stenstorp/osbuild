@@ -1,0 +1,25 @@
+_configure() {
+	./configure	\
+		--prefix=/usr				\
+		--libexecdir=/usr/lib			\
+		--with-secure-path			\
+		--with-all-insults			\
+		--with-env-editor			\
+		--docdir=/usr/share/doc/sudo-$version	\
+		--with-passprompt="[sudo] password for %p: "
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+	ln -sfv libsudo_util.so.0.0.0 /usr/lib/sudo/libsudo_util.so.0
+
+	cp ${COMPDIR}/sudo/files/sudo /etc/sudoers.d/sudo
+
+	mkdir -p /etc/pam.d
+	cp ${COMPDIR}/sudo/files/pam-sudo /etc/pam.d/sudo
+	chmod 644 /etc/pam.d/sudo
+}

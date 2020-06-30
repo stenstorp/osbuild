@@ -1,0 +1,13 @@
+_configure() {
+	./configure --prefix=/usr
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+
+	cp -v ${COMPDIR}/dracut/files/dracut.conf /etc/dracut.conf
+}	

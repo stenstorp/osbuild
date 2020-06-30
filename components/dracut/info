@@ -1,0 +1,4 @@
+name=dracut
+version=050
+source=https://github.com/dracutdevs/dracut/archive/${version}.tar.gz
+sha1sum=7cf117f75900e0ef4263ca77d47781161a11cb7f

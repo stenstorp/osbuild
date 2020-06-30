@@ -1,0 +1,26 @@
+_configure() {
+	sed -i '/The name/,+2 d' src/global.c
+
+	./configure		\
+		--prefix=/usr	\
+		--bindir=/bin	\
+		--enable-mt	\
+		--with-rmt=/usr/libexec/rmt
+}
+
+_build() {
+	make -j${THREADS}
+	makeinfo --html            -o doc/html      doc/cpio.texi
+	makeinfo --html --no-split -o doc/cpio.html doc/cpio.texi
+	makeinfo --plaintext       -o doc/cpio.txt  doc/cpio.texi
+}
+
+_install() {
+	make install
+
+	install -v -m755 -d /usr/share/doc/cpio-$version/html
+	install -v -m644    doc/html/* \
+	                    /usr/share/doc/cpio-$version/html
+	install -v -m644    doc/cpio.{html,txt} \
+	                    /usr/share/doc/cpio-$version
+}

@@ -1,0 +1,12 @@
+_configure() {
+	sed -i s/3000/5000/ libxslt/transform.c doc/xsltproc.{1,xml} &&
+	./configure --prefix=/usr --disable-static
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+}
