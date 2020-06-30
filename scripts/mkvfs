@@ -34,3 +34,6 @@ cp -r source ${OS}/usr/src/system/
 cp -r scripts ${OS}/usr/src/system/
 cp -r files ${OS}/usr/src/system/
 cp -r Makefile ${OS}/usr/src/system/
+
+mkdir ${OS}/usr/src/system/log
+mount -v --bind ${LOGDIR} ${OS}/usr/src/system/log

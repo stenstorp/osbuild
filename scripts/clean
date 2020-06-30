@@ -3,15 +3,15 @@ set -e
 
 source config
 
-rm -rf ${LOGDIR}
-rm -rf ${WORKDIR}
-
-for f in dev/pts dev proc sys run; do
+for f in usr/src/system/log dev/pts dev proc sys run; do
 	if mountpoint -q ${OS}/$f; then
 		sudo umount -l ${OS}/$f
 	fi
 done
 
+rm -rf ${WORKDIR}
+
+sudo rm -rf ${LOGDIR}
 sudo rm -rf ${OS}
 
 if [ "$1" == "all" ]; then

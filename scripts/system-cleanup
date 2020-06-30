@@ -50,4 +50,9 @@ find /usr/lib /usr/libexec -name \*.la -delete
 
 rm -rf /tools
 
-make clean all
+if mountpoint -q /usr/src/system/log; then
+	umount -l /usr/src/system/log
+fi
+
+cd /usr/src/system
+make cleanall

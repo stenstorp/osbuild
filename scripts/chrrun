@@ -3,6 +3,18 @@ set -e
 
 source config
 
-cat << EOF | chroot ${OS}
+if [ "$(uname -m)" != "${ARCH}" ]; then
+	# FIXME - add more
+	if [ "$(uname -m)" == "x86_64" ] && [ "${ARCH}" == "i686" ]; then
+		LINUX="linux32"
+	else
+		# FIXME - can't assume binaries will be interpreted by default!!!
+		LINUX=""
+	fi
+else
+	LINUX=""
+fi
+
+cat << EOF | ${LINUX} chroot ${OS}
 cd /usr/src/system; $@
 EOF

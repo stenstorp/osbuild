@@ -40,7 +40,7 @@ echo "[${name}] extracting source"
 case ${extension} in
 	tar.xz)
 		tar -C ${WORKDIR}/${name}-${version} -xJf ${SOURCEDIR}/${filename} ;;
-	tar.gz)
+	tar.gz | tgz)
 		tar -C ${WORKDIR}/${name}-${version} -xzf ${SOURCEDIR}/${filename} ;;
 	tar.bz2)
 		tar -C ${WORKDIR}/${name}-${version} -xjf ${SOURCEDIR}/${filename} ;;
