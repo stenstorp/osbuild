@@ -1,4 +1,6 @@
 _configure() {
+	patch -Np1 -i ${COMPDIR}/glibc/gcc10_long-double.patch
+
 	case ${ARCH} in
 		i?86)
 			ln -sfv ld-linux.so.2 ${OS}/lib/ld-lsb.so.3
