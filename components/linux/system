@@ -4,36 +4,44 @@ _configure() {
 	case ${ARCH} in
 		x86_64)
 			KARCH=x86
-			DEFCONFIG=x86_64_defconfig
+			#DEFCONFIG=x86_64_defconfig
+			cp -v ${COMPDIR}/linux/files/x86_64-config .config
 		;;
 		i?86)
 			KARCH=x86
-			DEFCONFIG=i386_defconfig
+			#DEFCONFIG=i386_defconfig
+			cp -v ${COMPDIR}/linux/files/i386-config .config
+
 		;;
 		powerpc)
 			KARCH=powerpc
-			DEFCONFIG=pmac32_defconfig
+			#DEFCONFIG=pmac32_defconfig
+			cp -v ${COMPDIR}/linux/files/powerpc-config .config
+
 		;;
 		powerpc64)
 			KARCH=powerpc
-			DEFCONFIG=ppc64_defconfig
+			#DEFCONFIG=ppc64_defconfig
+			cp -v ${COMPDIR}/linux/files/powerpc64-config .config
 		;;
 		aarch64)
 			KARCH=arm64
-			DEFCONFIG=defconfig
+			#DEFCONFIG=defconfig
+			cp -v ${COMPDIR}/linux/files/aarch64-config .config
 		;;
-		arm)
+		arm*)
 			KARCH=arm
-			DEFCONFIG=bcm2835_defconfig
+			#DEFCONFIG=bcm2835_defconfig
+			cp -v ${COMPDIR}/linux/files/arm-config .config
 		;;
 		*)
 			KARCH=${ARCH}
-			DEFCONFIG=defconfig
+			make ARCH=${KARCH} ${DEFCONFIG}
 		;;
 	esac
 
 	# FIXME - use a proper config!
-	make ARCH=${KARCH} ${DEFCONFIG}
+	#make ARCH=${KARCH} ${DEFCONFIG}
 }
 
 _build() {
@@ -43,9 +51,9 @@ _build() {
 _install() {
 	make modules_install
 
-	cp -iv arch/x86/boot/bzImage /boot/vmlinuz-$version
-	cp -iv System.map /boot/System.map-$version
-	cp -iv .config /boot/config-$version
+	cp -v arch/x86/boot/bzImage /boot/vmlinuz-$version
+	cp -v System.map /boot/System.map-$version
+	cp -v .config /boot/config-$version
 
 	install -d /usr/share/doc/linux-$version
 	cp -r Documentation/* /usr/share/doc/linux-$version
