@@ -1,5 +1,14 @@
 _configure() {
-	./config			\
+
+	case ${ARCH} in
+		i?86) PLAT="x86" ;;
+		powerpc) PLAT="ppc" ;;
+		powerpc64 | ppc64) PLAT="ppc64" ;;
+		arm*) PLAT="armv4" ;;
+		*) PLAT="${ARCH}" ;;
+	esac
+
+	./Configure linux-${PLAT}	\
 		--prefix=/usr		\
 		--openssldir=/etc/ssl	\
 		--libdir=lib		\
