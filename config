@@ -20,5 +20,5 @@ case $(uname -m) in
   x86_64) SUBARCH="i686" ;;
   aarch64) SUBARCH="arm" ;;
   powerpc64 | ppc64) SUBARCH="powerpc" ;;
-  *) SUBARCH=""
+  *) SUBARCH="" ;;
 esac
