@@ -4,17 +4,38 @@ set -e
 source config
 
 if [ "$(uname -m)" != "${ARCH}" ]; then
-	# FIXME - add more
-	if [ "$(uname -m)" == "x86_64" ] && [ "${ARCH}" == "i686" ]; then
+	if [ "${ARCH}" == "${SUBARCH}" ]; then
 		LINUX="linux32"
+		INTERPRETER=""
 	else
-		# FIXME - can't assume binaries will be interpreted by default!!!
 		LINUX=""
+
+		case ${ARCH} in
+			x86_64) INTERPRETER=qemu-x86_64-static ;;
+			i?86) INTERPRETER=qemu-i386-static ;;
+			powerpc) INTERPRETER=qemu-ppc-static ;;
+			powerpc64) INTERPRETER=qemu-ppc64-static ;;
+			arm*) INTERPRETER=qemu-arm-static ;;
+			aarch64) INTERPRETER=qemu-aarch64-static ;;
+			*) INTERPRETER=qemu-${ARCH}-static ;;
+		esac
+
+		if [ -e /usr/bin/${INTERPRETER} ] && [ ! -e ${OS}/usr/bin/${INTERPRETER} ]; then
+			sudo cp /usr/bin/${INTERPRETER} ${OS}/usr/bin/${INTERPRETER}
+		elif [ ! -e /usr/bin/${INTERPRETER} ]; then
+			echo "[chroot] interpreter \"/usr/bin/${INTERPRETER}\" not found!"
+			exit 1
+		fi
+
 	fi
 else
+	# Assuming native
 	LINUX=""
+	INTERPRETER=""
 fi
 
-cat << EOF | ${LINUX} chroot ${OS}
+echo "[chroot] interpreter: \"${INTERPRETER}\""
+
+cat << EOF | ${LINUX} chroot ${OS} ${INTERPRETER} bin/bash
 cd /usr/src/system; $@
 EOF
