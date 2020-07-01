@@ -10,9 +10,9 @@ OS=${CDIR}/OS
 ARCH=$(uname -m)
 THREADS=$(nproc)
 
-TARGET=${ARCH}-unknown-linux-gnu
-#TARGET=${ARCH}-unknown-linux-gnueabi
-#TARGET=${ARCH}-unknown-linux-gnueabihf
+TARGET=${ARCH}-linux-gnu
+#TARGET=${ARCH}-linux-gnueabi
+#TARGET=${ARCH}-linux-gnueabihf
 
 PATH=${OS}/tools/bin:/bin:/usr/bin:/sbin:/usr/sbin
 
