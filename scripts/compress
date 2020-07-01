@@ -12,7 +12,7 @@ done
 sudo cp -r ${OS} ${OS}-copy
 
 cd ${OS}-copy
-sudo XZ_OPT="--threads=${THREADS}" tar cfJ ../os-$(date +%Y%m%d).tar.xz *
+sudo XZ_OPT="--threads=${THREADS}" tar cfJ ../rootfs_${TARGET}-$(date +%Y%m%d).tar.xz *
 cd ${CDIR}
 
 sudo rm -rf ${OS}-copy
