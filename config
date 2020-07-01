@@ -15,3 +15,10 @@ TARGET=${ARCH}-unknown-linux-gnu
 #TARGET=${ARCH}-unknown-linux-gnueabihf
 
 PATH=${OS}/tools/bin:/bin:/usr/bin:/sbin:/usr/sbin
+
+case $(uname -m) in
+  x86_64) SUBARCH="i686" ;;
+  aarch64) SUBARCH="arm" ;;
+  powerpc64 | ppc64) SUBARCH="powerpc" ;;
+  *) SUBARCH=""
+esac
