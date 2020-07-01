@@ -12,6 +12,10 @@ _build() {
 }
 
 _install() {
+	sed -i -e 's/j0/j1/g' Makefile
+	sed -i -e 's/j0/j1/g' Makefile.pre
+	sed -i -e 's/j0/j1/g' Makefile.pre.in
+
 	make install
 
 	# FIXME - hard-coded version
