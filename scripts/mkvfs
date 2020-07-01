@@ -7,7 +7,7 @@ chown -R root:root ${OS}/{usr,lib,var,etc,bin,sbin,tools}
 
 # FIXME - add more
 case ${ARCH} in
-  x86_64 | aarch64 | powerpc64) chown -R root:root ${OS}/lib64 ;;
+  x86_64 | aarch64 | powerpc64 | ppc64) chown -R root:root ${OS}/lib64 ;;
 esac
 
 mkdir -pv ${OS}/{dev,proc,sys,run}

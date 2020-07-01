@@ -4,7 +4,7 @@ _configure() {
 
 	# FIXME - add more
 	case ${ARCH} in
-		x86_64,powerpc64,aarch64) arg="--enable-64bit" ;;
+		x86_64 | powerpc64 | ppc64 | aarch64) arg="--enable-64bit" ;;
 		*) arg="" ;;
 	esac
 

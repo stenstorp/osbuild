@@ -13,8 +13,8 @@ if [ "$(uname -m)" != "${ARCH}" ]; then
 		case ${ARCH} in
 			x86_64) INTERPRETER=qemu-x86_64-static ;;
 			i?86) INTERPRETER=qemu-i386-static ;;
-			powerpc) INTERPRETER=qemu-ppc-static ;;
-			powerpc64) INTERPRETER=qemu-ppc64-static ;;
+			powerpc | ppc) INTERPRETER=qemu-ppc-static ;;
+			powerpc64 | ppc64) INTERPRETER=qemu-ppc64-static ;;
 			arm*) INTERPRETER=qemu-arm-static ;;
 			aarch64) INTERPRETER=qemu-aarch64-static ;;
 			*) INTERPRETER=qemu-${ARCH}-static ;;

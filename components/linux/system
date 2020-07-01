@@ -10,11 +10,11 @@ _configure() {
 			KARCH=x86
 			cp -v ${COMPDIR}/linux/files/i386-config .config
 		;;
-		powerpc)
+		powerpc | ppc)
 			KARCH=powerpc
 			cp -v ${COMPDIR}/linux/files/powerpc-config .config
 		;;
-		powerpc64)
+		powerpc64 | ppc64)
 			KARCH=powerpc
 			cp -v ${COMPDIR}/linux/files/powerpc64-config .config
 		;;

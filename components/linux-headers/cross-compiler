@@ -3,7 +3,7 @@ _build() {
 
 	case ${ARCH} in
 		x86_64 | i?86) KARCH=x86 ;;
-		powerpc64) KARCH=powerpc ;;
+		powerpc64 | ppc64) KARCH=powerpc ;;
 		aarch64) KARCH=arm64 ;;
 		arm*) KARCH=arm ;;
 		*) KARCH=${ARCH} ;;
