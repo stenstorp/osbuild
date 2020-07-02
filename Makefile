@@ -1,4 +1,9 @@
-all: clean prep cross-compiler cross-system download-all prep-rootfs chroot-tempsystem chroot-system chroot-clean
+all:
+	@echo "Please specify rootfs or local"
+
+rootfs: clean prep cross-compiler cross-system download-all prep-rootfs chroot-tempsystem chroot-system chroot-clean compress
+
+local: clean temp-system system
 
 versioncheck:
 	@scripts/version-check
@@ -24,6 +29,12 @@ download-all:
 prep-rootfs:
 	@sudo scripts/mkvfs
 	@sudo scripts/chrrun scripts/rootfs system
+
+temp-system:
+	scripts/temp-system
+
+system:
+	scripts/system
 
 chroot-tempsystem:
 	@sudo scripts/chrrun scripts/temp-system
