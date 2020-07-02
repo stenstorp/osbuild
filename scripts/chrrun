@@ -7,6 +7,7 @@ if [ "$(uname -m)" != "${ARCH}" ]; then
 	if [ "${ARCH}" == "${SUBARCH}" ]; then
 		LINUX="linux32"
 		INTERPRETER=""
+		echo "[chroot] \"${SUBARCH}\" subarch of \"$(uname -m)\", using linux32"
 	else
 		LINUX=""
 
@@ -26,15 +27,15 @@ if [ "$(uname -m)" != "${ARCH}" ]; then
 			echo "[chroot] interpreter \"/usr/bin/${INTERPRETER}\" not found!"
 			exit 1
 		fi
-
+		echo "[chroot] using interpreter: \"${INTERPRETER}\""
 	fi
 else
 	# Assuming native
 	LINUX=""
 	INTERPRETER=""
+	echo "[chroot] assuming native"
 fi
 
-echo "[chroot] interpreter: \"${INTERPRETER}\""
 
 cat << EOF | ${LINUX} chroot ${OS} ${INTERPRETER} bin/bash
 cd /usr/src/system; $@
