@@ -23,23 +23,23 @@ for COMP in $@; do
 	if [ -e ${SOURCEDIR}/${filename} ]; then
 		check_sha1sum=$(sha1sum ${SOURCEDIR}/${filename} | cut -d " " -f 1)
 		if [ "${check_sha1sum}" != "${sha1sum}" ]; then
-			echo "[${name}] sha1sum mismatch, re-downloading"
-			echo "[${name}] ${check_sha1sum} != ${sha1sum}"
+			echo "[${COMP}] sha1sum mismatch, re-downloading"
+			echo "[${COMP}] ${check_sha1sum} != ${sha1sum}"
 			rm ${SOURCEDIR}/${filename}
 		fi
 	fi
 
 	if [ ! -e ${SOURCEDIR}/${filename} ]; then
-		echo "[${name}] downloading source"
+		echo "[${COMP}] downloading source"
 		wget -q -P ${SOURCEDIR} ${source}
 	else
-		echo "[${name}] source exists, skipping download"
+		echo "[${COMP}] source exists, skipping download"
 	fi
 
 	check_sha1sum=$(sha1sum ${SOURCEDIR}/${filename} | cut -d " " -f 1)
 	if [ "${check_sha1sum}" != "${sha1sum}" ]; then
-		echo "[${name}] sha1sum mismatch, removing"
-		echo "[${name}] ${check_sha1sum} != ${sha1sum}"
+		echo "[${COMP}] sha1sum mismatch, removing"
+		echo "[${COMP}] ${check_sha1sum} != ${sha1sum}"
 		rm ${SOURCEDIR}/${filename}
 		exit 1
 	fi

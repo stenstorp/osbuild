@@ -3,7 +3,7 @@ set -e
 
 source config
 
-for f in usr/src/system/log dev/pts dev proc sys run; do
+for f in usr/src/system dev/pts dev proc sys run; do
 	if mountpoint -q ${OS}/$f; then
 		sudo umount -l ${OS}/$f
 	fi

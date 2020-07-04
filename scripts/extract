@@ -17,7 +17,7 @@ source ${COMPDIR}/${COMP}/info
 filename=${source##*/}
 
 if [ ! -e ${SOURCEDIR}/${filename} ]; then
-	echo "[${name}] source doesn't exist, exiting"
+	echo "[${COMP}] source doesn't exist, exiting"
 	exit 1
 fi
 
@@ -36,7 +36,8 @@ fi
 
 mkdir -p ${WORKDIR}/${name}-${version}
 
-echo "[${name}] extracting source"
+echo "[${COMP}] extracting source"
+# FIXME - add more
 case ${extension} in
 	tar.xz)
 		tar -C ${WORKDIR}/${name}-${version} -xJf ${SOURCEDIR}/${filename} ;;
@@ -65,6 +66,6 @@ case ${extension} in
 	#7z) ;;
 	#rar) ;;
 	*)
-		echo "[${name}] file type \"${extension}\" not supported"
+		echo "[${COMP}] file type \"${extension}\" not supported"
 		exit 1 ;;
 esac
