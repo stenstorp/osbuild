@@ -27,13 +27,4 @@ if [ -h ${OS}/dev/shm ]; then
 fi
 
 mkdir -p ${OS}/usr/src/system
-
-cp -r config ${OS}/usr/src/system/
-cp -r components ${OS}/usr/src/system/
-cp -r source ${OS}/usr/src/system/
-cp -r scripts ${OS}/usr/src/system/
-cp -r files ${OS}/usr/src/system/
-cp -r Makefile ${OS}/usr/src/system/
-
-mkdir ${OS}/usr/src/system/log
-mount -v --bind ${LOGDIR} ${OS}/usr/src/system/log
+mount -v --bind ${CDIR} ${OS}/usr/src/system
