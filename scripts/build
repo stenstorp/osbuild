@@ -35,26 +35,33 @@ if [ -e ${LOGDIR}/${STAGE}/${COMP} ]; then
 fi
 mkdir -p ${LOGDIR}/${STAGE}/${COMP}
 
+if [ -e ${COMPDIR}/${COMP}/patch ]; then
+	for f in ${COMPDIR}/${COMP}/patch/*.patch; do
+		patch -Np1 -i $f &> ${LOGDIR}/${STAGE}/${COMP}/patch.log || exit 1
+		echo "[${COMP}] patching with ${f##*/}"
+	done
+fi
+
 if [ ! -z $(type -t _configure) ]; then
-	echo "[${name}] configuring"
-	_configure &> ${LOGDIR}/${STAGE}/${COMP}/${name}-configure.log || exit 1
+	echo "[${COMP}] configuring"
+	_configure &> ${LOGDIR}/${STAGE}/${COMP}/configure.log || exit 1
 fi
 
 if [ ! -z $(type -t _build) ]; then
-	echo "[${name}] building"
-	_build &> ${LOGDIR}/${STAGE}/${COMP}/${name}-build.log || exit 1
+	echo "[${COMP}] building"
+	_build &> ${LOGDIR}/${STAGE}/${COMP}/build.log || exit 1
 fi
 
 if [ ! -z $(type -t _install) ]; then
-	echo "[${name}] installing"
-	_install &> ${LOGDIR}/${STAGE}/${COMP}/${name}-install.log || exit 1
+	echo "[${COMP}] installing"
+	_install &> ${LOGDIR}/${STAGE}/${COMP}/install.log || exit 1
 fi
 
 cd ${CDIR}
 
 if [ -z ${noclean} ]; then
-	echo "[${name}] cleaning"
+	echo "[${COMP}] cleaning"
 	rm -rf ${WORKDIR}/${name}-${version}
 fi
 
-echo "[${name}] complete"
+echo "[${COMP}] complete"

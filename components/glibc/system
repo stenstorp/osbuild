@@ -1,6 +1,4 @@
 _configure() {
-	patch -Np1 -i ${COMPDIR}/glibc/gcc10_long-double.patch
-
 	mkdir -v build
 	cd build
 

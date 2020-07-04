@@ -1,7 +1,3 @@
-_configure() {
-	patch -Np1 -i ${COMPDIR}/sysvinit/sysvinit-2.96-consolidated-1.patch
-}
-
 _build() {
 	make -j${THREADS}
 }

@@ -1,5 +1,4 @@
 _configure() {
-	patch -Np1 -i ${COMPDIR}/sgml-common/sgml-common-0.6.3-manpage-1.patch
 	autoreconf -f -i
 
 	./configure --prefix=/usr --sysconfdir=/etc
