@@ -9,6 +9,10 @@ _configure() {
 	        -D_PATH_DHCPD_CONF='\"/etc/dhcp/dhcpd.conf\"'               \
 	        -D_PATH_DHCLIENT_CONF='\"/etc/dhcp/dhclient.conf\"'"
 
+	case ${ARCH} in
+		ppc | powerpc) export LDFLAGS="-latomic" ;;
+	esac
+
 	./configure --prefix=/usr                                           \
 	            --sysconfdir=/etc/dhcp                                  \
 	            --localstatedir=/var                                    \
