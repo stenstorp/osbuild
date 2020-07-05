@@ -61,7 +61,7 @@ case ${extension} in
 		cd ${CDIR} ;;
 	zip)
 		cd ${WORKDIR}/${name}-${version}
-		unzip ${SOURCEDIR}/${filename}
+		unzip -q ${SOURCEDIR}/${filename}
 		cd ${CDIR} ;;
 	#7z) ;;
 	#rar) ;;
