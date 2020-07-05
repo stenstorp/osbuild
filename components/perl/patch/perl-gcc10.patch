@@ -1,6 +1,6 @@
---- perl-5.28.1.orig/Configure	2018-11-02 06:07:20.000000000 +0800
-+++ perl-5.28.1/Configure	2020-05-16 12:53:09.219976591 +0800
-@@ -4689,7 +4689,7 @@
+--- perl-5.30.0.orig/Configure	2019-05-11 19:20:20.000000000 +0930
++++ perl-5.30.0/Configure	2020-07-05 10:26:20.813643569 +0930
+@@ -4696,7 +4696,7 @@
  fi
  $rm -f try try.*
  case "$gccversion" in
@@ -9,7 +9,7 @@
  esac
  case "$gccversion" in
  '') gccosandvers='' ;;
-@@ -4729,7 +4729,7 @@
+@@ -4736,7 +4736,7 @@
  # gcc 3.* complain about adding -Idirectories that they already know about,
  # so we will take those off from locincpth.
  case "$gccversion" in
@@ -18,7 +18,7 @@
      echo "main(){}">try.c
      for incdir in $locincpth; do
         warn=`$cc $ccflags -I$incdir -c try.c 2>&1 | \
-@@ -5455,13 +5455,13 @@
+@@ -5462,13 +5462,13 @@
  case "$hint" in
  default|recommended)
  	case "$gccversion" in
@@ -34,7 +34,7 @@
  			$contains _POSIX_VERSION $usrinc/sys/unistd.h >/dev/null 2>&1
  		then
  			# Interactive Systems (ISC) POSIX mode.
-@@ -5470,7 +5470,7 @@
+@@ -5477,7 +5477,7 @@
  		;;
  	esac
  	case "$gccversion" in
@@ -43,7 +43,7 @@
  	2.[0-8]*) ;;
  	?*)	set strict-aliasing -fno-strict-aliasing
  		eval $checkccflag
-@@ -5588,7 +5588,7 @@
+@@ -5595,7 +5595,7 @@
      ;;
  esac
  case "$gccversion" in
@@ -52,18 +52,18 @@
  esac
  case "$mips_type" in
  '');;
-@@ -22957,7 +22957,7 @@
+@@ -23180,7 +23180,7 @@
  
  : add -D_FORTIFY_SOURCE if feasible and not already there
  case "$gccversion" in
--[4567].*)	case "$optimize$ccflags" in
+-[456789].*)	case "$optimize$ccflags" in
 +[456789].*|[1-9][0-9]*)	case "$optimize$ccflags" in
  	*-O*)	case "$ccflags$cppsymbols" in
  		*_FORTIFY_SOURCE=*) # Don't add it again.
  			echo "You seem to have -D_FORTIFY_SOURCE already, not adding it." >&4
 
---- perl-5.28.1.orig/cflags.SH	2018-11-02 06:07:21.000000000 +0800
-+++ perl-5.28.1/cflags.SH	2020-05-16 12:53:40.212991067 +0800
+--- perl-5.30.0.orig/cflags.SH	2019-05-11 19:20:20.000000000 +0930
++++ perl-5.30.0/cflags.SH	2020-07-05 10:26:52.798723614 +0930
 @@ -156,7 +156,7 @@
  
  case "$gccversion" in
