@@ -22,8 +22,10 @@ case ${STAGE} in
 	cross-compiler)
 		echo "[rootfs] Creating cross-compiler root filesystem"
 		mkdir -p ${OS}/{usr,lib,var,etc,bin,sbin}
+		mkdir -p ${OS}/usr/{lib,sbin}
 		if [ "${BITS}" == "64" ]; then
-			mkdir -p ${OS}/lib64
+			ln -s lib ${OS}/lib64
+			ln -s lib ${OS}/usr/lib64
 		fi
 		mkdir -p ${OS}/tools ;;
 	system)
