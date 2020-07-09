@@ -72,6 +72,17 @@ if [ ! -z $(type -t _install) ] && [ ! -e ${LOGDIR}/${STAGE}/${COMP}/.install-co
 	echo "[${COMP}] installing"
 	_install &> ${LOGDIR}/${STAGE}/${COMP}/install.log || exit 1
 	touch ${LOGDIR}/${STAGE}/${COMP}/.install-complete
+
+	if [ "${STAGE}" == "system" ] || [ "${STAGE}" == "cross-system" ]; then
+		if [ "${CDIR}" == "/usr/usr/system" ]; then
+			mkdir -p /var/cache/system
+			echo "REVISION=${revision}" > /var/cache/system/${COMP}
+		else
+			mkdir -p ${OS}/var/cache/system/
+			echo "REVISION=${revision}" > ${OS}/var/cache/system/${COMP}
+		fi
+	fi
+
 fi
 
 cd ${CDIR}
