@@ -1,4 +1,5 @@
 name=gmp
 version=6.2.0
+revision=1
 source=https://ftp.gnu.org/gnu/gmp/gmp-$version.tar.xz
 sha1sum=052a5411dc74054240eec58132d2cf41211d0ff6

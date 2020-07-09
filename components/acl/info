@@ -1,4 +1,5 @@
 name=acl
 version=2.2.53
+revision=1
 source=http://download.savannah.gnu.org/releases/acl/acl-$version.tar.gz
 sha1sum=6c9e46602adece1c2dae91ed065899d7f810bf01

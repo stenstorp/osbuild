@@ -1,4 +1,5 @@
 name=bc
 version=2.7.2
+revision=1
 source=https://github.com/gavinhoward/bc/releases/download/$version/bc-$version.tar.xz
 sha1sum=2332db5d8839202cc2b43e2bebe2654efc093bf1

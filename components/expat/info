@@ -1,4 +1,5 @@
 name=expat
 version=2.2.9
+revision=1
 source=https://prdownloads.sourceforge.net/expat/expat-$version.tar.xz
 sha1sum=90a361e4c97f8c469479ffadc0de0b121a911fb5

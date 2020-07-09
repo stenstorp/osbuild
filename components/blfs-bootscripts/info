@@ -1,4 +1,5 @@
 name=blfs-bootscripts
 version=20200404
+revision=1
 source=http://anduin.linuxfromscratch.org/BLFS/blfs-bootscripts/blfs-bootscripts-$version.tar.xz
 sha1sum=24c2345f8d1fa8d6681a486e0e24e912e398c306

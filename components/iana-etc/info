@@ -1,4 +1,5 @@
 name=iana-etc
 version=20200429
+revision=1
 source=http://anduin.linuxfromscratch.org/LFS/iana-etc-$version.tar.gz
 sha1sum=3edf4734d98ad69a6c92e595050217a2bf275203

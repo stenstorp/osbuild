@@ -1,4 +1,5 @@
 name=gettext
 version=0.20.2
+revision=1
 source=http://ftp.gnu.org/gnu/gettext/gettext-$version.tar.xz
 sha1sum=de904ffa99ac0ca61dffc42d4f391de6ee560a88

@@ -1,4 +1,5 @@
 name=libffi
 version=3.3
+revision=1
 source=ftp://sourceware.org/pub/libffi/libffi-$version.tar.gz
 sha1sum=8df6cb570c8d6596a67d1c0773bf00650154f7aa

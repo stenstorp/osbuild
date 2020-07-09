@@ -1,4 +1,5 @@
 name=asciidoc
 version=9.0.1
+revision=1
 source=https://github.com/asciidoc/asciidoc-py3/releases/download/$version/asciidoc-$version.tar.gz
 sha1sum=d370c1fc10bed2654a046107a970468ed9bf3369

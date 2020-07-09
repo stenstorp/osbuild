@@ -1,5 +1,6 @@
 name=xml-parser
 version=2.46
+revision=1
 source=https://cpan.metacpan.org/authors/id/T/TO/TODDR/XML-Parser-$version.tar.gz
 sha1sum=40cba8a10847b71804684e5c72a410277f47f8ce
 folder=XML-Parser-$version

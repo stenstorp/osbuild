@@ -1,4 +1,5 @@
 name=iproute2
 version=5.7.0
+revision=1
 source=https://www.kernel.org/pub/linux/utils/net/iproute2/iproute2-$version.tar.xz
 sha1sum=d5478e7bc2aca5f63f1eefd98003f35800249f77

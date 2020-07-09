@@ -1,4 +1,5 @@
 name=autoconf
 version=2.69
+revision=1
 source=http://ftp.gnu.org/gnu/autoconf/autoconf-$version.tar.xz
 sha1sum=e891c3193029775e83e0534ac0ee0c4c711f6d23

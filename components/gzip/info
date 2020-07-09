@@ -1,4 +1,5 @@
 name=gzip
 version=1.10
+revision=1
 source=https://ftp.gnu.org/gnu/gzip/gzip-$version.tar.xz
 sha1sum=48d28c77cb8cac38573809fdd1665ecf75f91fa9

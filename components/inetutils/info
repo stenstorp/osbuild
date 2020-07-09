@@ -1,4 +1,5 @@
 name=inetutils
 version=1.9.4
+revision=1
 source=http://ftp.gnu.org/gnu/inetutils/inetutils-$version.tar.xz
 sha1sum=5e515cc9da142cb73bb1beda137b4c2dcf2b528c

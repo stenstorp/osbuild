@@ -1,4 +1,5 @@
 name=diffutils
 version=3.7
+revision=1
 source=https://ftp.gnu.org/gnu/diffutils/diffutils-$version.tar.xz
 sha1sum=ad4e0a05ee2e7f5529db6cb84474f45e086e609b

@@ -1,4 +1,5 @@
 name=vim
 version=8.2.1076
+revision=1
 source=https://github.com/vim/vim/archive/v$version.tar.gz
 sha1sum=42d477e93fcf8e9835daf824ce25c3397fdb6325

@@ -1,4 +1,5 @@
 name=gdbm
 version=1.18.1
+revision=1
 source=http://ftp.gnu.org/gnu/gdbm/gdbm-$version.tar.gz
 sha1sum=4a923ebfac06bb05c1c7699b206719e06a938f0d
