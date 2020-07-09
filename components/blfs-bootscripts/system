@@ -1,4 +1,5 @@
 _install() {
 	make install-service-dhcpcd
 	make install-service-dhclient
+	make install-sshd
 }

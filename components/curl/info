@@ -1,0 +1,5 @@
+name=curl
+version=7.71.1
+revision=1
+source=https://curl.haxx.se/download/curl-${version}.tar.xz
+sha1sum=243b6ab55421c20500cae8224409c3242d10bcce

@@ -1,0 +1,5 @@
+name=openssh
+version=8.3p1
+revision=1
+source=http://ftp.openbsd.org/pub/OpenBSD/OpenSSH/portable/openssh-${version}.tar.gz
+sha1sum=04c7adb9986f16746588db8988b910530c589819

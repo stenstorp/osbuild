@@ -1,0 +1,21 @@
+_configure() {
+	./configure --prefix=/usr                           \
+            --disable-static                        \
+            --enable-threaded-resolver              \
+            --with-ca-path=/etc/ssl/certs
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+
+	rm -rf docs/examples/.deps
+
+	find docs \( -name Makefile\* -o -name \*.1 -o -name \*.3 \) -exec rm {} \;
+
+	install -v -d -m755 /usr/share/doc/curl-${version}
+	cp -v -R docs/*     /usr/share/doc/curl-${version}
+}
