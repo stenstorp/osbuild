@@ -30,7 +30,7 @@ case ${STAGE} in
 		mkdir -p ${OS}/tools ;;
 	system)
 
-		if [ ! $(scripts/chrooted) ]; then
+		if [ "$(stat -c %d:%i /)" == "$(stat -c %d:%i /proc/1/root/.)" ]; then
 			echo "[rootfs] MUST BE RUN IN CHROOT!, exiting"
 			exit 1
 		fi
