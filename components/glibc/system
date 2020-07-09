@@ -12,10 +12,14 @@ _configure() {
 }
 
 _build() {
+	cd ${CURWORKDIR}/build
+
 	make -j${THREADS}
 }
 
 _install() {
+	cd ${CURWORKDIR}/build
+
 	sed '/test-installation/s@$(PERL)@echo not running@' -i ../Makefile
 	make install
 

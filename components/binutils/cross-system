@@ -14,9 +14,13 @@ _configure() {
 }
 
 _build() {
+	cd ${CURWORKDIR}/build
+
 	make -j${THREADS}
 }
 
 _install() {
+	cd ${CURWORKDIR}/build
+
 	make DESTDIR=${OS} install
 }

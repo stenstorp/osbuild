@@ -4,7 +4,7 @@ set -e
 source config
 
 if [ -z $2 ]; then
-	echo "Usage: build [STAGE] [TARGET]"
+	echo "Usage: build [STAGE] [TARGET] (clean)"
 	exit 1
 fi
 
@@ -16,8 +16,24 @@ if [ ! -e ${COMPDIR}/${COMP} ]; then
 	exit 1
 fi
 
+if [ "$3" == "clean" ] && [ -e ${LOGDIR}/${STAGE}/${COMP} ]; then
+	echo "[${COMP}] performing clean build"
+	rm -rf ${LOGDIR}/${STAGE}/${COMP}
+elif [ -e ${LOGDIR}/${STAGE}/${COMP}/.complete ]; then
+	echo "[${COMP}] already built"
+	exit 0
+fi
+
+mkdir -p ${LOGDIR}/${STAGE}/${COMP}
+
 scripts/download ${COMP}
-scripts/extract ${COMP}
+
+if [ ! -e ${LOGDIR}/${STAGE}/${COMP}/.extract-complete ]; then
+	scripts/extract ${COMP}
+	touch ${LOGDIR}/${STAGE}/${COMP}/.extract-complete
+else
+	echo "[${COMP}] already extracted"
+fi
 
 unset name version source sha1sum folder
 source ${COMPDIR}/${COMP}/info
@@ -26,35 +42,36 @@ if [ -z ${folder} ]; then
 	folder=${name}-${version}
 fi
 
-cd ${WORKDIR}/${name}-${version}/${folder}
+CURWORKDIR=${WORKDIR}/${name}-${version}/${folder}
+
+cd ${CURWORKDIR}
 unset _configure _build _install
 source ${COMPDIR}/${COMP}/${STAGE}
 
-if [ -e ${LOGDIR}/${STAGE}/${COMP} ]; then
-	rm -rf ${LOGDIR}/${STAGE}/${COMP}
-fi
-mkdir -p ${LOGDIR}/${STAGE}/${COMP}
-
-if [ -e ${COMPDIR}/${COMP}/patch ]; then
+if [ -e ${COMPDIR}/${COMP}/patch ] && [ ! -e ${LOGDIR}/${STAGE}/${COMP}/.patch-complete ]; then
 	for f in ${COMPDIR}/${COMP}/patch/*.patch; do
 		patch -Np1 -i $f &> ${LOGDIR}/${STAGE}/${COMP}/patch.log || exit 1
 		echo "[${COMP}] patching with ${f##*/}"
 	done
+	touch ${LOGDIR}/${STAGE}/${COMP}/.patch-complete
 fi
 
-if [ ! -z $(type -t _configure) ]; then
+if [ ! -z $(type -t _configure) ] && [ ! -e ${LOGDIR}/${STAGE}/${COMP}/.configure-complete ]; then
 	echo "[${COMP}] configuring"
 	_configure &> ${LOGDIR}/${STAGE}/${COMP}/configure.log || exit 1
+	touch ${LOGDIR}/${STAGE}/${COMP}/.configure-complete
 fi
 
-if [ ! -z $(type -t _build) ]; then
+if [ ! -z $(type -t _build) ] && [ ! -e ${LOGDIR}/${STAGE}/${COMP}/.build-complete ]; then
 	echo "[${COMP}] building"
 	_build &> ${LOGDIR}/${STAGE}/${COMP}/build.log || exit 1
+	touch ${LOGDIR}/${STAGE}/${COMP}/.build-complete
 fi
 
-if [ ! -z $(type -t _install) ]; then
+if [ ! -z $(type -t _install) ] && [ ! -e ${LOGDIR}/${STAGE}/${COMP}/.install-complete ]; then
 	echo "[${COMP}] installing"
 	_install &> ${LOGDIR}/${STAGE}/${COMP}/install.log || exit 1
+	touch ${LOGDIR}/${STAGE}/${COMP}/.install-complete
 fi
 
 cd ${CDIR}
@@ -65,3 +82,4 @@ if [ -z ${noclean} ]; then
 fi
 
 echo "[${COMP}] complete"
+touch ${LOGDIR}/${STAGE}/${COMP}/.complete

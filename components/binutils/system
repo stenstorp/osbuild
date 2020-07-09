@@ -16,9 +16,13 @@ _configure() {
 }
 
 _build() {
+	cd ${CURWORKDIR}/build
+
 	make -j${THREADS} tooldir=/usr
 }
 
 _install() {
+	cd ${CURWORKDIR}/build
+
 	make tooldir=/usr install
 }

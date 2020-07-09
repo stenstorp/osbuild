@@ -1,5 +1,6 @@
 _configure() {
 
+	# FIXME - add more
 	case ${ARCH} in
 		i?86) PLAT="x86" ;;
 		powerpc) PLAT="ppc" ;;

@@ -23,10 +23,14 @@ _configure() {
 }
 
 _build() {
+	cd ${CURWORKDIR}/build
+
 	make -j${THREADS}
 }
 
 _install() {
+	cd ${CURWORKDIR}/build
+
 	make install
 
 	rm -rf /usr/lib/gcc/$(gcc -dumpmachine)/$version/include-fixed/bits/
