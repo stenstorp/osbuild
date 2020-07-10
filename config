@@ -5,7 +5,7 @@ SOURCEDIR=${CDIR}/source
 COMPDIR=${CDIR}/components
 LOGDIR=${CDIR}/log
 WORKDIR=${CDIR}/work
-OS=${CDIR}/OS
+OS=${CDIR}/rootfs
 
 ARCH=$(uname -m)
 THREADS=$(nproc)

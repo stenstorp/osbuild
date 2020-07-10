@@ -9,10 +9,7 @@ for f in usr/src/system dev/pts dev proc sys run; do
 	fi
 done
 
-rm -rf ${WORKDIR}
-
-sudo rm -rf ${LOGDIR}
-sudo rm -rf ${OS}
+sudo rm -rf ${WORKDIR} ${LOGDIR} ${OS} ${ARCHIVEDIR} ${INSTALLDIR}
 
 if [ "$1" == "all" ]; then
 	rm -rf ${SOURCEDIR}
