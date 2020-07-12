@@ -31,16 +31,22 @@ prep-rootfs:
 	@sudo scripts/chrrun scripts/rootfs system
 
 temp-system:
-	scripts/temp-system
+	@scripts/temp-system
 
 system:
-	scripts/system
+	@scripts/system
+
+xorg:
+	@scripts/xorg
 
 chroot-tempsystem:
 	@sudo scripts/chrrun scripts/temp-system
 
 chroot-system:
 	@sudo scripts/chrrun scripts/system
+
+chroot-xorg:
+	@sudo scripts/chrrun scripts/xorg
 
 chroot-clean:
 	@sudo scripts/chrrun scripts/system-cleanup
