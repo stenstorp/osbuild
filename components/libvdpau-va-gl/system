@@ -6,11 +6,14 @@ _configure() {
 }
 
 _build() {
+	cd ${CURWORKDIR}/build
 	make -j${THREADS}
 }
 
 _install() {
+	cd ${CURWORKDIR}/build
 	make install
 
+	mkdir -p /etc/profile.d/
 	echo "export VDPAU_DRIVER=va_gl" >> /etc/profile.d/xorg.sh
 }
