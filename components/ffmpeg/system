@@ -9,7 +9,6 @@ _configure() {
 	            --disable-debug      \
 	            --enable-avresample  \
 	            --enable-libass      \
-	            --enable-libfdk-aac  \
 	            --enable-libfreetype \
 	            --enable-libmp3lame  \
 	            --enable-libopus     \
