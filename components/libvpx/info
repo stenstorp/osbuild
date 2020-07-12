@@ -1,0 +1,5 @@
+name=libvpx
+version=1.8.2
+revision=1
+source=https://github.com/webmproject/libvpx/archive/v${version}/libvpx-${version}.tar.gz
+sha1sum=7fbc7de47f59431fa2c5b76660f115963e83193d

@@ -1,0 +1,6 @@
+name=libx264
+version=20200218
+revision=1
+source=http://anduin.linuxfromscratch.org/BLFS/x264/x264-${version}.tar.xz
+sha1sum=f84cb0366409b06f6a4c1d8db9e98c670ff378a3
+folder=x264-${version}

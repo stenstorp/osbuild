@@ -1,0 +1,5 @@
+name=lame
+version=3.100
+revision=1
+source=https://downloads.sourceforge.net/lame/lame-${version}.tar.gz
+sha1sum=64c53b1a4d493237cef5e74944912cd9f98e618d

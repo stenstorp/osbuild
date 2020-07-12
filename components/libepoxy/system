@@ -1,0 +1,16 @@
+_configure() {
+	mkdir build
+	cd    build
+
+	meson --prefix=/usr ..
+}
+
+_build() {
+	cd ${CURWORKDIR}/build
+	ninja
+}
+
+_install() {
+	cd ${CURWORKDIR}/build
+	ninja install
+}

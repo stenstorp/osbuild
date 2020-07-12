@@ -1,0 +1,5 @@
+name=libepoxy
+version=1.5.4
+revision=1
+source=https://github.com/anholt/libepoxy/releases/download/${version}/libepoxy-${version}.tar.xz
+sha1sum=d08d805b3307005e2197741012f9f4bc9739cd31

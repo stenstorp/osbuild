@@ -1,0 +1,5 @@
+name=wayland
+version=1.18.0
+revision=1
+source=https://wayland.freedesktop.org/releases/wayland-${version}.tar.xz
+sha1sum=33e5292b32a115e829458ea627201ed1e4ad4f45

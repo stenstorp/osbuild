@@ -1,0 +1,23 @@
+_configure() {
+	sed -i 's/cp -p/cp/' build/make/Makefile
+
+	mkdir libvpx-build
+	cd libvpx-build
+
+	CFLAGS="${CFLAGS} ${OS_CFLAGS} ${OPT_CFLAGS}"		\
+	CXXFLAGS="${CXXFLAGS} ${OS_CXXFLAGS} ${OPT_CXXFLAGS}"	\
+	../configure						\
+		--prefix=/usr					\
+		--enable-shared					\
+		--disable-static
+}
+
+_build() {
+	cd ${CURWORKDIR}/libvpx-build
+	make -j${THREADS}
+}
+
+_install() {
+	cd ${CURWORKDIR}/libvpx-build
+	make install
+}

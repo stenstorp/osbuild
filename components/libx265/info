@@ -1,0 +1,6 @@
+name=libx265
+version=3.4
+revision=1
+source=https://bitbucket.org/multicoreware/x265/downloads/x265_${version}.tar.gz
+sha1sum=5bc27f7d4504fef1ea429551319c9bab49f6df4a
+folder=x265_${version}

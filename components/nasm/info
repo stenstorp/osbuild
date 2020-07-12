@@ -1,0 +1,5 @@
+name=nasm
+version=2.15.02
+revision=1
+source=http://www.nasm.us/pub/nasm/releasebuilds/${version}/nasm-${version}.tar.xz
+sha1sum=2427ae3a859413f739eee1885f03546134e6afb8

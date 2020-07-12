@@ -1,0 +1,11 @@
+_configure() {
+	configcmd --prefix=/usr --enable-mp3rtp --disable-static
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make pkghtmldir=/usr/share/doc/lame-${version} install
+}

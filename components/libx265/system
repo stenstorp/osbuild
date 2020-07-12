@@ -1,0 +1,17 @@
+_configure() {
+	mkdir bld
+	cd    bld
+
+	cmake -DCMAKE_INSTALL_PREFIX=/usr ../source
+}
+
+_build() {
+	cd ${CURWORKDIR}/bld
+	make -j${THREADS}
+}
+
+_install() {
+	cd ${CURWORKDIR}/bld
+	make install
+	rm -vf /usr/lib/libx265.a
+}

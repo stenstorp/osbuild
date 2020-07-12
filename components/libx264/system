@@ -1,0 +1,14 @@
+_configure() {
+	configcmd			\
+		--prefix=/usr		\
+		--enable-shared		\
+		--disable-cli 
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+}

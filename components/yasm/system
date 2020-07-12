@@ -1,0 +1,13 @@
+_configure() {
+	sed -i 's#) ytasm.*#)#' Makefile.in
+
+	configcmd --prefix=/usr
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+}

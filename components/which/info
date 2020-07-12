@@ -1,0 +1,5 @@
+name=which
+version=2.21
+revision=1
+source=https://ftp.gnu.org/gnu/which/which-${version}.tar.gz
+sha1sum=6b6bec3d2b3d4661c164feb81b9b1d22d1359ded
