@@ -1,5 +1,7 @@
 #!/bin/sh
 
+OS_RELEASE=$(date +%Y%m%d)
+
 CDIR=$(pwd)
 SOURCEDIR=${CDIR}/source
 COMPDIR=${CDIR}/components
