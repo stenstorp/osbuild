@@ -1,6 +1,6 @@
 _configure() {
 	sed -i '361 s/{/\\{/' bin/autoscan.in
-	./configure --prefix=/usr
+	configcmd --prefix=/usr
 }
 
 _build() {

@@ -11,7 +11,7 @@ _configure() {
 	sed -i 's/1000/999/' etc/useradd
 
 	touch /usr/bin/passwd
-	./configure			\
+	configcmd			\
 		--sysconfdir=/etc	\
 		--with-group-name-max-length=32
 }

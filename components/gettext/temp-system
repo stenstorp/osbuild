@@ -1,5 +1,5 @@
 _configure() {
-	./configure --disable-shared
+	configcmd --disable-shared
 }
 
 _build() {

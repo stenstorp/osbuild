@@ -1,7 +1,7 @@
 _configure() {
 	sed -i 's/test.test/#&/' python/tests/tstLastError.py
 
-	./configure			\
+	configcmd			\
 		 --prefix=/usr		\
 		--disable-static	\
 		--with-history		\

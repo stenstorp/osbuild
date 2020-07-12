@@ -2,7 +2,7 @@ _configure() {
 	mkdir -v build
 	cd       build
 
-	../configure			\
+	sconfigcmd			\
 		--prefix=/usr		\
 		--bindir=/bin		\
 		--with-root-prefix=""	\

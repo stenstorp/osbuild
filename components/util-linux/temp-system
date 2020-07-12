@@ -1,7 +1,7 @@
 _configure() {
 	mkdir -pv /var/lib/hwclock
 
-	./configure						\
+	configcmd						\
 		ADJTIME_PATH=/var/lib/hwclock/adjtime		\
 		--docdir=/usr/share/doc/util-linux-${version}	\
 		--disable-chfn-chsh				\

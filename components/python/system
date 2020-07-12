@@ -1,9 +1,11 @@
 _configure() {
-	./configure			\
-		--prefix=/usr		\
-		--enable-shared		\
-		--with-system-expat	\
-		--with-system-ffi	\
+	./configure											\
+		CFLAGS="${CFLAGS} $(echo ${OS_CFLAGS} | sed -e 's/-Ofast //g' -e 's/-O3 //g')"		\
+		CXXFLAGS="${CXXFLAGS} $(echo ${OS_CXXFLAGS} | sed -e 's/-Ofast //g' -e 's/-O3 //g')"	\
+		--prefix=/usr										\
+		--enable-shared										\
+		--with-system-expat									\
+		--with-system-ffi									\
 		--with-ensurepip=yes
 }
 
@@ -12,14 +14,10 @@ _build() {
 }
 
 _install() {
-	sed -i -e 's/j0/j1/g' Makefile
-	sed -i -e 's/j0/j1/g' Makefile.pre
-	sed -i -e 's/j0/j1/g' Makefile.pre.in
-
 	make install
 
 	# FIXME - hard-coded version
-	chmod -v 755 /usr/lib/libpython3.8.so
+	chmod -v 755 /usr/lib/libpython3.7.so
 	chmod -v 755 /usr/lib/libpython3.so
-	ln -sfv pip3.8 /usr/bin/pip3
+	ln -sfv pip3.7 /usr/bin/pip3
 }

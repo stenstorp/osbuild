@@ -2,7 +2,7 @@ _configure() {
 	cp -v configfsf.guess config.guess
 	cp -v configfsf.sub   config.sub
 
-	./configure			\
+	configcmd			\
 		--prefix=/usr		\
 		--enable-cxx		\
 		--disable-static	\

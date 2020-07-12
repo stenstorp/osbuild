@@ -31,7 +31,7 @@ _configure() {
 	mkdir -pv ${TARGET}/libgcc
 	ln -s ../../../libgcc/gthr-posix.h ${TARGET}/libgcc/gthr-default.h
 
-	../configure				\
+	sconfigcmd				\
 		--build=$(../config.guess)	\
 		--host=${TARGET}		\
 		--prefix=/usr			\

@@ -1,7 +1,7 @@
 _configure() {
 	sed -i 's:\\\${:\\\$\\{:' intltool-update.in
 
-	./configure --prefix=/usr
+	configcmd --prefix=/usr
 }
 
 _build() {

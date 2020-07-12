@@ -1,7 +1,7 @@
 _configure() {
 	sed -i 's/extras//' Makefile.in
 
-	./configure --prefix=/usr
+	configcmd --prefix=/usr
 }
 
 _build() {

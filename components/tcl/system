@@ -8,7 +8,7 @@ _configure() {
 		*) arg="" ;;
 	esac
 
-	./configure			\
+	configcmd			\
 		--prefix=/usr		\
 		--mandir=/usr/share/man	\
 		$arg

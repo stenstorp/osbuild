@@ -13,7 +13,7 @@ _configure() {
 		ppc | powerpc) export LDFLAGS="-latomic" ;;
 	esac
 
-	./configure --prefix=/usr                                           \
+	configcmd   --prefix=/usr                                           \
 	            --sysconfdir=/etc/dhcp                                  \
 	            --localstatedir=/var                                    \
 	            --with-srv-lease-file=/var/lib/dhcpd/dhcpd.leases       \

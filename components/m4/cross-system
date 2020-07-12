@@ -2,9 +2,9 @@ _configure() {
 	sed -i 's/IO_ftrylockfile/IO_EOF_SEEN/' lib/*.c
 	echo "#define _IO_IN_BACKUP 0x100" >> lib/stdio-impl.h
 
-	./configure				\
-		--prefix=/usr			\
-		--host=${TARGET}		\
+	configcmd					\
+		--prefix=/usr				\
+		--host=${TARGET}			\
 		--build=$(build-aux/config.guess)
 }
 

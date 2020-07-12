@@ -1,5 +1,5 @@
 _configure() {
-	./configure --prefix=/usr --sysconfdir=/etc
+	configcmd --prefix=/usr --sysconfdir=/etc
 }
 
 _build() {

@@ -1,5 +1,5 @@
 _configure() {
-	./configure --prefix=/usr --localstatedir=/var/lib/locate
+	configcmd --prefix=/usr --localstatedir=/var/lib/locate
 }
 
 _build() {

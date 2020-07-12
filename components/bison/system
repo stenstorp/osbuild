@@ -1,5 +1,5 @@
 _configure() {
-	./configure --prefix=/usr --docdir=/usr/share/doc/bison-$version
+	configcmd --prefix=/usr --docdir=/usr/share/doc/bison-$version
 }
 
 _build() {

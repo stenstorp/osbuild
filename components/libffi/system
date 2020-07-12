@@ -1,6 +1,6 @@
 _configure() {
 	# FIXME - native arch?
-	./configure --prefix=/usr --disable-static --with-gcc-arch=native
+	configcmd --prefix=/usr --disable-static --with-gcc-arch=native
 }
 
 _build() {

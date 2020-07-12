@@ -1,5 +1,5 @@
 _configure() {
-	./configure --prefix=/usr
+	configcmd --prefix=/usr
 }
 
 _build() {

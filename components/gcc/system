@@ -12,7 +12,7 @@ _configure() {
 	mkdir -v build
 	cd build
 
-	../configure				\
+	sconfigcmd				\
 		--prefix=/usr			\
 		LD=ld				\
 		--enable-languages=c,c++	\

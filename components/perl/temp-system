@@ -1,4 +1,6 @@
 _configure() {
+	CFLAGS="${CFLAGS} ${OS_CFLAGS}"		\
+	CXXFLAGS="${CXXFLAGS} ${OS_CXXFLAGS}"	\
 	sh Configure -des -Dprefix=/usr
 }
 

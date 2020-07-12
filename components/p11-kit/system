@@ -4,7 +4,7 @@ _configure() {
 	echo "/usr/libexec/make-ca/copy-trust-modifications" >> trust/trust-extract-compat.in
 	echo "/usr/sbin/make-ca -f -g" >> trust/trust-extract-compat.in
 
-	./configure			\
+	configcmd			\
 		--prefix=/usr		\
 		--sysconfdir=/etc	\
 		--with-trust-paths=/etc/pki/anchors

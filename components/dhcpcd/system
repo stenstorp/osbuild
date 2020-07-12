@@ -9,7 +9,7 @@ _configure() {
 	         -u 52 dhcpcd &&
 	chown    -v dhcpcd:dhcpcd /var/lib/dhcpcd 
 
-	./configure --libexecdir=/lib/dhcpcd \
+	configcmd --libexecdir=/lib/dhcpcd \
 	            --dbdir=/var/lib/dhcpcd  \
 	            --privsepuser=dhcpcd
 }

@@ -1,7 +1,7 @@
 _configure() {
 	sed -i '/The name/,+2 d' src/global.c
 
-	./configure		\
+	configcmd		\
 		--prefix=/usr	\
 		--bindir=/bin	\
 		--enable-mt	\

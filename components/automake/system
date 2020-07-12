@@ -1,7 +1,7 @@
 _configure() {
 	sed -i "s/''/etags/" t/tags-lisp-space.sh
 
-	./configure --prefix=/usr --docdir=/usr/share/doc/automake-$version
+	configcmd --prefix=/usr --docdir=/usr/share/doc/automake-$version
 }
 
 _build() {

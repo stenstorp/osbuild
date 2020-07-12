@@ -1,7 +1,7 @@
 _configure() {
 	autoreconf -f -i
 
-	./configure --prefix=/usr --sysconfdir=/etc
+	configcmd --prefix=/usr --sysconfdir=/etc
 }
 
 _build() {

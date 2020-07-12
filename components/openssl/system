@@ -9,11 +9,13 @@ _configure() {
 		*) PLAT="${ARCH}" ;;
 	esac
 
-	./Configure linux-${PLAT}	\
-		--prefix=/usr		\
-		--openssldir=/etc/ssl	\
-		--libdir=lib		\
-		shared			\
+	CFLAGS="${CFLAGS} ${OS_CFLAGS}"		\
+	CXXFLAGS="${CXXFLAGS} ${OS_CXXFLAGS}"	\
+	./Configure linux-${PLAT}		\
+		--prefix=/usr			\
+		--openssldir=/etc/ssl		\
+		--libdir=lib			\
+		shared				\
 		zlib-dynamic
 }
 

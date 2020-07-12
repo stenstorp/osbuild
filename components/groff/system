@@ -1,5 +1,6 @@
 _configure() {
-	PAGE=A4 ./configure --prefix=/usr
+	OPT_CFLAGS=" -fno-fast-math " \
+	PAGE=A4 configcmd --prefix=/usr
 }
 
 _build() {
