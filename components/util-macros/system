@@ -1,5 +1,5 @@
 _configure() {
-	confgcmd			\
+	configcmd			\
 		--prefix=/usr		\
 		--sysconfdir=/etc	\
 		--localstatedir=/var	\
