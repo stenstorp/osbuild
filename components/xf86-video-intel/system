@@ -1,11 +1,13 @@
 _configure() {
-	configcmd                       \
-                --prefix=/usr           \
-                --sysconfdir=/etc	\
-                --localstatedir=/var    \
-                --disable-static	\
-		--enable-kms-only	\
-		--enable-uxa		\
+	./autogen.sh							\
+		CFLAGS="${CFLAGS} ${OS_CFLAGS} ${OPT_CFLAGS}"		\
+		CXXFLAGS="${CXXFLAGS} ${OS_CXXFLAGS} ${OPT_CXXFLAGS}"	\
+                --prefix=/usr						\
+                --sysconfdir=/etc					\
+                --localstatedir=/var					\
+                --disable-static					\
+		--enable-kms-only					\
+		--enable-uxa						\
 		--mandir=/usr/share/man
 }
 
