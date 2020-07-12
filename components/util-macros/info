@@ -2,4 +2,4 @@ name=util-macros
 version=1.19.2
 revision=1
 source=https://www.x.org/pub/individual/util/util-macros-${version}.tar.bz2
-sha1sum=
+sha1sum=e8b3a6f2bfde22440fca0974da53da18821a4ee6
