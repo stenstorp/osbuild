@@ -7,12 +7,35 @@ LOGDIR=${CDIR}/log
 WORKDIR=${CDIR}/work
 OS=${CDIR}/rootfs
 
+# -------------------------------------------------------
+
 ARCH=$(uname -m)
 THREADS=$(nproc)
 
 TARGET=${ARCH}-unknown-linux-gnu
 #TARGET=${ARCH}-unknown-linux-gnueabi
 #TARGET=${ARCH}-unknown-linux-gnueabihf
+
+OS_CFLAGS="-pipe"
+OS_CXXFLAGS="${OS_CFLAGS}"
+
+# -------------------------------------------------------
+
+configcmd() {
+	./configure CFLAGS="${CFLAGS} ${OS_CFLAGS} ${OPT_CFLAGS}" CXXFLAGS="${CXXFLAGS} ${OS_CXXFLAGS} ${OPT_CFLAGS}" $@
+	unset OPT_CFLAGS
+}
+
+sconfigcmd() {
+	../configure CFLAGS="${CFLAGS} ${OS_CFLAGS} ${OPT_CFLAGS}" CXXFLAGS="${CXXFLAGS} ${OS_CXXFLAGS} ${OPT_CFLAGS}" $@
+	unset OPT_CFLAGS
+}
+
+oconfigcmd() {
+	_d=$1
+	${_d}/configure CFLAGS="${CFLAGS} ${OS_CFLAGS} ${OPT_CFLAGS}" CXXFLAGS="${CXXFLAGS} ${OS_CXXFLAGS} ${OPT_CFLAGS}" ${@:2}
+	unset OPT_CFLAGS
+}
 
 PATH=${OS}/tools/bin:/bin:/usr/bin:/sbin:/usr/sbin
 
