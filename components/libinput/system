@@ -12,13 +12,11 @@ _configure() {
 }
 
 _build() {
+	cd ${CURWORKDIR}/build
 	ninja
 }
 
 _install() {
+	cd ${CURWORKDIR}/build
 	ninja install
-
-	install -v -dm755      /usr/share/doc/libinput-${version}/{html,api} &&
-	cp -rv Documentation/* /usr/share/doc/libinput-${version}/html &&
-	cp -rv api/*           /usr/share/doc/libinput-${version}/api
 }
