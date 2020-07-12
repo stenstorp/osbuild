@@ -1,0 +1,17 @@
+_configure() {
+	sed -i 's/^miPointerSpriteFuncRec/extern &/' src/drmmode_display.h
+
+	configcmd                       \
+                --prefix=/usr           \
+                --sysconfdir=/etc	\
+                --localstatedir=/var    \
+                --disable-static
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+}

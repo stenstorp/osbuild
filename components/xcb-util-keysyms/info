@@ -1,0 +1,5 @@
+name=xcb-util-keysyms
+version=0.4.0
+revision=1
+source=https://xcb.freedesktop.org/dist/xcb-util-keysyms-${version}.tar.bz2
+sha1sum=ff02ee8ac22c53848af50c0a6a6b00feb002c1cb

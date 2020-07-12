@@ -1,0 +1,5 @@
+name=xpr
+version=1.0.5
+revision=1
+source=https://www.x.org/pub/individual/app/${name}-${version}.tar.bz2
+sha1sum=0632c7d8632ac9d23f285811aaea805a2956e155

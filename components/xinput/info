@@ -1,0 +1,5 @@
+name=xinput
+version=1.6.3
+revision=1
+source=https://www.x.org/pub/individual/app/${name}-${version}.tar.bz2
+sha1sum=92ea7dfb3d8465921b0dca85da7d5b01cedae6c8

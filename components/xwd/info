@@ -1,0 +1,5 @@
+name=xwd
+version=1.0.7
+revision=1
+source=https://www.x.org/pub/individual/app/${name}-${version}.tar.bz2
+sha1sum=65ce0617be29687cf6082c3a0e85d15a0dcccda9

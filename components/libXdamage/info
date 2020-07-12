@@ -1,0 +1,5 @@
+name=libXdamage
+version=1.1.5
+revision=1
+source=https://www.x.org/pub/individual/lib/${name}-${version}.tar.bz2
+sha1sum=719ae6ab8c1b972c6386b654976c479255af5572

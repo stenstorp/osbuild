@@ -1,0 +1,5 @@
+name=libpng
+version=1.6.37
+revision=1
+source=https://downloads.sourceforge.net/libpng/libpng-${version}.tar.xz
+sha1sum=3ab93fabbf4c27e1c4724371df408d9a1bd3f656

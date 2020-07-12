@@ -1,0 +1,5 @@
+name=xkeyboardconfig
+version=2.30
+revision=1
+source=https://www.x.org/pub/individual/data/xkeyboard-config/xkeyboard-config-${version}.tar.bz2
+sha1sum=ded6c15b44134b21879a03ced5dee2e6e5fa1f0c

@@ -1,0 +1,5 @@
+name=libvdpau
+version=1.4
+revision=1
+source=https://gitlab.freedesktop.org/vdpau/libvdpau/-/archive/${version}/libvdpau-${version}.tar.bz2
+sha1sum=e0c38f4342ae4848dab48c7b6c6770a73c4374ad

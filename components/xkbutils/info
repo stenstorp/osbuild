@@ -1,0 +1,5 @@
+name=xkbutils
+version=1.0.4
+revision=1
+source=https://www.x.org/pub/individual/app/${name}-${version}.tar.bz2
+sha1sum=b09aef7cc3853eb12dbda332f55adec3add4447b

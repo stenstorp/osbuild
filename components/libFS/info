@@ -1,0 +1,5 @@
+name=libFS
+version=1.0.8
+revision=1
+source=https://www.x.org/pub/individual/lib/libFS-${version}.tar.bz2
+sha1sum=70173cc15a7a55defb7b22b00a9387901acad634

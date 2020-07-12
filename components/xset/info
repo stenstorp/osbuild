@@ -1,0 +1,5 @@
+name=xset
+version=1.2.4
+revision=1
+source=https://www.x.org/pub/individual/app/${name}-${version}.tar.bz2
+sha1sum=41a857f30ff5bb0dfbda1549bb703984344ea228

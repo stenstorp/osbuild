@@ -1,0 +1,5 @@
+name=xterm
+version=357
+revision=1
+source=http://invisible-mirror.net/archives/xterm/xterm-${version}.tgz
+sha1sum=e546df6cdf38192b3d595f1d5c7185a595287585

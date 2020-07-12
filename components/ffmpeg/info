@@ -1,0 +1,5 @@
+name=ffmpeg
+version=4.3
+revision=1
+source=http://ffmpeg.org/releases/ffmpeg-${version}.tar.xz
+sha1sum=dd618212469347feb5deb8934023ef6e1ae5f533

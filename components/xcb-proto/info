@@ -1,0 +1,5 @@
+name=xcb-proto
+version=1.14
+revision=1
+source=https://xorg.freedesktop.org/archive/individual/proto/xcb-proto-${version}.tar.xz
+sha1sum=170307b3748cf6c9953db2017615821428fca8be

@@ -1,0 +1,5 @@
+name=xrefresh
+version=1.0.6
+revision=1
+source=https://www.x.org/pub/individual/app/${name}-${version}.tar.bz2
+sha1sum=11eb5b3f905631281d2cedd86a0b666bab0d9bdc

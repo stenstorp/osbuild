@@ -1,0 +1,5 @@
+name=xdriinfo
+version=1.0.6
+revision=1
+source=https://www.x.org/pub/individual/app/${name}-${version}.tar.bz2
+sha1sum=11682ae1f04a311b832651d78bbf4c6ac77f0ed9

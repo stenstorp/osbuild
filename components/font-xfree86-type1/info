@@ -1,0 +1,5 @@
+name=font-xfree86-type1
+version=1.0.4
+revision=1
+source=https://www.x.org/pub/individual/font/${name}-${version}.tar.bz2
+sha1sum=1381f274a178cbd08627560e17a4a8f6653be3f7

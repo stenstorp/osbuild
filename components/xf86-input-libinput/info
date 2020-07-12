@@ -1,0 +1,5 @@
+name=xf86-input-libinput
+version=0.30.0
+revision=1
+source=https://www.x.org/pub/individual/driver/xf86-input-libinput-${version}.tar.bz2
+sha1sum=b705d0280b4fa7ccf44b9ff3869f5d7846e26414

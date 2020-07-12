@@ -1,0 +1,5 @@
+name=libXi
+version=1.7.10
+revision=1
+source=https://www.x.org/pub/individual/lib/${name}-${version}.tar.bz2
+sha1sum=79052e50ea07ce2431f8988a60553d9091d46207

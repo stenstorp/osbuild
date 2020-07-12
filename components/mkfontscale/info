@@ -1,0 +1,5 @@
+name=mkfontscale
+version=1.2.1
+revision=1
+source=https://www.x.org/pub/individual/app/${name}-${version}.tar.bz2
+sha1sum=fb9d0458a4476a237609b676f9cebcc64b0a8a85

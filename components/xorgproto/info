@@ -1,0 +1,5 @@
+name=xorgproto
+version=2020.1
+revision=1
+source=https://xorg.freedesktop.org/archive/individual/proto/xorgproto-${version}.tar.bz2
+sha1sum=1cdab4e9ab796760ddb9582071328469a8eca08a

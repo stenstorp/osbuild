@@ -1,0 +1,22 @@
+_configure() {
+	configcmd                       \
+                --prefix=/usr           \
+                --sysconfdir=/etc	\
+                --localstatedir=/var    \
+                --disable-static	\
+		--enable-glamor		\
+		--enable-suid-wrapper	\
+		--with-xkb-output=/var/lib/xkb
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+
+	mkdir -pv /etc/X11/xorg.conf.d
+	mkdir -p /etc/sysconfig
+	cp ${COMPDIR}/xorg-server/createfiles /etc/sysconfig/createfiles
+}

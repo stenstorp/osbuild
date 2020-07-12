@@ -1,0 +1,5 @@
+name=font-misc-ethiopic
+version=1.0.3
+revision=1
+source=https://www.x.org/pub/individual/font/${name}-${version}.tar.bz2
+sha1sum=3f6af53047cb1206d737e8e8fbbbbb315c5419bb

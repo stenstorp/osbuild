@@ -1,0 +1,5 @@
+name=xkbevd
+version=1.1.4
+revision=1
+source=https://www.x.org/pub/individual/app/${name}-${version}.tar.bz2
+sha1sum=629fea940692f9d971dfae36cd697b13337caaba

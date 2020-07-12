@@ -1,0 +1,5 @@
+name=libXtst
+version=1.2.3
+revision=1
+source=https://www.x.org/pub/individual/lib/${name}-${version}.tar.bz2
+sha1sum=27d004db631bee3a82155d3caf961d9584207d36

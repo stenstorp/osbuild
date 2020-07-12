@@ -1,0 +1,5 @@
+name=mkfontdir
+version=1.0.7
+revision=1
+source=https://www.x.org/pub/individual/app/${name}-${version}.tar.bz2
+sha1sum=3c06dad8a5fbf7362b51fb7d6b1ab805eba40336

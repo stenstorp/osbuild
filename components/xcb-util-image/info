@@ -1,0 +1,5 @@
+name=xcb-util-image
+version=0.4.0
+revision=1
+source=https://xcb.freedesktop.org/dist/xcb-util-image-${version}.tar.bz2
+sha1sum=c9c9361781911a47b28f74fc6ebe0abd1273fae4

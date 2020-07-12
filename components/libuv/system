@@ -1,0 +1,12 @@
+_configure() {
+	sh autogen.sh
+	configcmd --prefix=/usr --disable-static
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+}

@@ -1,0 +1,5 @@
+name=xprop
+version=1.2.4
+revision=1
+source=https://www.x.org/pub/individual/app/${name}-${version}.tar.bz2
+sha1sum=0549a927d01930218f1d0089d0157eb9538b34a5

@@ -1,0 +1,5 @@
+name=Mako
+version=1.1.3
+revision=1
+source=https://files.pythonhosted.org/packages/source/M/Mako/Mako-${version}.tar.gz
+sha1sum=098f90baefe938434e426b8682cdfb89fa223eba

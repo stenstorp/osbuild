@@ -1,0 +1,14 @@
+_configure() {
+	mkdir build &&
+	cd    build &&
+
+	meson --prefix=/usr -Dudev=true
+}
+
+_build() {
+	ninja
+}
+
+_install() {
+	ninja install
+}

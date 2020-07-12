@@ -1,0 +1,5 @@
+name=xf86-input-wacom
+version=0.39.0
+revision=1
+source=https://github.com/linuxwacom/xf86-input-wacom/releases/download/xf86-input-wacom-${version}/xf86-input-wacom-${version}.tar.bz2
+sha1sum=eddbbc3eb97318875985344a5dd2c480aa75246b

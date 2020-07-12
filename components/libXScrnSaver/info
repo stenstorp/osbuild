@@ -1,0 +1,5 @@
+name=libXScrnSaver
+version=1.2.3
+revision=1
+source=https://www.x.org/pub/individual/lib/libXScrnSaver-${version}.tar.bz2
+sha1sum=70c791c5755a298ecf1a0823e239a24fa4b2b42f

@@ -1,0 +1,5 @@
+name=encodings
+version=1.0.5
+revision=1
+source=https://www.x.org/pub/individual/font/${name}-${version}.tar.bz2
+sha1sum=7ffec76dba1cfd5040c5b43ccfae930c83ddf92e

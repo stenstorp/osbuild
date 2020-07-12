@@ -1,0 +1,5 @@
+name=xvinfo
+version=1.1.4
+revision=1
+source=https://www.x.org/pub/individual/app/${name}-${version}.tar.bz2
+sha1sum=136a70a72b23c81f4fe8f4c8cb7073316be16b44

@@ -1,0 +1,5 @@
+name=xhost
+version=1.0.8
+revision=1
+source=https://www.x.org/pub/individual/app/${name}-${version}.tar.bz2
+sha1sum=971670858a464d4f8eeb6f4e182f9fcd94149790

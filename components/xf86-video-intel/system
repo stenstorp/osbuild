@@ -1,0 +1,23 @@
+_configure() {
+	configcmd                       \
+                --prefix=/usr           \
+                --sysconfdir=/etc	\
+                --localstatedir=/var    \
+                --disable-static	\
+		--enable-kms-only	\
+		--enable-uxa		\
+		--mandir=/usr/share/man
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+
+	mv -v /usr/share/man/man4/intel-virtual-output.4 \
+	      /usr/share/man/man1/intel-virtual-output.1 &&
+      
+	sed -i '/\.TH/s/4/1/' /usr/share/man/man1/intel-virtual-output.1
+}

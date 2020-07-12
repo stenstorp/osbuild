@@ -1,0 +1,24 @@
+_configure() {
+	mkdir build &&
+	cd    build &&
+
+	meson --prefix=/usr         \
+	      -Dudev-dir=/lib/udev  \
+	      -Ddebug-gui=false     \
+	      -Dtests=false         \
+	      -Ddocumentation=false \
+	      -Dlibwacom=false      \
+	      ..
+}
+
+_build() {
+	ninja
+}
+
+_install() {
+	ninja install
+
+	install -v -dm755      /usr/share/doc/libinput-${version}/{html,api} &&
+	cp -rv Documentation/* /usr/share/doc/libinput-${version}/html &&
+	cp -rv api/*           /usr/share/doc/libinput-${version}/api
+}

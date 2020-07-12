@@ -1,0 +1,5 @@
+name=xcursorgen
+version=1.0.7
+revision=1
+source=https://www.x.org/pub/individual/app/${name}-${version}.tar.bz2
+sha1sum=109367eb23b0ad52cf5de15f50c02ebe872698ae

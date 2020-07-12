@@ -1,0 +1,5 @@
+name=libdmx
+version=1.1.4
+revision=1
+source=https://www.x.org/pub/individual/lib/${name}-${version}.tar.bz2
+sha1sum=499e2540ca0e94ca858037865243c3c60908fd94

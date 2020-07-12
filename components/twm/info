@@ -1,0 +1,5 @@
+name=twm
+version=1.0.11
+revision=1
+source=https://www.x.org/pub/individual/app/twm-${version}.tar.xz
+sha1sum=d6cb6d846ea669983efb25045a4bfc8b1a90f427

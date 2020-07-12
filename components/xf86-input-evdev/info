@@ -1,0 +1,5 @@
+name=xf86-input-evdev
+version=2.10.6
+revision=1
+source=https://www.x.org/pub/individual/driver/xf86-input-evdev-${version}.tar.bz2
+sha1sum=660de292d5a40e2b8f385965c6a4e149c981ba59

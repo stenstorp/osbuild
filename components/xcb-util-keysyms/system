@@ -1,0 +1,15 @@
+_configure() {
+        configcmd	 	 	\
+                --prefix=/usr	        \
+                --sysconfdir=/etc 	\
+                --localstatedir=/var	\
+                --disable-static
+}
+
+_build() {
+        make -j${THREADS}
+}
+
+_install() {
+        make install
+}

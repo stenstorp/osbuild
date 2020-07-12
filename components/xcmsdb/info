@@ -1,0 +1,5 @@
+name=xcmsdb
+version=1.0.5
+revision=1
+source=https://www.x.org/pub/individual/app/${name}-${version}.tar.bz2
+sha1sum=b1d09b1a9a4324fa86c85340ae47cc34743423a9

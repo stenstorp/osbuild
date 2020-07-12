@@ -1,0 +1,5 @@
+name=font-bh-type1
+version=1.0.3
+revision=1
+source=https://www.x.org/pub/individual/font/${name}-${version}.tar.bz2
+sha1sum=69ff038d38015cd305a4cd4d1a921fe3bd08bbde

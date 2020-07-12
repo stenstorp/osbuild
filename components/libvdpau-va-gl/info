@@ -1,0 +1,5 @@
+name=libvdpau-va-gl
+version=0.4.0
+revision=1
+source=https://github.com/i-rinat/libvdpau-va-gl/archive/v${version}/libvdpau-va-gl-${version}.tar.gz
+sha1sum=fbbaaa81dde4cfbdcaedb26a8f5ee83b1e0da653

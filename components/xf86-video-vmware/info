@@ -1,0 +1,5 @@
+name=xf86-video-vmware
+version=13.3.0
+revision=1
+source=https://www.x.org/pub/individual/driver/xf86-video-vmware-${version}.tar.bz2
+sha1sum=f01335fe6bdb507e749571bfcd69163aed97312a

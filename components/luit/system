@@ -1,0 +1,17 @@
+_configure() {
+	sed -i -e "/D_XOPEN/s/5/6/" configure
+
+	configcmd                       \
+                --prefix=/usr           \
+                --sysconfdir=/etc	\
+                --localstatedir=/var    \
+                --disable-static
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+}

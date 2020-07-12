@@ -1,0 +1,5 @@
+name=intel-vaapi-driver
+version=2.4.1
+revision=1
+source=https://github.com/intel/intel-vaapi-driver/releases/download/${version}/intel-vaapi-driver-${version}.tar.bz2
+sha1sum=c998e06f13238c6419bb38ede9a13e453312737b

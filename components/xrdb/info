@@ -1,0 +1,5 @@
+name=xrdb
+version=1.2.0
+revision=1
+source=https://www.x.org/pub/individual/app/${name}-${version}.tar.bz2
+sha1sum=79596928246288a217abdec0e4a2315ec9b07963

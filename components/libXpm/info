@@ -1,0 +1,5 @@
+name=libXpm
+version=3.5.13
+revision=1
+source=https://www.x.org/pub/individual/lib/libXpm-${version}.tar.bz2
+sha1sum=38b1a2728adb49f4e255aba1530f51789815ffc4

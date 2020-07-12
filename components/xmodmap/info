@@ -1,0 +1,5 @@
+name=xmodmap
+version=1.0.10
+revision=1
+source=https://www.x.org/pub/individual/app/${name}-${version}.tar.bz2
+sha1sum=69e041f8a8c501bd1feb68805a0880633a685bc8

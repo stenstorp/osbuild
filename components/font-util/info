@@ -1,0 +1,5 @@
+name=font-util
+version=1.3.2
+revision=1
+source=https://www.x.org/pub/individual/font/${name}-${version}.tar.bz2
+sha1sum=1b36275c174b64a9c16da5c902c91546789a67ef

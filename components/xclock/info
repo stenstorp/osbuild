@@ -1,0 +1,5 @@
+name=xclock
+version=1.0.9
+revision=1
+source=https://www.x.org/pub/individual/app/xclock-${version}.tar.bz2
+sha1sum=774c711cf7ee3f601f7209bbb01ce3f0d5ddbde6

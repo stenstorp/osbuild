@@ -1,0 +1,33 @@
+_configure() {
+	sed '1s/python/&3/' -i bin/symbols-check.py
+
+	GALLIUM_DRV="i915,nouveau,r600,radeonsi,svga,swrast,virgl"
+	DRI_DRIVERS="i965,nouveau"
+}
+
+_build() {
+	mkdir build &&
+	cd    build &&
+
+	meson --prefix=/usr                  \
+	      -Dbuildtype=release            \
+	      -Ddri-drivers=$DRI_DRIVERS     \
+	      -Dgallium-drivers=$GALLIUM_DRV \
+	      -Dgallium-nine=false           \
+	      -Dglx=dri                      \
+	      -Dosmesa=gallium               \
+	      -Dvalgrind=false               \
+	      -Dlibunwind=false              \
+	      ..
+
+	unset GALLIUM_DRV DRI_DRIVERS &&
+
+	ninja
+}
+
+_install() {
+	ninja install
+
+	install -v -dm755 /usr/share/doc/mesa-${version}
+	cp -rfv ../docs/* /usr/share/doc/mesa-${version}
+}

@@ -1,0 +1,5 @@
+name=libICE
+version=1.0.10
+revision=1
+source=https://www.x.org/pub/individual/lib/libICE-${version}.tar.bz2
+sha1sum=5b5eb125d4f43a3ab8153b0f850963ee6c982c24

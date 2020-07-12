@@ -1,0 +1,5 @@
+name=xtrans
+version=1.4.0
+revision=1
+source=https://www.x.org/pub/individual/lib/xtrans-${version}.tar.bz2
+sha1sum=7c490026efb450798e02b040c05eba5212291c08

@@ -1,0 +1,5 @@
+name=libXxf86vm
+version=1.1.4
+revision=1
+source=https://www.x.org/pub/individual/lib/${name}-${version}.tar.bz2
+sha1sum=78ef18ca2be157131899e01c62679e247409a13f

@@ -1,0 +1,5 @@
+name=xf86-video-nouveau
+version=1.0.6
+revision=1
+source=https://www.x.org/pub/individual/driver/xf86-video-nouveau-${version}.tar.bz2
+sha1sum=602f47934f303e5b93ac25d91987d7519c6d80ab

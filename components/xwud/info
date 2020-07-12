@@ -1,0 +1,5 @@
+name=xwud
+version=1.0.5
+revision=1
+source=https://www.x.org/pub/individual/app/${name}-${version}.tar.bz2
+sha1sum=a85d84a1b81f8e667ea6ac126d447590c93eb079

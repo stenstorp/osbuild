@@ -1,0 +1,5 @@
+name=xkbcomp
+version=1.4.3
+revision=1
+source=https://www.x.org/pub/individual/app/${name}-${version}.tar.bz2
+sha1sum=cc8070e5d54273c8d9120571710d0e7c4a58a59a

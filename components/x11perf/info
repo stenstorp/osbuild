@@ -1,0 +1,5 @@
+name=x11perf
+version=1.6.1
+revision=1
+source=https://www.x.org/pub/individual/app/${name}-${version}.tar.bz2
+sha1sum=c54ebef80b6cb565397fe2e3069e0d7470027e5a

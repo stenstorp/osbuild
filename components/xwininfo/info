@@ -1,0 +1,5 @@
+name=xwininfo
+version=1.1.5
+revision=1
+source=https://www.x.org/pub/individual/app/${name}-${version}.tar.bz2
+sha1sum=9f67b1eb07c5824d437bf577cf6198962af1aeb7

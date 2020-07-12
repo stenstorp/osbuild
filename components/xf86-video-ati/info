@@ -1,0 +1,5 @@
+name=xf86-video-ati
+version=19.1.0
+revision=1
+source=https://www.x.org/pub/individual/driver/xf86-video-ati-${version}.tar.bz2
+sha1sum=aea1d11c05531b03f2eb67c6785cddf6d7f30e5f

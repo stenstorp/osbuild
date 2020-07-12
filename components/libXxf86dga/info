@@ -1,0 +1,5 @@
+name=libXxf86dga
+version=1.1.5
+revision=1
+source=https://www.x.org/pub/individual/lib/${name}-${version}.tar.bz2
+sha1sum=332ba80d1b3d06473f7bbfe1612e7c5b58fbdf69

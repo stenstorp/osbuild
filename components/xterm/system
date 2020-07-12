@@ -1,0 +1,27 @@
+_configure() {
+	sed -i '/v0/{n;s/new:/new:kb=^?:/}' termcap
+	printf '\tkbs=\\177,\n' >> terminfo
+
+	TERMINFO=/usr/share/terminfo \
+	configcmd                       \
+                --prefix=/usr           \
+                --sysconfdir=/etc	\
+                --localstatedir=/var    \
+                --disable-static	\
+		--with-app-defaults=/etc/X11/app-defaults
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+	make install-ti
+
+	mkdir -pv /usr/share/applications
+	cp -v *.desktop /usr/share/applications/
+
+	mkdir -p /etc/X11/app-defaults/
+	cp ${COMPDIR}/xterm/XTerm /etc/X11/app-defaults/Xterm
+}

@@ -1,0 +1,5 @@
+name=libxkbfile
+version=1.1.0
+revision=1
+source=https://www.x.org/pub/individual/lib/${name}-${version}.tar.bz2
+sha1sum=487f314b6dbc17e93d0fe1e3741392156a9ca895

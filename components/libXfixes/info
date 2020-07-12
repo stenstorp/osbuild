@@ -1,0 +1,5 @@
+name=libXfixes
+version=5.0.3
+revision=1
+source=https://www.x.org/pub/individual/lib/${name}-${version}.tar.bz2
+sha1sum=ca86342d129c02435a9ee46e38fdf1a04d6b4b91

@@ -1,0 +1,5 @@
+name=font-bh-ttf
+version=1.0.3
+revision=1
+source=https://www.x.org/pub/individual/font/${name}-${version}.tar.bz2
+sha1sum=f42ebd527096011040a312e0f9cdf78d64177419

@@ -1,0 +1,5 @@
+name=xinit
+version=1.4.1
+revision=1
+source=https://www.x.org/pub/individual/app/xinit-${version}.tar.bz2
+sha1sum=d874a2eecf2c30291e327851b151fdab8183260c

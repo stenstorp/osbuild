@@ -1,0 +1,5 @@
+name=libXau
+version=1.0.9
+revision=1
+source=https://www.x.org/pub/individual/lib/libXau-${version}.tar.bz2
+sha1sum=ef9b1ad00f958c8b6e30a1bbc11fdfac311c9733

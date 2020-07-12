@@ -1,0 +1,5 @@
+name=libXrender
+version=0.9.10
+revision=1
+source=https://www.x.org/pub/individual/lib/${name}-${version}.tar.bz2
+sha1sum=d55106de9260c2377c19d271d9b677744a6c7e81

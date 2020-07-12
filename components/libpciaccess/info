@@ -1,0 +1,5 @@
+name=libpciaccess
+version=0.16
+revision=1
+source=https://www.x.org/pub/individual/lib/${name}-${version}.tar.bz2
+sha1sum=ffaa13f2df5f822da1089b55223b217c142ef919

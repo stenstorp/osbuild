@@ -1,0 +1,16 @@
+_configure() {
+	mkdir build &&
+	cd    build &&
+
+	cmake -DCMAKE_BUILD_TYPE=Release -DCMAKE_INSTALL_PREFIX=/usr ..
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+
+	echo "export VDPAU_DRIVER=va_gl" >> /etc/profile.d/xorg.sh
+}

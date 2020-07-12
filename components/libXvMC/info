@@ -1,0 +1,5 @@
+name=libXvMC
+version=1.0.12
+revision=1
+source=https://www.x.org/pub/individual/lib/${name}-${version}.tar.bz2
+sha1sum=4871f92a83faa86aff5c630a2d6016c67bf11b97

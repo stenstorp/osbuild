@@ -1,0 +1,5 @@
+name=xmessage
+version=1.0.5
+revision=1
+source=https://www.x.org/pub/individual/app/${name}-${version}.tar.bz2
+sha1sum=d3eca72c7173d0d9547c676a16bcec51ca1213a2

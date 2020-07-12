@@ -1,0 +1,5 @@
+name=xbacklight
+version=1.2.3
+revision=1
+source=https://www.x.org/pub/individual/app/${name}-${version}.tar.bz2
+sha1sum=f0a6163738143ec23542b459aef567309a119e0c

@@ -1,0 +1,5 @@
+name=libX11
+version=1.6.9
+revision=1
+source=https://www.x.org/pub/individual/lib/libX11-${version}.tar.bz2
+sha1sum=62456536411f2540fbd4a3f59ed8af94967124c2

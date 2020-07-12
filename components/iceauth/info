@@ -1,0 +1,5 @@
+name=iceauth
+version=1.0.8
+revision=1
+source=https://www.x.org/pub/individual/app/${name}-${version}.tar.bz2
+sha1sum=2ce23c40a17d98badeb8ce70d26e81a5ac0e178c

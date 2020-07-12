@@ -1,0 +1,5 @@
+name=xf86-input-synaptics
+version=1.9.1
+revision=1
+source=https://www.x.org/pub/individual/driver/xf86-input-synaptics-${version}.tar.bz2
+sha1sum=07eeef716820105cae959bbc3aa103e2fcfd0084

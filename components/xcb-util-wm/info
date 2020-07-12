@@ -1,0 +1,5 @@
+name=xcb-util-wm
+version=0.4.1
+revision=1
+source=https://xcb.freedesktop.org/dist/xcb-util-wm-${version}.tar.bz2
+sha1sum=7006c52b961c123355320bfc30477cdf90c8bbb7

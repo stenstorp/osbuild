@@ -1,0 +1,5 @@
+name=libXrandr
+version=1.5.2
+revision=1
+source=https://www.x.org/pub/individual/lib/${name}-${version}.tar.bz2
+sha1sum=7a1f6df239341b76fd59ebbe101d6f180adb43bb

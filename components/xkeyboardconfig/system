@@ -1,0 +1,16 @@
+_configure() {
+	configcmd                       \
+                --prefix=/usr           \
+                --sysconfdir=/etc	\
+                --localstatedir=/var    \
+                --disable-static	\
+		--with-xkb-rules-symlink=xorg
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+}

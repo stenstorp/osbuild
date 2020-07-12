@@ -1,0 +1,5 @@
+name=font-alias
+version=1.0.3
+revision=1
+source=https://www.x.org/pub/individual/font/${name}-${version}.tar.bz2
+sha1sum=96b0aa38f88a54ef32ab85d3eef6f29b0437f70d

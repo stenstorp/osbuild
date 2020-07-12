@@ -1,0 +1,5 @@
+name=xrandr
+version=1.5.1
+revision=1
+source=https://www.x.org/pub/individual/app/${name}-${version}.tar.xz
+sha1sum=9f72957e0d2a26ece509336ea7e1529cc9ea881e

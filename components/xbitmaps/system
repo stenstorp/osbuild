@@ -1,0 +1,11 @@
+_configure() {
+	configcmd                       \
+                --prefix=/usr           \
+                --sysconfdir=/etc	\
+                --localstatedir=/var    \
+                --disable-static
+}
+
+_install() {
+	make install
+}

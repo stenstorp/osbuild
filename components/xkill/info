@@ -1,0 +1,5 @@
+name=xkill
+version=1.0.5
+revision=1
+source=https://www.x.org/pub/individual/app/${name}-${version}.tar.bz2
+sha1sum=c5ee06b33adb252a41e4f737be6bd47651ff582a

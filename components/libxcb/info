@@ -1,0 +1,5 @@
+name=libxcb
+version=1.14
+revision=1
+source=https://xorg.freedesktop.org/archive/individual/lib/libxcb-${version}.tar.xz
+sha1sum=e218be6043162d2f758643dbda8caccd53107388
