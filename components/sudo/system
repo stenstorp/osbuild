@@ -21,4 +21,7 @@ _install() {
 	mkdir -p /etc/pam.d
 	cp ${COMPDIR}/sudo/files/pam-sudo /etc/pam.d/sudo
 	chmod 644 /etc/pam.d/sudo
+
+	chown root:root /usr/bin/sudo
+	chmod 4755 /usr/bin/sudo
 }
