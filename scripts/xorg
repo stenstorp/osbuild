@@ -3,6 +3,8 @@ set -e
 
 source config
 
+scripts/download clang compiler-rt
+
 COMPONENTS="ninja meson util-macros xorgproto libXau libXdmcp xcb-proto libxcb freetype fontconfig xtrans libX11 libXext libFS libICE libSM libXScrnSaver libXt libXmu libXpm libXaw libXfixes libXcomposite libXrender libXcursor libXdamage libfontenc libXfont2 libXft libXi libXinerama libXrandr libXres libXtst libXv libXvMC libXxf86dga libXxf86vm libdmx libpciaccess libxkbfile libxshmfence xcb-util xcb-util-image xcb-util-keysyms xcb-util-renderutil xcb-util-wm xcb-util-cursor libdrm MarkupSafe Mako libuv libarchive cmake llvm wayland wayland-protocols mesa xbitmaps libpng iceauth luit mkfontdir mkfontscale sessreg setxkbmap smproxy x11perf xauth xbacklight xcmsdb xcursorgen xdpyinfo xdriinfo xev xgamma xhost xinput xkbcomp xkbevd xkbutils xkill xlsatoms xlsclients xmessage xmodmap xpr xprop xrandr xrdb xrefresh xset xsetroot xvinfo xwd xwininfo xwud xcursor-themes font-util encodings font-alias font-adobe-utopia-type1 font-bh-ttf font-bh-type1 font-ibm-type1 font-misc-ethiopic font-xfree86-type1 xkeyboard-config pixman libepoxy xorg-server libevdev mtdev xf86-input-evdev libinput xf86-input-libinput xf86-input-synaptics xf86-input-wacom xf86-video-amdgpu xf86-video-ati xf86-video-fbdev xf86-video-intel xf86-video-nouveau xf86-video-vmware libva intel-vaapi-driver libvdpau yasm nasm fribidi libass lame opus libogg libvorbis libtheora which libvpx libx264 libx265 ffmpeg libvdpau-va-gl twm xterm xclock xinit"
 
 for f in ${COMPONENTS}; do
