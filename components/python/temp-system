@@ -1,8 +1,8 @@
 _configure() {
-	./configure											\
-		CFLAGS="${CFLAGS} $(echo ${OS_CFLAGS} | sed -e 's/-Ofast //g' -e 's/-O3 //g')"		\
-		CXXFLAGS="${CXXFLAGS} $(echo ${OS_CXXFLAGS} | sed -e 's/-Ofast //g' -e 's/-O3 //g')"	\
-		--prefix=/usr										\
+	./configure														\
+		CFLAGS="${CFLAGS} $(echo ${OS_CFLAGS} | sed -e 's/-Ofast /-O2 /g' -e 's/-O3 /-O2 /g') ${OPT_CFLAGS}"		\
+		CXXFLAGS="${CXXFLAGS} $(echo ${OS_CXXFLAGS} | sed -e 's/-Ofast /-O2 /g' -e 's/-O3 /-O2 /g') ${OPT_CXXFLAGS}"	\
+		--prefix=/usr													\
 		--without-ensurepip
 }
 
