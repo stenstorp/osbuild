@@ -1,9 +1,11 @@
 _configure() {
-	configcmd			\
-		--prefix=/usr		\
-		--sbindir=/sbin		\
-		--sysconfdir=/etc	\
-		--disable-efiemu	\
+	./configure														\
+                CFLAGS="${CFLAGS} $(echo ${OS_CFLAGS} | sed -e 's/-Ofast /-O2 /g' -e 's/-O3 /-O2 /g') ${OPT_CFLAGS}"		\
+                CXXFLAGS="${CXXFLAGS} $(echo ${OS_CXXFLAGS} | sed -e 's/-Ofast /-O2 /g' -e 's/-O3 /-O2 /g') ${OPT_CXXFLAGS}"	\
+		--prefix=/usr													\
+		--sbindir=/sbin													\
+		--sysconfdir=/etc												\
+		--disable-efiemu												\
 		--disable-werror
 }
 
