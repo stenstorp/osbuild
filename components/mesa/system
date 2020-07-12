@@ -3,9 +3,7 @@ _configure() {
 
 	GALLIUM_DRV="i915,nouveau,r600,radeonsi,svga,swrast,virgl"
 	DRI_DRIVERS="i965,nouveau"
-}
 
-_build() {
 	mkdir build &&
 	cd    build &&
 
@@ -20,8 +18,10 @@ _build() {
 	      -Dlibunwind=false              \
 	      ..
 
-	unset GALLIUM_DRV DRI_DRIVERS &&
+	unset GALLIUM_DRV DRI_DRIVERS
+}
 
+_build() {
 	ninja
 }
 
