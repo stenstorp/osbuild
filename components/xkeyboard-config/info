@@ -1,4 +1,4 @@
-name=xkeyboardconfig
+name=xkeyboard-config
 version=2.30
 revision=1
 source=https://www.x.org/pub/individual/data/xkeyboard-config/xkeyboard-config-${version}.tar.bz2
