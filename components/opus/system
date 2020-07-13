@@ -1,4 +1,5 @@
 _configure() {
+	OPT_CFLAGS=" -fno-fast-math "	\
 	configcmd			\
 		--prefix=/usr		\
 		--disable-static	\
