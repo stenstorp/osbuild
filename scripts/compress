@@ -3,6 +3,8 @@ set -e
 
 source config
 
+echo "[compress] compressing rootfs..."
+
 for f in usr/src/system dev/pts dev proc sys run; do
 	if mountpoint -q ${OS}/$f; then
 		sudo umount -l ${OS}/$f
@@ -16,3 +18,5 @@ sudo XZ_OPT="--threads=${THREADS}" tar cfJ ../rootfs_${TARGET}-${OS_RELEASE}.tar
 cd ${CDIR}
 
 sudo rm -rf ${OS}-copy
+
+echo "[compress] finished! created rootfs_${TARGET}-${OS_RELEASE}.tar.xz"
