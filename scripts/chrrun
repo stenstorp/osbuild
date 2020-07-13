@@ -36,6 +36,18 @@ else
 	echo "[chroot] assuming native"
 fi
 
+for f in dev dev/pts proc sys run usr/src/system; do
+	if [ "$(mountpoint ${OS}/$f | grep not)" > 1 ]; then
+		case $f in
+			usr/src/system) mount --bind ${CDIR} ${OS}/usr/src/system ;;
+			dev) mount --bind /dev ${OS}/dev ;;
+			dev/pts) mount --bind /dev/pts ${OS}/dev/pts ;;
+			proc) mount -t proc proc ${OS}/proc ;;
+			sys) mount -t sysfs sysfs ${OS}/sys ;;
+			run) mount -t tmpfs tmpfs ${OS}/run ;;
+		esac
+	fi
+done
 
 cat << EOF | ${LINUX} chroot ${OS} ${INTERPRETER} bin/bash
 cd /usr/src/system; $@
