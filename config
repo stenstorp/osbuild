@@ -18,8 +18,10 @@ TARGET=${ARCH}-unknown-linux-gnu
 #TARGET=${ARCH}-unknown-linux-gnueabi
 #TARGET=${ARCH}-unknown-linux-gnueabihf
 
-OS_CFLAGS="-pipe"
+OS_CFLAGS="-O2 -pipe"
 OS_CXXFLAGS="${OS_CFLAGS}"
+
+#noclean=yes
 
 # -------------------------------------------------------
 
