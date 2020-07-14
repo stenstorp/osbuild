@@ -49,15 +49,15 @@ case ${extension} in
 		tar -C ${WORKDIR}/${name}-${version} -xf ${SOURCEDIR}/${filename} ;;
 	xz)
 		cd ${WORKDIR}/${name}-${version}
-		unxz ${SOURCEDIR}/${filename}
+		unxz -c ${SOURCEDIR}/${filename} > ${WORKDIR}/${name}-${version}/$(echo ${filename} | sed -e 's/.xz//g')
 		cd ${CDIR} ;;
 	gz)
 		cd ${WORKDIR}/${name}-${version}
-		gunzip ${SOURCEDIR}/${filename}
+		gunzip -c ${SOURCEDIR}/${filename} > ${WORKDIR}/${name}-${version}/$(echo ${filename} | sed -e 's/.gz//g')
 		cd ${CDIR} ;;
 	bz2)
 		cd ${WORKDIR}/${name}-${version}
-		bunzip ${SOURCEDIR}/${filename}
+		bunzip2 -c ${SOURCEDIR}/${filename} > ${WORKDIR}/${name}-${version}/$(echo ${filename} | sed -e 's/.bz2//g')
 		cd ${CDIR} ;;
 	zip)
 		cd ${WORKDIR}/${name}-${version}
