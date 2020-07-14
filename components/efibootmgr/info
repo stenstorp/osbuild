@@ -1,0 +1,5 @@
+name=efibootmgr
+version=16
+revision=1
+source=https://github.com/rhinstaller/efibootmgr/releases/download/${version}/efibootmgr-${version}.tar.bz2
+sha1sum=3b023978c27af2514606de2a6be11801d881b5a3

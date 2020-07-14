@@ -1,0 +1,6 @@
+name=unifont
+version=12.1.03
+revision=1
+source=http://unifoundry.com/pub/unifont/unifont-${version}/font-builds/unifont-${version}.pcf.gz
+sha1sum=cfbe1b13c51656c03836928e99a5bbb3118061c3
+folder=.

@@ -1,0 +1,5 @@
+name=efivar
+version=37
+revision=1
+source=https://github.com/rhboot/efivar/releases/download/${version}/efivar-${version}.tar.bz2
+sha1sum=1ef24e0a06e1a42d7a93ba7a76b2970659c7c0c0

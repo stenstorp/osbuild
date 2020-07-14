@@ -1,10 +1,5 @@
 _configure() {
 
-	case ${ARCH} in
-		i?86|x86_64) GPLAT="--with-platform=pc" ;;
-		ppc*|powerpc*) GPLAT="--with-platform=ieee1275" ;;
-	esac
-
 	./configure														\
                 CFLAGS="${CFLAGS} $(echo ${OS_CFLAGS} | sed -e 's/-Ofast /-O2 /g' -e 's/-O3 /-O2 /g') ${OPT_CFLAGS}"		\
                 CXXFLAGS="${CXXFLAGS} $(echo ${OS_CXXFLAGS} | sed -e 's/-Ofast /-O2 /g' -e 's/-O3 /-O2 /g') ${OPT_CXXFLAGS}"	\
@@ -12,7 +7,7 @@ _configure() {
 		--sbindir=/sbin													\
 		--sysconfdir=/etc												\
 		--disable-efiemu												\
-		${GPLAT}													\
+		--with-platform=efi												\
 		--disable-werror
 }
 
@@ -21,6 +16,6 @@ _build() {
 }
 
 _install() {
-	make install
-	mv -v /etc/bash_completion.d/grub /usr/share/bash-completion/completions
+	make install DESTDIR=${WORKDIR}/${name}-${version}/INSTALL
+	cp -rv ${WORKDIR}/${name}-${version}/INSTALL/usr/lib*/grub/x86_64-efi /usr/lib/
 }

@@ -1,0 +1,7 @@
+_build() {
+	make libdir=/usr/lib -j${THREADS}
+}
+
+_install() {
+	make libdir=/usr/lib install
+}

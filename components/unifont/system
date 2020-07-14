@@ -1,0 +1,4 @@
+_install() {
+	mkdir -pv /usr/share/fonts/unifont
+	cp unifont.pcf /usr/share/fonts/unifont/unifont.pcf
+}
