@@ -1,9 +1,9 @@
 all:
 	@echo "Please specify rootfs or local"
 
-rootfs: clean prep cross-compiler cross-system download-all prep-rootfs chroot-tempsystem chroot-system chroot-clean compress
+rootfs: clean prep cross-compiler cross-system download-all prep-rootfs chroot-tempsystem chroot-system chroot-xorg chroot-clean compress
 
-local: clean temp-system system
+local: clean temp-system system xorg
 
 versioncheck:
 	@scripts/version-check
