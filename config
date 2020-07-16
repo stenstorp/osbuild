@@ -1,6 +1,6 @@
 #!/bin/sh
 
-OS_RELEASE=$(date +%Y%m%d)
+OS_RELEASE=0.0a
 
 CDIR=$(pwd)
 SOURCEDIR=${CDIR}/source
