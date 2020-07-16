@@ -1,0 +1,5 @@
+NAME="OSBuild"
+VERSION="0.0a"
+ID=osbuild
+PRETTY_NAME="OSBuild 0.0a"
+VERSION_CODENAME="It's something!"

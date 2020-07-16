@@ -3,9 +3,9 @@
 
 # Distro Information
 # These values, if specified here, override the defaults
-#DISTRO="Linux From Scratch" # The distro name
-#DISTRO_CONTACT="lfs-dev@linuxfromscratch.org" # Bug report address
-#DISTRO_MINI="LFS" # Short name used in filenames for distro config
+DISTRO="OSbuild" # The distro name
+DISTRO_CONTACT="stenstorpmc@gmail.com" # Bug report address
+DISTRO_MINI="OS" # Short name used in filenames for distro config
 
 # Define custom colors used in messages printed to the screen
 
@@ -43,7 +43,7 @@
 
 # The total length of the distro welcome string, without escape codes
 #wlen=$(echo "Welcome to ${DISTRO}" | wc -c )
-#welcome_message="Welcome to ${INFO}${DISTRO}${NORMAL}"
+welcome_message="Welcome to ${INFO}${DISTRO}${NORMAL}"
 
 # The total length of the interactive string, without escape codes
 #ilen=$(echo "Press 'I' to enter interactive startup" | wc -c )
@@ -75,7 +75,7 @@
 #LOGLEVEL=7
 
 # For network
-#HOSTNAME=mylfs
+HOSTNAME=osbuild
 
 # Delay between TERM and KILL signals at shutdown
 #KILLDELAY=3
