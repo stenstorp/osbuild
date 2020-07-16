@@ -81,7 +81,7 @@ if [ ! -z $(type -t _install) ] && [ ! -e ${LOGDIR}/${STAGE}/${COMP}/.install-co
 	if [ "${STAGE}" == "system" ]; then
 		if [ "${CDIR}" == "/usr/usr/system" ]; then
 			mkdir -p /var/cache/system
-			echo "REVISION=${revision}" > /var/cache/system/${COMP}
+			echo "${revision}" > /var/cache/system/${COMP}
 		else
 			mkdir -p ${OS}/var/cache/system/
 			echo "${revision}" > ${OS}/var/cache/system/${COMP}
