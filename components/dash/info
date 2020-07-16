@@ -1,0 +1,5 @@
+name=dash
+version=0.5.11.1
+revision=1
+source=http://gondor.apana.org.au/~herbert/dash/files/dash-${version}.tar.gz
+sha1sum=bd66fa551cfb81e9606951c98a95c8618ade8742

@@ -1,0 +1,14 @@
+_configure() {
+	configcmd			\
+		--prefix=/usr		\
+		--bindir=/bin		\
+		--mandir=/usr/share/man
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+}

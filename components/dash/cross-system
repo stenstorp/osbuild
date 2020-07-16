@@ -1,9 +1,10 @@
 _configure() {
 	configcmd				\
 		--prefix=/usr			\
+		--bindir=/bin			\
+		--mandir=/usr/share/man		\
 		--build=$(support/config.guess)	\
-		--host=${TARGET}		\
-		--without-bash-malloc
+                --host=${TARGET}
 }
 
 _build() {
@@ -11,6 +12,6 @@ _build() {
 }
 
 _install() {
-	make DESTDIR=${OS} install
-	mv ${OS}/usr/bin/bash ${OS}/bin/bash
+	make install DESTDIR=${OS}
+	ln -svf dash /bin/sh
 }
