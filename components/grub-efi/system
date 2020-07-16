@@ -17,5 +17,5 @@ _build() {
 
 _install() {
 	make install DESTDIR=${WORKDIR}/${name}-${version}/INSTALL
-	cp -rv ${WORKDIR}/${name}-${version}/INSTALL/usr/lib*/grub/x86_64-efi /usr/lib/
+	cp -rv ${WORKDIR}/${name}-${version}/INSTALL/usr/lib*/grub/x86_64-efi /usr/lib/grub/
 }
