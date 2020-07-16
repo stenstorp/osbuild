@@ -13,5 +13,5 @@ _build() {
 
 _install() {
 	make install DESTDIR=${OS}
-	ln -svf dash /bin/sh
+	ln -svf dash ${OS}/bin/sh
 }
