@@ -1,31 +1,49 @@
 _configure() {
 	sed '1s/python/&3/' -i bin/symbols-check.py
 
-	GALLIUM_DRV="i915,nouveau,r600,radeonsi,svga,swrast,virgl"
-	DRI_DRIVERS="i965,nouveau"
+	GALLIUM_DRIVERS="nouveau,r600,radeonsi,swrast,virgl"
+	DRI_DRIVERS="nouveau"
+	VULKAN_DRIVERS="amd"
+
+	case ${ARCH} in
+		ppc*|powerpc*) extra_args=" -Dpower8=false" ;;
+		arm*|aarch64) extra_args="" ;;
+		# i?86 x86_64
+		*)
+			extra_args=""
+			GALLIUM_DRIVERS+=",i915,svga"
+			DRI_DRIVERS+="i915,i965"
+			VULKAN_DRIVERS+=",intel"
+			;;
+	esac
 
 	mkdir build &&
 	cd    build &&
 
-	meson --prefix=/usr                  \
-	      -Dbuildtype=release            \
-	      -Ddri-drivers=$DRI_DRIVERS     \
-	      -Dgallium-drivers=$GALLIUM_DRV \
-	      -Dgallium-nine=false           \
-	      -Dglx=dri                      \
-	      -Dosmesa=gallium               \
-	      -Dvalgrind=false               \
-	      -Dlibunwind=false              \
-	      ..
+	meson						\
+		--prefix=/usr				\
+		-Dbuildtype=release			\
+		-Ddri-drivers=$DRI_DRIVERS		\
+		-Dgallium-drivers=$GALLIUM_DRIVERS	\
+		-Dvulkan-drivers=$VULKAN_DRIVERS	\
+		-Dgallium-nine=false			\
+		-Dglx=dri				\
+		-Dosmesa=gallium			\
+		-Dvalgrind=false			\
+		-Dlibunwind=false			\
+		${extra_args}				\
+		..
 
-	unset GALLIUM_DRV DRI_DRIVERS
+	unset GALLIUM_DRIVERS DRI_DRIVERS VULKAN_DRIVERS
 }
 
 _build() {
+	cd ${CURWORKDIR}/build
 	ninja
 }
 
 _install() {
+	cd ${CURWORKDIR}/build
 	ninja install
 
 	install -v -dm755 /usr/share/doc/mesa-${version}
