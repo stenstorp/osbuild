@@ -10,4 +10,9 @@ _install() {
 	make install
 
 	cp -v ${COMPDIR}/dracut/files/dracut.conf /etc/dracut.conf
+
+	case ${ARCH} in
+		i?86|x86_64) echo "add_drivers+=\"crc32c_generic\"" >> /etc/dracut.conf ;;
+	esac
+
 }	

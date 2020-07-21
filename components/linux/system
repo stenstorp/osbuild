@@ -40,7 +40,16 @@ _build() {
 _install() {
 	make modules_install
 
-	cp -v arch/x86/boot/bzImage /boot/vmlinuz-$version
+	case ${ARCH} in
+		i?86|x86_64)
+			cp -v arch/${KARCH}/boot/bzImage /boot/vmlinuz-$version ;;
+		ppc*|powerpc*)
+			unxz vmlinux.strip.xz
+			cp -v vmlinux.strip /boot/vmlinuz-$version ;;
+		arm*|aarch64) # FIXME - UNTESTED
+			cp -v vmlinux /boot/vmlinuz-$version ;;
+	esac
+
 	cp -v System.map /boot/System.map-$version
 	cp -v .config /boot/config-$version
 

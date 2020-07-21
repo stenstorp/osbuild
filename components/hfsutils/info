@@ -1,0 +1,5 @@
+name=hfsutils
+version=3.2.6
+revision=1
+source=ftp://ftp.mars.org/pub/hfs/hfsutils-${version}.tar.gz
+sha1sum=6d71dfb2c93c0d8082972d39f3f75ae53a438d5d

@@ -1,0 +1,6 @@
+name=mac-fdisk
+version=0.1
+revision=1
+source=http://deb.debian.org/debian/pool/main/m/mac-fdisk/mac-fdisk_${version}.orig.tar.gz
+sha1sum=47013d3d74892d53c31a73e75c32fda2bf173252
+folder=${name}-${version}.orig

@@ -7,6 +7,7 @@ COMPONENTS="man-pages tcl expect dejagnu iana-etc glibc tzdata zlib bzip2 xz zst
 
 case ${ARCH} in
 	x86_64) COMPONENTS+=" efivar popt unifont efibootmgr grub grub-efi" ;;
+	ppc*|powerpc*) COMPONENTS+=" grub mac-fdisk hfsutils" ;;
 	*) COMPONENTS+=" grub" ;;
 esac
 
