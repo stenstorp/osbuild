@@ -3,6 +3,10 @@ set -e
 
 source config
 
+if [ -e /usr/bin/qemu-*-static ]; then
+	rm /usr/bin/qemu-*-static
+fi
+
 # FIXME - add more?
 save_lib="ld-2.31.so libc-2.31.so libpthread-2.31.so libthread_db-1.0.so"
 
