@@ -1,5 +1,5 @@
 _configure() {
-	configcmd		\
+	./configure		\
 		--prefix=/usr	\
 		--host=${TARGET}
 }

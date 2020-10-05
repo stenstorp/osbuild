@@ -2,7 +2,7 @@ _configure() {
 	mkdir -v build
 	cd build
 
-	sconfigcmd				\
+	../configure				\
 		--prefix=/usr			\
 		--build=$(../config.guess)	\
 		--host=${TARGET}		\

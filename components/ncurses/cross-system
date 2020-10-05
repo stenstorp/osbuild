@@ -8,7 +8,7 @@ _configure() {
 		make -C progs tic
 	popd
 
-	configcmd				\
+	./configure				\
 		--prefix=/usr			\
 		--host=${TARGET}		\
 		--build=$(./config.guess)	\
