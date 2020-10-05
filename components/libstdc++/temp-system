@@ -4,7 +4,7 @@ _configure() {
 	mkdir -v build
 	cd build
 
-	CXXFLAGS="-g -O2 -D_GNU_SOURCE"		\
+	OPT_CXXFLAGS="-g -O2 -D_GNU_SOURCE"
 	oconfigcmd ../libstdc++-v3		\
 		--prefix=/usr			\
 		--disable-multilib		\
