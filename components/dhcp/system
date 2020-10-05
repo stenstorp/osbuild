@@ -13,13 +13,14 @@ _configure() {
 		ppc | powerpc) export LDFLAGS="-latomic" ;;
 	esac
 
-	configcmd   --prefix=/usr                                           \
-	            --sysconfdir=/etc/dhcp                                  \
-	            --localstatedir=/var                                    \
-	            --with-srv-lease-file=/var/lib/dhcpd/dhcpd.leases       \
-	            --with-srv6-lease-file=/var/lib/dhcpd/dhcpd6.leases     \
-	            --with-cli-lease-file=/var/lib/dhclient/dhclient.leases \
-	            --with-cli6-lease-file=/var/lib/dhclient/dhclient6.leases
+	./configure							\
+		--prefix=/usr						\
+		--sysconfdir=/etc/dhcp					\
+		--localstatedir=/var					\
+		--with-srv-lease-file=/var/lib/dhcpd/dhcpd.leases	\
+		--with-srv6-lease-file=/var/lib/dhcpd/dhcpd6.leases	\
+		--with-cli-lease-file=/var/lib/dhclient/dhclient.leases	\
+		--with-cli6-lease-file=/var/lib/dhclient/dhclient6.leases
 	)
 }
 
