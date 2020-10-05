@@ -11,8 +11,8 @@ _configure() {
 		# i?86 x86_64
 		*)
 			extra_args=""
-			GALLIUM_DRIVERS+=",i915,svga"
-			DRI_DRIVERS+="i915,i965"
+			GALLIUM_DRIVERS+=",svga"
+			DRI_DRIVERS+=",i915,i965"
 			VULKAN_DRIVERS+=",intel"
 			;;
 	esac
