@@ -1,0 +1,6 @@
+_install() {
+	cp -av boot/* /boot/
+
+	mkdir -p /lib/modules
+	cp -av modules/* /lib/modules/
+}

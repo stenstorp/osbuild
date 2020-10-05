@@ -1,0 +1,16 @@
+_build() {
+	make mrproper
+
+	case ${ARCH} in
+		aarch64) KARCH=arm64 ;;
+		arm*) KARCH=arm ;;
+	esac
+
+	make ARCH=${KARCH} headers
+}
+
+_install() {
+	find usr/include -name '.*' -delete
+	rm usr/include/Makefile
+	cp -rv usr/include ${OS}/usr
+}

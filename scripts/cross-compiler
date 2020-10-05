@@ -7,7 +7,14 @@ scripts/download mpc
 scripts/download mpfr
 scripts/download gmp
 
-COMPONENTS="binutils gcc linux-headers glibc libstdc++"
+COMPONENTS="binutils gcc"
+
+case ${ARCH} in
+	arm*|aarch64) COMPONENTS+=" linux-raspberrypi-headers" ;;
+	*) COMPONENTS+=" linux-headers" ;;
+esac
+
+COMPONENTS+=" glibc libstdc++"
 
 for f in ${COMPONENTS}; do
 	scripts/build cross-compiler $f || exit 1
