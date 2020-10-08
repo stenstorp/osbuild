@@ -21,6 +21,9 @@ TARGET=${ARCH}-unknown-linux-gnu
 OS_CFLAGS="-O2 -pipe"
 
 # --- System Optimisations ---
+# Native
+#OS_CFLAGS+=" -march=native"
+
 # Pi 1
 #OS_CFLAGS+=" -mcpu=arm1176jzf-s -mfloat-abi=hard -mfpu=vfp"
 
@@ -34,7 +37,17 @@ OS_CFLAGS="-O2 -pipe"
 #OS_CFLAGS+=" -mcpu=cortex-a72 -mfloat-abi=hard -mfpu=neon-fp-armv8 -mneon-for-64bits"
 
 # Atom N270
-OS_CFLAGS+=" -march=core2 -m32 --param l1-cache-line-size=64 --param l1-cache-size=32 --param l2-cache-size=512 -funswitch-loops -fpredictive-commoning -fgcse-after-reload -ftree-vectorize -fomit-frame-pointer -pipe"
+#OS_CFLAGS+=" -march=core2 -m32 --param l1-cache-line-size=64 --param l1-cache-size=32 --param l2-cache-size=512 -funswitch-loops -fpredictive-commoning -fgcse-after-reload -ftree-vectorize -fomit-frame-pointer"
+
+# Pentium III
+#OS_CFLAGS+=" -march=pentium3"
+
+# Pentium 4
+#OS_CFLAGS+=" -march=pentium4"
+
+# Core 2 (32 bit)
+#OS_CFLAGS+=" -march=core2 -m32"
+
 # ----------------------------
 
 OS_CXXFLAGS="${OS_CFLAGS}"
