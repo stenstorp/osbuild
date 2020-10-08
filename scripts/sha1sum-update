@@ -1,0 +1,35 @@
+#!/bin/bash
+set -e
+
+source config
+
+if [ -z $1 ]; then
+	echo "Usage: shasum-update [TARGET]"
+	exit 1
+fi
+
+if [ ! -e ${SOURCEDIR} ]; then
+	mkdir ${SOURCEDIR}
+fi
+
+for COMP in $@; do
+	unset name version source sha1sum folder
+	source ${COMPDIR}/${COMP}/info
+
+	filename=${source##*/}
+
+	if [ -e ${SOURCEDIR}/${filename} ]; then
+		rm ${SOURCEDIR}/${filename}
+	fi
+
+	echo "[${COMP}] downloading source"
+	wget -q -P ${SOURCEDIR} ${source}
+
+	check_sha1sum=$(sha1sum ${SOURCEDIR}/${filename} | cut -d " " -f 1)
+	if [ "${check_sha1sum}" != "${sha1sum}" ]; then
+		echo "[${COMP}] sha1sum mismatch, updating"
+		echo "[${COMP}] was: ${sha1sum}"
+		echo "[${COMP}] now: ${check_sha1sum}"
+		sed -i -e "s/^sha1sum=.*$/sha1sum=${check_sha1sum}/" components/${COMP}/info
+	fi
+done
