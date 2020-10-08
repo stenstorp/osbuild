@@ -1,5 +1,5 @@
 name=sysvinit
-version=2.96
+version=2.97
 revision=1
-source=http://download.savannah.gnu.org/releases/sysvinit/sysvinit-$version.tar.xz
-sha1sum=3f826119b988dfd149f63bab987d735eb5d32eaa
+source=http://download.savannah.gnu.org/releases/sysvinit/sysvinit-${version}.tar.xz
+sha1sum=44dd66bd922b0bf1544410e3b69e592fd791b89a

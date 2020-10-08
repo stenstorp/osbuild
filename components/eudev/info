@@ -1,5 +1,5 @@
 name=eudev
 version=3.2.9
 revision=1
-source=https://dev.gentoo.org/~blueness/eudev/eudev-$version.tar.gz
+source=https://dev.gentoo.org/~blueness/eudev/eudev-${version}.tar.gz
 sha1sum=f30e768bfa6a57a782fcef5456495cade79e2197

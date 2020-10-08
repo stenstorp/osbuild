@@ -1,5 +1,5 @@
 name=mpfr
-version=4.0.2
+version=4.1.0
 revision=1
-source=https://ftp.gnu.org/gnu/mpfr/mpfr-$version.tar.xz
-sha1sum=52c1f2a4c9a202f46cf3275a8d46b562aa584208
+source=https://ftp.gnu.org/gnu/mpfr/mpfr-${version}.tar.xz
+sha1sum=159c3a58705662bfde4dc93f2617f3660855ead6

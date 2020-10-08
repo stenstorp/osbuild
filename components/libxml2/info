@@ -1,5 +1,5 @@
 name=libxml2
 version=2.9.10
 revision=1
-source=http://xmlsoft.org/sources/libxml2-$version.tar.gz
+source=http://xmlsoft.org/sources/libxml2-${version}.tar.gz
 sha1sum=db6592ec9ca9708c4e71bf6bfd907bbb5cd40644

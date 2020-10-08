@@ -1,6 +1,6 @@
 name=linux-raspberrypi
-version=1.20200717-1
+version=1.20200902-1
 revision=1
 source=https://github.com/raspberrypi/linux/archive/raspberrypi-kernel_${version}.tar.gz
-sha1sum=4d64d7bd65515e0db066f16d32d30369969220ed
+sha1sum=c55e5f82657192fae999b6df90393bea00bbe377
 folder=linux-raspberrypi-kernel_${version}

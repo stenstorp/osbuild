@@ -1,5 +1,5 @@
 name=xf86-video-intel
-version=20200518
+version=20200817
 revision=1
 source=http://anduin.linuxfromscratch.org/BLFS/xf86-video-intel/xf86-video-intel-${version}.tar.xz
-sha1sum=3a5843d378684ea8876701837af54b9f4b6e1460
+sha1sum=23b7fa2254dea6d9770dbf3b72616bbb81e7225e

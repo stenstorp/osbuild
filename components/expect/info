@@ -1,6 +1,6 @@
 name=expect
 version=5.45.4
 revision=1
-source=https://prdownloads.sourceforge.net/expect/expect$version.tar.gz
+source=https://prdownloads.sourceforge.net/expect/expect${version}.tar.gz
 sha1sum=a97b2f377c6a799928d6728c2ada55beb7f57d96
-folder=expect$version
+folder=expect${version}

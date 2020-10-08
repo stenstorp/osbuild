@@ -1,5 +1,5 @@
 name=elfutils
-version=0.180
+version=0.181
 revision=1
-source=https://sourceware.org/ftp/elfutils/$version/elfutils-$version.tar.bz2
-sha1sum=c1ed871515b0f7fcdf2d94fea23e4b8ba67e8fe3
+source=https://sourceware.org/ftp/elfutils/${version}/elfutils-${version}.tar.bz2
+sha1sum=b8c75d48be1e9c107e8e4d6cacd3781311b1a8b7

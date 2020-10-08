@@ -1,5 +1,5 @@
 name=xkeyboard-config
-version=2.30
+version=2.31
 revision=1
 source=https://www.x.org/pub/individual/data/xkeyboard-config/xkeyboard-config-${version}.tar.bz2
-sha1sum=ded6c15b44134b21879a03ced5dee2e6e5fa1f0c
+sha1sum=eb698e46ee475729e82bc519eeb120fe30942b2c

@@ -1,6 +1,6 @@
 name=docbook
 version=4.5
 revision=1
-source=http://www.docbook.org/sgml/$version/docbook-$version.zip
+source=http://www.docbook.org/sgml/${version}/docbook-${version}.zip
 sha1sum=5efeb22936ea30cdaf88053337de7966dfda02bd
 folder=.

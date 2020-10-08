@@ -1,5 +1,5 @@
 name=libpipeline
-version=1.5.2
+version=1.5.3
 revision=1
-source=http://download.savannah.gnu.org/releases/libpipeline/libpipeline-$version.tar.gz
-sha1sum=fa296e37495d1874c736b7182770baaf390ad9de
+source=http://download.savannah.gnu.org/releases/libpipeline/libpipeline-${version}.tar.gz
+sha1sum=725e1104b864f06835e5620bfe689a5a00cbeb1f

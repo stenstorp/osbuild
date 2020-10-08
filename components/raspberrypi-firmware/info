@@ -1,6 +1,6 @@
 name=raspberrypi-firmware
-version=1.20200717
+version=1.20200902
 revision=1
 source=https://github.com/raspberrypi/firmware/archive/${version}.tar.gz
-sha1sum=f595772485018766b84bc55c2b5da9ce7a54b99e
+sha1sum=e43e4c0cf17dc52f487536935c22b0dda969d359
 folder=firmware-${version}

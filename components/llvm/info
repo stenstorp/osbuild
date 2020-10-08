@@ -1,6 +1,6 @@
 name=llvm
-version=10.0.0
+version=10.0.1
 revision=1
 source=https://github.com/llvm/llvm-project/releases/download/llvmorg-${version}/llvm-${version}.src.tar.xz
-sha1sum=85f2d89205fb190c61c8a98dad2a58e27a1540da
+sha1sum=25d07260f3b7bf4f647e115c4a663fdeda130fbd
 folder=${name}-${version}.src

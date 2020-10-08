@@ -1,5 +1,5 @@
 name=dhcpcd
-version=9.1.2
+version=9.3.0
 revision=1
-source=https://roy.marples.name/downloads/dhcpcd/dhcpcd-$version.tar.xz
-sha1sum=997565b1ceb503fde8aa971e6423846e23b4ecee
+source=https://roy.marples.name/downloads/dhcpcd/dhcpcd-${version}.tar.xz
+sha1sum=d0ca31edbc0863e91583bd681c7ba9ccdc7c74e2

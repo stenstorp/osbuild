@@ -1,6 +1,6 @@
 name=unifont
-version=12.1.03
+version=13.0.03
 revision=1
 source=http://unifoundry.com/pub/unifont/unifont-${version}/font-builds/unifont-${version}.pcf.gz
-sha1sum=cfbe1b13c51656c03836928e99a5bbb3118061c3
+sha1sum=6124f929aef5b3ab24e981b4190a714cef642170
 folder=.

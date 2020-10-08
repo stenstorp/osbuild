@@ -1,5 +1,5 @@
 name=binutils
-version=2.34
+version=2.35.1
 revision=1
-source=https://ftp.gnu.org/gnu/binutils/binutils-$version.tar.xz
-sha1sum=78f7ba4c0775ae75f5b906dc9af03d70b39b0785
+source=https://ftp.gnu.org/gnu/binutils/binutils-${version}.tar.xz
+sha1sum=45f7a96a2580a422f44b78317f0abf13935fecb6

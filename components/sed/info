@@ -1,5 +1,5 @@
 name=sed
 version=4.8
 revision=1
-source=https://ftp.gnu.org/gnu/sed/sed-$version.tar.xz
+source=https://ftp.gnu.org/gnu/sed/sed-${version}.tar.xz
 sha1sum=61bd770062d49cdab3f0f45df473e2bf950ba266

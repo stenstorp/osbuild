@@ -1,5 +1,5 @@
 name=sysklogd
 version=1.5.1
 revision=1
-source=http://www.infodrom.org/projects/sysklogd/download/sysklogd-$version.tar.gz
+source=http://www.infodrom.org/projects/sysklogd/download/sysklogd-${version}.tar.gz
 sha1sum=2f6ad044960232dc5432ae83c345c0c192263f6d

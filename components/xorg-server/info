@@ -1,5 +1,5 @@
 name=xorg-server
-version=1.20.8
+version=1.20.9
 revision=1
 source=https://www.x.org/pub/individual/xserver/xorg-server-${version}.tar.bz2
-sha1sum=077d081f912faf11c87ea1c9d0e29490961b0cd4
+sha1sum=4b70ac63fa864f0569712d634a61496d015c3b86

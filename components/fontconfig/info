@@ -1,5 +1,5 @@
 name=fontconfig
-version=2.13.1
+version=2.13.92
 revision=1
-source=https://www.freedesktop.org/software/fontconfig/release/fontconfig-${version}.tar.bz2
-sha1sum=75612356ef4f801735b49baf987f8942b4a7a5e1
+source=https://www.freedesktop.org/software/fontconfig/release/fontconfig-${version}.tar.xz
+sha1sum=4fe12179e2e69934360b31259fdb43a4b42246f8

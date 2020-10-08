@@ -1,6 +1,6 @@
 name=docbook-xsl
 version=1.79.2
 revision=1
-source=https://github.com/docbook/xslt10-stylesheets/releases/download/release/$version/docbook-xsl-nons-$version.tar.bz2
+source=https://github.com/docbook/xslt10-stylesheets/releases/download/release/${version}/docbook-xsl-nons-${version}.tar.bz2
 sha1sum=fb4f60b3968777b5a794d1e1f9e5867b04517425
-folder=docbook-xsl-nons-$version
+folder=docbook-xsl-nons-${version}

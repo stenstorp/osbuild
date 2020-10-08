@@ -1,5 +1,5 @@
 name=attr
 version=2.4.48
 revision=1
-source=http://download.savannah.gnu.org/releases/attr/attr-$version.tar.gz
+source=http://download.savannah.gnu.org/releases/attr/attr-${version}.tar.gz
 sha1sum=d7c88cb5db51c5e255a511b0a15e832fcdda5b4f

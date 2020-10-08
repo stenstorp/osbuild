@@ -1,5 +1,5 @@
 name=ninja
-version=1.10.0
+version=1.10.1
 revision=1
 source=https://github.com/ninja-build/ninja/archive/v${version}/ninja-${version}.tar.gz
-sha1sum=7134bca607e17238d272e281ce1cae05d04be970
+sha1sum=774dd6733067f29061e96e1feaf9aa227f677b2f

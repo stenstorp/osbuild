@@ -1,5 +1,5 @@
 name=xev
-version=1.2.3
+version=1.2.4
 revision=1
 source=https://www.x.org/pub/individual/app/${name}-${version}.tar.bz2
-sha1sum=3a294934b9e150abc3cccc4182a40ed9b5ea9871
+sha1sum=76d182ba0f57449fbc7a7a467dfb7f1df767b873

@@ -1,5 +1,5 @@
 name=kbd
-version=2.2.0
+version=2.3.0
 revision=1
-source=https://www.kernel.org/pub/linux/utils/kbd/kbd-$version.tar.xz
-sha1sum=0180f70c7d34452a04d106e0b8cfadebe0e1b2a8
+source=https://www.kernel.org/pub/linux/utils/kbd/kbd-${version}.tar.xz
+sha1sum=1ebd128857e6dd097845a37324ffcb9ede8f457c

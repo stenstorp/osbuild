@@ -1,6 +1,6 @@
 name=tzdata
-version=2020a
+version=2020b
 revision=1
-source=https://www.iana.org/time-zones/repository/releases/tzdata$version.tar.gz
-sha1sum=d9f29aab03246713e6c5b792f49871846b4cfeda
+source=https://www.iana.org/time-zones/repository/releases/tzdata${version}.tar.gz
+sha1sum=89f5295b0bdbc8315f97fd8f7f5ed035f238a1e7
 folder=.

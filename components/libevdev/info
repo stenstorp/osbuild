@@ -1,5 +1,5 @@
 name=libevdev
-version=1.9.0
+version=1.9.901
 revision=1
 source=https://www.freedesktop.org/software/libevdev/libevdev-${version}.tar.xz
-sha1sum=ab5040ee88dd4cb49a75da72e8fded91b282c108
+sha1sum=f38458367c4ae124b07536cb43d2017c7afe4506

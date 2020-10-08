@@ -1,5 +1,5 @@
 name=meson
-version=0.54.3
+version=0.55.3
 revision=1
 source=https://github.com/mesonbuild/meson/releases/download/${version}/meson-${version}.tar.gz
-sha1sum=96a3172a732620f2f9ca4537a54edbb1f46077d2
+sha1sum=6a6ca4d36eb8cdf954beff08c653fc72cf336527

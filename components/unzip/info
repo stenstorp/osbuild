@@ -1,6 +1,6 @@
 name=unzip
 version=60
 revision=1
-source=https://downloads.sourceforge.net/infozip/unzip$version.tar.gz
+source=https://downloads.sourceforge.net/infozip/unzip${version}.tar.gz
 sha1sum=abf7de8a4018a983590ed6f5cbd990d4740f8a22
-folder=unzip$version
+folder=unzip${version}

@@ -1,5 +1,5 @@
 _configure() {
-	configcmd --prefix=/usr --disable-debuginfod
+	configcmd --prefix=/usr --disable-libdebuginfod --disable-debuginfod
 }
 
 _build() {

@@ -1,5 +1,5 @@
 name=linux
-version=5.4.49
+version=5.4.70
 revision=1
-source=https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-$version.tar.xz
-sha1sum=e000080db981fdf05aedc6b2438091835f53b832
+source=https://cdn.kernel.org/pub/linux/kernel/v5.x/linux-${version}.tar.xz
+sha1sum=69dc94dfca08b3927ffa7901fd1a3770ed004a7c

@@ -1,5 +1,5 @@
 name=less
 version=551
 revision=1
-source=http://www.greenwoodsoftware.com/less/less-$version.tar.gz
+source=http://www.greenwoodsoftware.com/less/less-${version}.tar.gz
 sha1sum=7a2dbccd46697ba17189b1e19f75eee5115c19a2

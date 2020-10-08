@@ -1,5 +1,5 @@
 name=udev-lfs
 version=20171102
 revision=1
-source=http://anduin.linuxfromscratch.org/LFS/udev-lfs-$version.tar.xz
+source=http://anduin.linuxfromscratch.org/LFS/udev-lfs-${version}.tar.xz
 sha1sum=4d7d980d90f6fb2022c8d6f2c53b145234b60608

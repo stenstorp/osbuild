@@ -1,6 +1,6 @@
 name=libuv
-version=1.38.1
+version=1.40.0
 revision=1
 source=https://dist.libuv.org/dist/v${version}/libuv-v${version}.tar.gz
-sha1sum=ad98b4c37f96f82fe1f88d3a602bd014fa70714c
+sha1sum=b332257555ad719c016b68fecfd056706a6c63f9
 folder=${name}-v${version}

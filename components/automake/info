@@ -1,5 +1,5 @@
 name=automake
 version=1.16.2
 revision=1
-source=http://ftp.gnu.org/gnu/automake/automake-$version.tar.xz
+source=http://ftp.gnu.org/gnu/automake/automake-${version}.tar.xz
 sha1sum=f87fd355c6142e4e87d7a69702697f3a30c922d8

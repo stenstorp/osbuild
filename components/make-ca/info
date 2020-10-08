@@ -1,5 +1,5 @@
 name=make-ca
 version=1.7
 revision=1
-source=https://github.com/djlucas/make-ca/releases/download/v$version/make-ca-$version.tar.xz
+source=https://github.com/djlucas/make-ca/releases/download/v${version}/make-ca-${version}.tar.xz
 sha1sum=e4b27f895ed8f73f9a7da1e7dce17ced361bcd1e

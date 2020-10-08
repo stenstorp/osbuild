@@ -1,5 +1,5 @@
 name=kmod
 version=27
 revision=1
-source=https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-$version.tar.xz
+source=https://www.kernel.org/pub/linux/utils/kernel/kmod/kmod-${version}.tar.xz
 sha1sum=2c5d55ffe3a83e9de70bb3419fb1a2887489a65f

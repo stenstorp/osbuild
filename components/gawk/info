@@ -1,5 +1,5 @@
 name=gawk
 version=5.1.0
 revision=1
-source=https://ftp.gnu.org/gnu/gawk/gawk-$version.tar.xz
+source=https://ftp.gnu.org/gnu/gawk/gawk-${version}.tar.xz
 sha1sum=02408f1be58747a0d8c16ef1d191398b4260c638

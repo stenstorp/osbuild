@@ -1,5 +1,5 @@
 name=clang
-version=10.0.0
+version=10.0.1
 revision=1
 source=https://github.com/llvm/llvm-project/releases/download/llvmorg-${version}/clang-${version}.src.tar.xz
-sha1sum=cfaa4c4e89a45b604e6f3057f984d73365074727
+sha1sum=0e61e92b22a620fe7f833fa8b2a56f2db96f7335

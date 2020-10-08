@@ -1,5 +1,5 @@
 name=e2fsprogs
 version=1.45.6
 revision=1
-source=https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v$version/e2fsprogs-$version.tar.gz
+source=https://downloads.sourceforge.net/project/e2fsprogs/e2fsprogs/v${version}/e2fsprogs-${version}.tar.gz
 sha1sum=4f2eb83d9fd96d61355c10f1223e47cc8df71229
