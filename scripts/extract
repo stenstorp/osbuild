@@ -21,51 +21,62 @@ if [ ! -e ${SOURCEDIR}/${filename} ]; then
 	exit 1
 fi
 
-fext=${filename#*.}
-ext=${filename##*.}
+PROTOCOL=$(echo ${source} | cut -d ":" -f 1)
+case ${PROTOCOL} in
+	http|https|ftp)
 
-if [ $(echo ${fext} | grep tar) ] && [ "${ext}" != "tar" ]; then
-	extension="tar.${ext}"
-else
-	extension="${ext}"
-fi
+		fext=${filename#*.}
+		ext=${filename##*.}
 
-if [ -e ${WORKDIR}/${name}-${version} ]; then
-	rm -rf ${WORKDIR}/${name}-${version}
-fi
+		if [ $(echo ${fext} | grep tar) ] && [ "${ext}" != "tar" ]; then
+			extension="tar.${ext}"
+		else
+			extension="${ext}"
+		fi
 
-mkdir -p ${WORKDIR}/${name}-${version}
+		if [ -e ${WORKDIR}/${name}-${version} ]; then
+			rm -rf ${WORKDIR}/${name}-${version}
+		fi
 
-echo "[${COMP}] extracting source"
-# FIXME - add more
-case ${extension} in
-	tar.xz)
-		tar -C ${WORKDIR}/${name}-${version} -xJf ${SOURCEDIR}/${filename} ;;
-	tar.gz | tgz)
-		tar -C ${WORKDIR}/${name}-${version} -xzf ${SOURCEDIR}/${filename} ;;
-	tar.bz2)
-		tar -C ${WORKDIR}/${name}-${version} -xjf ${SOURCEDIR}/${filename} ;;
-	tar)
-		tar -C ${WORKDIR}/${name}-${version} -xf ${SOURCEDIR}/${filename} ;;
-	xz)
-		cd ${WORKDIR}/${name}-${version}
-		unxz -c ${SOURCEDIR}/${filename} > ${WORKDIR}/${name}-${version}/$(echo ${filename} | sed -e 's/.xz//g')
-		cd ${CDIR} ;;
-	gz)
-		cd ${WORKDIR}/${name}-${version}
-		gunzip -c ${SOURCEDIR}/${filename} > ${WORKDIR}/${name}-${version}/$(echo ${filename} | sed -e 's/.gz//g')
-		cd ${CDIR} ;;
-	bz2)
-		cd ${WORKDIR}/${name}-${version}
-		bunzip2 -c ${SOURCEDIR}/${filename} > ${WORKDIR}/${name}-${version}/$(echo ${filename} | sed -e 's/.bz2//g')
-		cd ${CDIR} ;;
-	zip)
-		cd ${WORKDIR}/${name}-${version}
-		unzip -q ${SOURCEDIR}/${filename}
-		cd ${CDIR} ;;
-	#7z) ;;
-	#rar) ;;
-	*)
-		echo "[${COMP}] file type \"${extension}\" not supported"
-		exit 1 ;;
+		mkdir -p ${WORKDIR}/${name}-${version}
+
+		echo "[${COMP}] extracting source"
+		# FIXME - add more
+		case ${extension} in
+			tar.xz)
+				tar -C ${WORKDIR}/${name}-${version} -xJf ${SOURCEDIR}/${filename} ;;
+			tar.gz | tgz)
+				tar -C ${WORKDIR}/${name}-${version} -xzf ${SOURCEDIR}/${filename} ;;
+			tar.bz2)
+				tar -C ${WORKDIR}/${name}-${version} -xjf ${SOURCEDIR}/${filename} ;;
+			tar)
+				tar -C ${WORKDIR}/${name}-${version} -xf ${SOURCEDIR}/${filename} ;;
+			xz)
+				cd ${WORKDIR}/${name}-${version}
+				unxz -c ${SOURCEDIR}/${filename} > ${WORKDIR}/${name}-${version}/$(echo ${filename} | sed -e 's/.xz//g')
+				cd ${CDIR} ;;
+			gz)
+				cd ${WORKDIR}/${name}-${version}
+				gunzip -c ${SOURCEDIR}/${filename} > ${WORKDIR}/${name}-${version}/$(echo ${filename} | sed -e 's/.gz//g')
+				cd ${CDIR} ;;
+			bz2)
+				cd ${WORKDIR}/${name}-${version}
+				bunzip2 -c ${SOURCEDIR}/${filename} > ${WORKDIR}/${name}-${version}/$(echo ${filename} | sed -e 's/.bz2//g')
+				cd ${CDIR} ;;
+			zip)
+				cd ${WORKDIR}/${name}-${version}
+				unzip -q ${SOURCEDIR}/${filename}
+				cd ${CDIR} ;;
+			#7z) ;;
+			#rar) ;;
+			*)
+				echo "[${COMP}] file type \"${extension}\" not supported"
+				exit 1 ;;
+		esac
+		;;
+	git)
+		echo "[${COMP}] copying source"
+		mkdir -p ${WORKDIR}/${name}-${version}
+		cp -r ${SOURCEDIR}/${filename} ${WORKDIR}/${name}-${version}/
+		;;
 esac

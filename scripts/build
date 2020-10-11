@@ -16,11 +16,16 @@ if [ ! -e ${COMPDIR}/${COMP} ]; then
 	exit 1
 fi
 
-unset name version revision source sha1sum folder
+unset name version source sha1sum folder
 source ${COMPDIR}/${COMP}/info
 
 if [ -z ${folder} ]; then
-	folder=${name}-${version}
+	PROTOCOL=$(echo ${source} | cut -d ":" -f 1)
+	if [ "${PROTOCOL}" == "git" ]; then
+		folder=${name}
+	else
+		folder=${name}-${version}
+	fi
 fi
 
 if [ "$3" == "clean" ] && [ -e ${LOGDIR}/${STAGE}/${COMP} ]; then
@@ -29,11 +34,6 @@ if [ "$3" == "clean" ] && [ -e ${LOGDIR}/${STAGE}/${COMP} ]; then
 elif [ -e ${LOGDIR}/${STAGE}/${COMP}/.complete ]; then
 	echo "[${COMP}] already built"
 	exit 0
-#elif [ -e /var/cache/system/${COMP} ]; then
-#	if [ "$(cat /var/cache/system/${COMP})" -le "${revision}" ]; then
-#		echo "[${COMP}] installed revision $(cat /var/cache/system/${COMP}) >= requested revision ${revision}"
-#		exit 0
-#	fi
 fi
 
 mkdir -p ${LOGDIR}/${STAGE}/${COMP}
@@ -77,17 +77,6 @@ if [ ! -z $(type -t _install) ] && [ ! -e ${LOGDIR}/${STAGE}/${COMP}/.install-co
 	echo "[${COMP}] installing"
 	_install &> ${LOGDIR}/${STAGE}/${COMP}/install.log || exit 1
 	touch ${LOGDIR}/${STAGE}/${COMP}/.install-complete
-
-	#if [ "${STAGE}" == "system" ]; then
-	#	if [ "${CDIR}" == "/usr/usr/system" ]; then
-	#		mkdir -p /var/cache/system
-	#		echo "${revision}" > /var/cache/system/${COMP}
-	#	else
-	#		mkdir -p ${OS}/var/cache/system/
-	#		echo "${revision}" > ${OS}/var/cache/system/${COMP}
-	#	fi
-	#fi
-
 fi
 
 cd ${CDIR}
