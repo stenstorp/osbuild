@@ -1,0 +1,4 @@
+name=sbase
+version=master
+source=git://git.suckless.org/sbase
+revision=1
