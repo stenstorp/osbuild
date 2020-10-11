@@ -1,5 +1,5 @@
 NAME="OSBuild"
-VERSION="0.0a"
+VERSION="0.1a"
 ID=osbuild
-PRETTY_NAME="OSBuild 0.0a"
+PRETTY_NAME="OSBuild 0.1a"
 VERSION_CODENAME="It's something!"
