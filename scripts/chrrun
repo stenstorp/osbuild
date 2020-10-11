@@ -37,7 +37,7 @@ else
 fi
 
 for f in dev dev/pts proc sys run usr/src/system; do
-	if [ "$(mountpoint ${OS}/$f | grep not)" > 1 ]; then
+	if [ "$(mountpoint ${OS}/$f | grep not)" > /dev/null ]; then
 		case $f in
 			usr/src/system) mount --bind ${CDIR} ${OS}/usr/src/system ;;
 			dev) mount --bind /dev ${OS}/dev ;;
@@ -49,6 +49,7 @@ for f in dev dev/pts proc sys run usr/src/system; do
 	fi
 done
 
+touch ${OS}/THIS_IS_A_CHROOT
 cat << EOF | ${LINUX} chroot ${OS} ${INTERPRETER} bin/bash
 cd /usr/src/system; $@
 EOF

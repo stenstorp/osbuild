@@ -30,33 +30,35 @@ case ${STAGE} in
 		mkdir -p ${OS}/tools ;;
 	system)
 
-		if [ "$(stat -c %d:%i /)" == "$(stat -c %d:%i /proc/1/root/.)" ]; then
+		if [ ! -e /THIS_IS_A_CHROOT ]; then
 			echo "[rootfs] MUST BE RUN IN CHROOT!, exiting"
 			exit 1
+		else
+			rm /THIS_IS_A_CHROOT
 		fi
 
-		mkdir -pv /{bin,boot,etc/{opt,sysconfig},home,lib/firmware,mnt,opt}
-		mkdir -pv /{media/{floppy,cdrom},srv,var}
-		mkdir -pv /usr/{,local/}{bin,include,lib,sbin,src}
-		mkdir -pv /usr/{,local/}share/{color,dict,doc,info,locale,man}
-		mkdir -pv /usr/{,local/}share/{misc,terminfo,zoneinfo}
-		mkdir -pv /usr/{,local/}share/man/man{1..8}
-		install -dv -m 1777 /tmp /var/tmp
-		install -dv -m 0750 /root
+		mkdir -p /{bin,boot,etc/{opt,sysconfig},home,lib/firmware,mnt,opt}
+		mkdir -p /{media/{floppy,cdrom},srv,var}
+		mkdir -p /usr/{,local/}{bin,include,lib,sbin,src}
+		mkdir -p /usr/{,local/}share/{color,dict,doc,info,locale,man}
+		mkdir -p /usr/{,local/}share/{misc,terminfo,zoneinfo}
+		mkdir -p /usr/{,local/}share/man/man{1..8}
+		install -d -m 1777 /tmp /var/tmp
+		install -d -m 0750 /root
 
-		mkdir -v /var/{log,mail,spool}
-		ln -sv /run /var/run
-		ln -sv /run/lock /var/lock
-		mkdir -pv /var/{opt,cache,lib/{color,misc,locate},local}
+		mkdir /var/{log,mail,spool}
+		ln -s /run /var/run
+		ln -s /run/lock /var/lock
+		mkdir -p /var/{opt,cache,lib/{color,misc,locate},local}
 
-		ln -sv /proc/self/mounts /etc/mtab
+		ln -s /proc/self/mounts /etc/mtab
 
-		cp -rv files/* /
+		cp -r files/* /
 
 		touch /var/log/{btmp,lastlog,faillog,wtmp}
-		chgrp -v utmp /var/log/lastlog
-		chmod -v 664  /var/log/lastlog
-		chmod -v 600  /var/log/btmp
+		chgrp utmp /var/log/lastlog
+		chmod 664  /var/log/lastlog
+		chmod 600  /var/log/btmp
 
 	;;
 	*)
