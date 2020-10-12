@@ -1,0 +1,4 @@
+name=nldev
+version=master
+source=git://r-36.net/nldev
+revision=1

@@ -1,0 +1,14 @@
+_configure() {
+	sed -i -e "s|PREFIX ?= /usr|PREFIX ?= /|g" config.mk
+	sed -i -e "s|MANPREFIX = \${PREFIX}/share/man|MANPREFIX = /usr/share/man|g" config.mk
+	sed -i -e "s|CC = cc|CC = $OS/tools/bin/$TARGET-gcc|g" config.mk
+	sed -i "/CFLAGS/ s/$/ ${CFLAGS} ${OS_CFLAGS}/" config.mk
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make DESTDIR=${OS} install
+}

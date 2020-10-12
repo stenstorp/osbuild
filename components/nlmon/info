@@ -1,0 +1,4 @@
+name=nlmon
+version=master
+source=git://r-36.net/nlmon
+revision=1
