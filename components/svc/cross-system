@@ -1,4 +1,0 @@
-_install() {
-	cp -r bin/* ${OS}/bin/
-	cp -r svc.d ${OS}/bin/
-}
