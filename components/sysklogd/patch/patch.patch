@@ -1,0 +1,21 @@
+--- a/syslogd.c	2020-10-12 16:57:54.213955429 +1030
++++ b/syslogd.c	2020-10-12 16:58:09.225971586 +1030
+@@ -2094,7 +2094,7 @@
+ 	(void) signal(SIGCHLD, reapchild);	/* reset signal handler -ASP */
+ 	wait ((int *)0);
+ #else
+-	union wait status;
++	int status;
+ 
+ 	while (wait3(&status, WNOHANG, (struct rusage *) NULL) > 0)
+ 		;
+--- a/ksym_mod.c	2020-10-12 16:57:41.589941843 +1030
++++ b/ksym_mod.c	2020-10-12 16:58:03.261965167 +1030
+@@ -189,7 +189,6 @@
+ 		else
+ 			Syslog(LOG_ERR, "Error loading kernel symbols " \
+ 			       "- %s\n", strerror(errno));
+-		fclose(ksyms);
+ 		return(0);
+ 	}
+ 
