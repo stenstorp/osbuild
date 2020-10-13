@@ -53,3 +53,4 @@ touch ${OS}/THIS_IS_A_CHROOT
 cat << EOF | ${LINUX} chroot ${OS} ${INTERPRETER} bin/bash
 cd /usr/src/system; $@
 EOF
+rm ${OS}/THIS_IS_A_CHROOT

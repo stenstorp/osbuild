@@ -33,8 +33,6 @@ case ${STAGE} in
 		if [ ! -e /THIS_IS_A_CHROOT ]; then
 			echo "[rootfs] MUST BE RUN IN CHROOT!, exiting"
 			exit 1
-		else
-			rm /THIS_IS_A_CHROOT
 		fi
 
 		mkdir -p /{bin,boot,etc/{opt,sysconfig},home,lib/firmware,mnt,opt}

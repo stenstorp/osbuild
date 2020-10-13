@@ -4,8 +4,6 @@ set -e
 if [ ! -e /THIS_IS_A_CHROOT ]; then
 	echo "[system-cleanup] MUST BE RUN IN CHROOT!, exiting"
 	exit 1
-else
-	rm /THIS_IS_A_CHROOT
 fi
 
 source config
