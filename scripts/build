@@ -18,6 +18,7 @@ fi
 
 unset name version source sha1sum folder
 source ${COMPDIR}/${COMP}/info
+date +"%Y-%m-%d %H:%m:%S.%N" > .start
 
 if [ -z ${folder} ]; then
 	PROTOCOL=$(echo ${source} | cut -d ":" -f 1)
@@ -88,3 +89,5 @@ fi
 
 echo "[${COMP}] complete"
 touch ${LOGDIR}/${STAGE}/${COMP}/.complete
+date +"%Y-%m-%d %H:%m:%S.%N" > .end
+scripts/provides > ${LOGDIR}/${STAGE}/${COMP}/provides 2>/dev/null

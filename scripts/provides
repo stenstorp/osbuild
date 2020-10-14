@@ -1,0 +1,10 @@
+#!/bin/bash
+source config
+
+if [ -e /THIS_IS_A_CHROOT ]; then
+	find / -type f -not -path "/usr/src/system/*" -prune -xdev -newer .start \! -newer .end
+else
+	find ${OS} -type f -newer .start \! -newer .end | sed -e "s|$OS||g"
+fi
+
+rm .start .end
