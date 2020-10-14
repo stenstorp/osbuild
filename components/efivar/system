@@ -1,4 +1,5 @@
 _build() {
+	sed -i -e 's/-O2 -flto/-O2 -flto -flto-partition=none/g' Make.defaults
 	make libdir=/usr/lib -j${THREADS}
 }
 
