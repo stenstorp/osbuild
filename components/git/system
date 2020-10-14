@@ -9,5 +9,6 @@ _build() {
 }
 
 _install() {
+	make strip
 	make install
 }
