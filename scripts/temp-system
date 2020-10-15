@@ -3,7 +3,7 @@ set -e
 
 source config
 
-COMPONENTS="libstdc++ bison gettext perl python texinfo util-linux"
+COMPONENTS="libstdc++ perl bison gettext python texinfo util-linux"
 
 for f in ${COMPONENTS}; do
 	scripts/build temp-system $f || exit 1
