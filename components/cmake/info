@@ -1,5 +1,5 @@
 name=cmake
-version=3.18.4
+version=3.18.2
 revision=1
 source=https://github.com/Kitware/CMake/releases/download/v${version}/cmake-${version}.tar.gz
-sha1sum=73ab5348c881f1a53c250b66848b6ee101c9fe1f
+sha1sum=23092c6a5ae9ecde368abbfda7bae0d01edb7387

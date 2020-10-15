@@ -1,4 +1,5 @@
 _configure() {
+	sed -i s/3000/5000/ libxslt/transform.c doc/xsltproc.{1,xml}
 	configcmd --prefix=/usr --disable-static
 }
 

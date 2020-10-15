@@ -1,5 +1,5 @@
 name=expat
-version=2.2.10
+version=2.2.5
 revision=1
-source=https://prdownloads.sourceforge.net/expat/expat-${version}.tar.xz
-sha1sum=a333b95121a718a77ee481dbade5efcd72a32eb8
+source=https://sourceforge.net/projects/expat/files/expat/${version}/expat-${version}.tar.bz2
+sha1sum=490659abd7d6c6d4cb4e60c945a15fbf081564f6

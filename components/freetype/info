@@ -1,5 +1,5 @@
 name=freetype
-version=2.10.2
+version=2.9.1
 revision=1
-source=https://downloads.sourceforge.net/freetype/freetype-${version}.tar.xz
-sha1sum=b074d5c34dc0e3cc150be6e7aa6b07c9ec4ed875
+source=https://sourceforge.net/projects/freetype/files/freetype2/${version}/freetype-${version}.tar.gz
+sha1sum=7498739e34e5dca4c61d05efdde6191ba69a2df0

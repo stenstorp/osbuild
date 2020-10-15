@@ -1,5 +1,5 @@
 name=mtdev
-version=1.1.6
+version=1.1.5
 revision=1
 source=http://bitmath.org/code/mtdev/mtdev-${version}.tar.bz2
-sha1sum=1459f8b977b615c8e569b53ba119c980af2fa688
+sha1sum=15267fbde0ed466f8474db1bbdf2d6989846f415

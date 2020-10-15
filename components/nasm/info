@@ -1,5 +1,5 @@
 name=nasm
-version=2.15.05
+version=2.13.03
 revision=1
 source=http://www.nasm.us/pub/nasm/releasebuilds/${version}/nasm-${version}.tar.xz
-sha1sum=d338409a03fc6d1508102881a675a00275fcb879
+sha1sum=1338ae8832bdbabd00a2b7ee3e39b8fd2f923ea0

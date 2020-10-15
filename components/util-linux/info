@@ -1,5 +1,5 @@
 name=util-linux
-version=2.36
+version=2.32.1
 revision=1
-source=https://www.kernel.org/pub/linux/utils/util-linux/v${version}/util-linux-${version}.tar.xz
-sha1sum=cf99c3df18cf0a13033ec2d3d1a31587eba825d9
+source=https://www.kernel.org/pub/linux/utils/util-linux/v$(echo ${version} | cut -d . -f 1,2)/util-linux-${version}.tar.xz
+sha1sum=de9271fb93fb651d21c027e2efb0cf0ac80f2e9a

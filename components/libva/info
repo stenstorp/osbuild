@@ -1,5 +1,5 @@
 name=libva
-version=2.9.0
+version=2.5.0
 revision=1
 source=https://github.com/intel/libva/releases/download/${version}/libva-${version}.tar.bz2
-sha1sum=3e20605243096b4e935e1ef6ac7797efbacc44f6
+sha1sum=5bd2b0bc9d1e49cf1e21d9a63696f13a1483bd86

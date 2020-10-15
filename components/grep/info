@@ -1,5 +1,5 @@
 name=grep
-version=3.5
+version=3.1
 revision=1
 source=https://ftp.gnu.org/gnu/grep/grep-${version}.tar.xz
-sha1sum=a66cc5ddac0b8fe2fbdea4dd9bf74ab3d2ebefcd
+sha1sum=d1d677e959c7d874e18e7e3839f26a0f0c1733d5

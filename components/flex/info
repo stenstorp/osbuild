@@ -1,5 +1,5 @@
 name=flex
-version=2.6.4
+version=2.6.1
 revision=1
 source=https://github.com/westes/flex/releases/download/v${version}/flex-${version}.tar.gz
-sha1sum=fafece095a0d9890ebd618adb1f242d8908076e1
+sha1sum=ea5d1a3a7443de31d7f54a610f64764be461d158

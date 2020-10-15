@@ -1,5 +1,5 @@
 name=compiler-rt
-version=10.0.1
+version=9.0.1
 revision=1
 source=https://github.com/llvm/llvm-project/releases/download/llvmorg-${version}/compiler-rt-${version}.src.tar.xz
-sha1sum=ee6077b4728b3c750e476938cead11cea45b49ff
+sha1sum=b35bc6ed7ce40f18ac45c81f4cf02ffd1f14de82

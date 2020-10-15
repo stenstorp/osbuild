@@ -1,5 +1,5 @@
 name=libXt
-version=1.2.0
+version=1.1.5
 revision=1
 source=https://www.x.org/pub/individual/lib/libXt-${version}.tar.bz2
-sha1sum=f6b5ed799bc2e8d721e5407a09c2a8f570963f1b
+sha1sum=c79e2c4f7de5259a2ade458817a139b66a043d59

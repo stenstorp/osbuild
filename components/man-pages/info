@@ -1,5 +1,5 @@
 name=man-pages
-version=5.08
+version=4.16
 revision=1
 source=https://www.kernel.org/pub/linux/docs/man-pages/man-pages-${version}.tar.xz
-sha1sum=2502669385da78c1a23c52977b784512f3ed6524
+sha1sum=f2937d7b32c989b8b60e1a8ede7a5dff51b09ddc

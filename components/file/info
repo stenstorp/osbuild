@@ -1,5 +1,5 @@
 name=file
-version=5.39
+version=5.33
 revision=1
 source=ftp://ftp.astron.com/pub/file/file-${version}.tar.gz
-sha1sum=a5a8941a8e4c436fe22933db6a71c5161c3fb10b
+sha1sum=31a67e4dc0a3d7a8d1b850429c3f625314700240

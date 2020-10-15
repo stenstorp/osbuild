@@ -1,5 +1,5 @@
 name=libXcomposite
-version=0.4.5
+version=0.4.4
 revision=1
 source=https://www.x.org/pub/individual/lib/${name}-${version}.tar.bz2
-sha1sum=902631efb55a798c81086e5ff90b60349839db40
+sha1sum=75fd0b996e56e12db1d84e9b63549c5c3f2631ca

@@ -1,5 +1,5 @@
 name=libinput
-version=1.16.2
+version=1.14.3
 revision=1
 source=https://www.freedesktop.org/software/libinput/libinput-${version}.tar.xz
-sha1sum=bff5e91ea0ea45509532aaa3e1a876d476e3e82e
+sha1sum=af23a4359202c24b592033f54347719a8f44d872

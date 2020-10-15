@@ -1,5 +1,5 @@
 name=p11-kit
-version=0.23.21
+version=0.23.14
 revision=1
-source=https://github.com/p11-glue/p11-kit/releases/download/${version}/p11-kit-${version}.tar.xz
-sha1sum=5c550cc2a192d5a3ede74862b22ef0b139c911a4
+source=https://github.com/p11-glue/p11-kit/releases/download/${version}/p11-kit-${version}.tar.gz
+sha1sum=30cab1d4b716022e6918f9a49976609c425f9cfc

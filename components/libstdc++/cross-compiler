@@ -8,6 +8,7 @@ _configure() {
 		--prefix=/usr			\
 		--disable-multilib		\
 		--disable-nls			\
+		--disable-libmpx		\
 		--disable-libstdcxx-pch		\
 		--with-gxx-include-dir=/tools/${TARGET}/include/c++/${version}
 }

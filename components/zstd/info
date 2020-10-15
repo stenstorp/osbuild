@@ -1,5 +1,5 @@
 name=zstd
-version=1.4.5
+version=1.4.4
 revision=1
 source=https://github.com/facebook/zstd/releases/download/v${version}/zstd-${version}.tar.gz
-sha1sum=8059ef26c3d7dffa4d6dad64511c0675e46c0da6
+sha1sum=355e79185fa1ea5b325d63cfcb6ead6e6e4aa9c4

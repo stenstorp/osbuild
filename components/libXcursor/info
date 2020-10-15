@@ -1,5 +1,5 @@
 name=libXcursor
-version=1.2.0
+version=1.1.15
 revision=1
 source=https://www.x.org/pub/individual/lib/${name}-${version}.tar.bz2
-sha1sum=cca0b34955d3c2f657f05a2a2c40f75353ddd912
+sha1sum=3e19f991f244b7fa31566adce7ead078424296cf

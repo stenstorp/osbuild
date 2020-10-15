@@ -1,5 +1,5 @@
 name=shadow
-version=4.8.1
+version=4.6
 revision=1
 source=https://github.com/shadow-maint/shadow/releases/download/${version}/shadow-${version}.tar.xz
-sha1sum=63457a0ba58dc4e81b2663b839dc6c89d3343f12
+sha1sum=0b84eb1010fda5edca2a9d1733f9480200e02de6

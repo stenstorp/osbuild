@@ -1,6 +1,6 @@
 name=python
-version=3.9.0
+version=3.6.8
 revision=1
 source=https://www.python.org/ftp/python/${version}/Python-${version}.tar.xz
-sha1sum=ff1fc8c37d5d4b09ec3bf0d84f3e5b97745c6704
+sha1sum=ee55acedef049268307633cbc9c7ff0610d1244f
 folder=Python-${version}

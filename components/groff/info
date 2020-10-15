@@ -1,5 +1,5 @@
 name=groff
-version=1.22.4
+version=1.22.3
 revision=1
 source=http://ftp.gnu.org/gnu/groff/groff-${version}.tar.gz
-sha1sum=2ce4ab107e3fab1414fef2c5b5312f562a4e4d35
+sha1sum=61a6808ea1ef715df9fa8e9b424e1f6b9fa8c091

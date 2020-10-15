@@ -1,5 +1,5 @@
 name=sudo
-version=1.9.3
+version=1.8.29
 revision=1
 source=http://www.sudo.ws/dist/sudo-${version}.tar.gz
-sha1sum=e55ea8e86c4c1924c696c8677b40372a73d57b01
+sha1sum=fdce342856f1803478eb549479190370001dca95

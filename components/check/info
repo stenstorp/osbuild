@@ -1,5 +1,5 @@
 name=check
-version=0.15.2
+version=0.12.0
 revision=1
 source=https://github.com/libcheck/check/releases/download/${version}/check-${version}.tar.gz
-sha1sum=54e6bae308aedab9a78a0349d839c92fc03bd2db
+sha1sum=f6d95392b8c6b9efdab559e6dba239b30a389b56

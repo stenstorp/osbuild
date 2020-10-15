@@ -1,5 +1,5 @@
 name=wget
-version=1.20.3
+version=1.19.5
 revision=1
 source=https://ftp.gnu.org/gnu/wget/wget-${version}.tar.gz
-sha1sum=2b886eab5b97267cc358ab35e42d14d33d6dfc95
+sha1sum=43b3d09e786df9e8d7aa454095d4ea2d420ae41c

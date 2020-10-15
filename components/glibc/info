@@ -1,5 +1,5 @@
 name=glibc
-version=2.32
+version=2.28
 revision=1
 source=https://ftp.gnu.org/gnu/glibc/glibc-${version}.tar.xz
-sha1sum=71ff0af28bdf4525d7b91ec5d82d1fc002000e91
+sha1sum=ccb5dc9e51a9884df8488f86982439d47b283b2a

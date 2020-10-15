@@ -1,5 +1,5 @@
 name=libcap
-version=2.43
+version=2.26
 revision=1
 source=https://www.kernel.org/pub/linux/libs/security/linux-privs/libcap2/libcap-${version}.tar.xz
-sha1sum=739f40b05339fbb1055019e8a340300611cb19d3
+sha1sum=f3cd8447b31651fa6b542e6a15a352ae72ead92e

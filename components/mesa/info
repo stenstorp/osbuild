@@ -1,5 +1,5 @@
 name=mesa
-version=20.1.9
+version=19.3.4
 revision=1
 source=https://mesa.freedesktop.org/archive/mesa-${version}.tar.xz
-sha1sum=294d0d1e2a6372411cddd6e4f7fb5bdcf3305baa
+sha1sum=9acddc437c4839da3a8f34dc966754b2dbb7a539

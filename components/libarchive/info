@@ -1,5 +1,5 @@
 name=libarchive
-version=3.4.3
+version=3.3.3
 revision=1
-source=https://github.com/libarchive/libarchive/releases/download/v${version}/libarchive-${version}.tar.xz
-sha1sum=53f1400ac71778d14615a66f89e04403548fae76
+source=https://github.com/libarchive/libarchive/releases/download/v${version}/libarchive-${version}.tar.gz
+sha1sum=499a8f48a895faff4151d7398b24070d578f0b2e

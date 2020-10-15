@@ -1,5 +1,5 @@
 name=cpio
-version=2.13
+version=2.12
 revision=1
 source=https://ftp.gnu.org/gnu/cpio/cpio-${version}.tar.bz2
-sha1sum=4dcefc0e1bc36b11506a354768d82b15e3fe6bb8
+sha1sum=60358408c76db354f6716724c4bcbcb6e18ab642

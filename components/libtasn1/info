@@ -1,5 +1,5 @@
 name=libtasn1
-version=4.16.0
+version=4.13
 revision=1
 source=https://ftp.gnu.org/gnu/libtasn1/libtasn1-${version}.tar.gz
-sha1sum=f4f1fc301c0835389d9db7754815e48f4f57937a
+sha1sum=a84afb4cd8187c1fa5901c6bc1cf1486eea66635

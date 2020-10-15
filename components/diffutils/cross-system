@@ -1,7 +1,8 @@
 _configure() {
-	./configure		\
-		--prefix=/usr	\
-		--host=${TARGET}
+	./configure			\
+		--prefix=/usr		\
+		--host=${TARGET}	\
+		gl_cv_func_getopt_gnu=yes
 }
 
 _build() {

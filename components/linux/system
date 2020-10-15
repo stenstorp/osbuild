@@ -38,11 +38,11 @@ _build() {
 }
 
 _install() {
-	make modules_install
+	make -j${THREADS} modules_install
 
 	case ${ARCH} in
 		i?86|x86_64)
-			cp -v arch/${KARCH}/boot/bzImage /boot/vmlinuz-$version ;;
+			cp -v arch/x86/boot/bzImage /boot/vmlinuz-$version ;;
 		ppc*|powerpc*)
 			unxz vmlinux.strip.xz
 			cp -v vmlinux.strip /boot/vmlinuz-$version ;;
