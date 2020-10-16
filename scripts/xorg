@@ -11,7 +11,7 @@ case ${ARCH} in
 	x86_64|i?86) COMPONENTS+=" xf86-video-intel intel-vaapi-driver" ;;
 esac
 
-COMPONENTS+=" xf86-video-nouveau xf86-video-vmware libvdpau yasm nasm fribidi libass lame opus libogg libvorbis libtheora which libvpx libx264 libx265 ffmpeg libvdpau-va-gl twm xterm xclock xinit"
+COMPONENTS+=" xf86-video-nouveau xf86-video-vmware libvdpau yasm nasm fribidi libass lame opus libogg libvorbis libtheora libvpx libx264 libx265 ffmpeg libvdpau-va-gl twm xterm xclock xinit"
 
 for f in ${COMPONENTS}; do
 	scripts/build system $f || exit 1
