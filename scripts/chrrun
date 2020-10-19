@@ -22,7 +22,7 @@ if [ "$(uname -m)" != "${ARCH}" ]; then
 		esac
 
 		if [ -e /usr/bin/${INTERPRETER} ] && [ ! -e ${OS}/usr/bin/${INTERPRETER} ]; then
-			sudo cp /usr/bin/${INTERPRETER} ${OS}/usr/bin/${INTERPRETER}
+			cp /usr/bin/${INTERPRETER} ${OS}/usr/bin/${INTERPRETER}
 		elif [ ! -e /usr/bin/${INTERPRETER} ]; then
 			echo "[chroot] interpreter \"/usr/bin/${INTERPRETER}\" not found!"
 			exit 1
