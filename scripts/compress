@@ -11,12 +11,12 @@ for f in usr/src/system dev/pts dev proc sys run; do
 	fi
 done
 
-sudo cp -r ${OS} ${OS}-copy
-
+sudo cp -rp ${OS} ${OS}-copy
 cd ${OS}-copy
-sudo XZ_OPT="--threads=${THREADS}" tar cfJ ../rootfs_${TARGET}-${OS_RELEASE}.tar.xz *
-cd ${CDIR}
 
+tar --acls --xattrs -cpf - . | XZ_OPT="--threads=${THREADS}" xz -z - > ../rootfs_${TARGET}-${OS_RELEASE}.tar.xz
+
+cd ${CDIR}
 sudo rm -rf ${OS}-copy
 
 echo "[compress] finished! created rootfs_${TARGET}-${OS_RELEASE}.tar.xz"

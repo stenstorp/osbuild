@@ -14,7 +14,8 @@ A Linux rootfs builder based on Linux from Scratch.
 
 ## Installing:
 1. Partition the drive with at least a root filesystem for BIOS systems or an EFI partition and a root partition for UEFI systems.
-2. Extract the compiled `rootfs_ARCH_VERSION.tar.xz` file into the root filesystem.
+2. Extract the compiled `rootfs_ARCH_VERSION.tar.xz` file into the root filesystem with:  
+	`tar --acls --xattrs -xpf rootfs_ARCH_VERSION.tar.xz`
 3. Mount the `dev` `sys` `proc` and `run` virtual filesystems with:  
 	`mount --bind /dev ./dev`  
 	`mount -t sysfs sysfs ./sys`  
