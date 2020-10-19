@@ -1,0 +1,15 @@
+_configure() {
+	configcmd						\
+		--prefix=/					\
+		--enable-compat-symlinks			\
+		--mandir=/usr/share/man				\
+		--docdir=/usr/share/doc/dosfstools-${version}
+}
+
+_build() {
+	make -j${THREADS}
+}
+
+_install() {
+	make install
+}
